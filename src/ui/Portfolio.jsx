@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useInView } from 'react-intersection-observer';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -29,7 +29,8 @@ import {
   FaMoneyBillWave,
   FaMobile,
   FaSearch,
-  FaHome
+  FaHome,
+  FaBitcoin
 } from 'react-icons/fa';
 
 const ImageWithBlur = ({ src, alt, width, height, priority = false, className }) => (
@@ -38,7 +39,7 @@ const ImageWithBlur = ({ src, alt, width, height, priority = false, className })
 		alt={alt}
 		width={width}
 		height={height}
-		quality={85}
+		quality={75}
 		loading={priority ? "eager" : "lazy"}
 		placeholder="blur"
 		blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkMjU1LS0yMi4qLjoxKy46LiE1MTc5PUVFSktGRk5PS0ZPRUVFRf/2wBDAR"
@@ -56,6 +57,29 @@ function Portfolio() {
 	const { language } = useLanguage();
 
 	const [selectedCategory, setSelectedCategory] = useState('all');
+	const [lightboxOpen, setLightboxOpen] = useState(false);
+	const [lightboxImage, setLightboxImage] = useState(null);
+
+	// Закриття lightbox клавішею ESC
+	useEffect(() => {
+		const handleKeyDown = (e) => {
+			if (e.key === 'Escape' && lightboxOpen) {
+				setLightboxOpen(false);
+			}
+		};
+		
+		if (lightboxOpen) {
+			document.addEventListener('keydown', handleKeyDown);
+			document.body.style.overflow = 'hidden'; // Блокуємо прокрутку
+		} else {
+			document.body.style.overflow = 'unset';
+		}
+		
+		return () => {
+			document.removeEventListener('keydown', handleKeyDown);
+			document.body.style.overflow = 'unset';
+		};
+	}, [lightboxOpen]);
 
   const imageMap = [
     { image: '/dr-tolstikova-bot.jpg', largeImage: '/dr-tolstikova-bot.jpg', caseId: 'dr-tolstikova-bot', category: 'chatbots' },
@@ -81,7 +105,8 @@ function Portfolio() {
 		{ image: '/IMAGE 2025-10-04 04:56:47.jpg', largeImage: '/IMAGE 2025-10-04 04:56:47.jpg', caseId: 'offer-dpuchkov', category: 'websites' },
 		{ image: '/vsk-technology.png', largeImage: '/vsk-technology.png', caseId: 'vsk-technology', category: 'websites' },
 		{ image: '/v12-auto.png', largeImage: '/v12-auto.png', caseId: 'v12-auto', category: 'websites' },
-		{ image: '/tripvibe.png', largeImage: '/tripvibe.png', caseId: 'tripvibe', category: 'websites' }
+		{ image: '/tripvibe.png', largeImage: '/tripvibe.png', caseId: 'tripvibe', category: 'websites' },
+		{ image: '/IMAGE 2025-10-13 22:39:19.jpg', largeImage: '/IMAGE 2025-10-13 22:39:19.jpg', caseId: 'tron-energy-bot', category: 'chatbots' }
 	];
 
 	// Створюємо масив робіт з перекладами
@@ -204,6 +229,8 @@ function Portfolio() {
 				return <FaHeart className="text-3xl sm:text-4xl md:text-6xl text-black" />;
 			case 'offer-dpuchkov':
 				return <FaGraduationCap className="text-3xl sm:text-4xl md:text-6xl text-black" />;
+			case 'tron-energy-bot':
+				return <FaBitcoin className="text-3xl sm:text-4xl md:text-6xl text-black" />;
 			default:
 				return <FaRobot className="text-3xl sm:text-4xl md:text-6xl text-black" />;
 		}
@@ -270,10 +297,7 @@ function Portfolio() {
 					portfolioInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
 				}`}>
 					{filteredProjects.map((work, index) => (
-						<Link
-							key={index}
-							href={getCaseUrl(work.caseId)}
-							className='group relative overflow-hidden rounded-2xl border border-gray-200 transform transition-all duration-500 hover:-translate-y-3 cursor-pointer bg-white block portfolio-card'
+						<div key={index} className='group relative overflow-hidden rounded-2xl border border-gray-200 transform transition-all duration-500 hover:-translate-y-3 bg-white portfolio-card'
 							style={{
 								boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
 							}}
@@ -284,7 +308,15 @@ function Portfolio() {
 								e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
 							}}
 						>
-							<div className='relative h-48 sm:h-64 md:h-72 lg:h-96 overflow-hidden portfolio-card-image'>
+							<div 
+								className='relative h-48 sm:h-64 md:h-72 lg:h-96 overflow-hidden portfolio-card-image cursor-pointer'
+								onClick={(e) => {
+									e.preventDefault();
+									e.stopPropagation();
+									setLightboxImage({ src: work.largeImage, alt: work.alt });
+									setLightboxOpen(true);
+								}}
+							>
 								<ImageWithBlur
 									src={work.image}
 									alt={work.alt}
@@ -294,21 +326,21 @@ function Portfolio() {
 									className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
 								/>
 								<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500' />
-								<div className='absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500'>
+								<div className='absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none'>
 									<div className="flex items-center gap-3">
 										<span className='text-white font-semibold text-base uppercase tracking-wider'>
-											{language === 'uk' ? 'Переглянути кейс' :
-											 language === 'en' ? 'View Case' :
-											 language === 'ru' ? 'Посмотреть кейс' :
-											 'Zobacz przypadek'}
+											{language === 'uk' ? 'Переглянути фото' :
+											 language === 'en' ? 'View Photo' :
+											 language === 'ru' ? 'Посмотреть фото' :
+											 'Zobacz zdjęcie'}
 										</span>
-										<svg className="w-5 h-5 text-white transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+										<svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
 										</svg>
 									</div>
 								</div>
 							</div>
-							<div className='p-4 sm:p-6 md:p-8 portfolio-card-content'>
+							<Link href={getCaseUrl(work.caseId)} className='block p-4 sm:p-6 md:p-8 portfolio-card-content cursor-pointer hover:bg-gray-50 transition-colors'>
 								<div className="flex items-center gap-3 mb-3">
 									{getCaseIcon(work.caseId)}
 									<h3 className='text-lg sm:text-xl md:text-2xl font-bold text-gray-900 line-clamp-2 leading-tight portfolio-card-title'>
@@ -329,12 +361,41 @@ function Portfolio() {
 										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
 									</svg>
 								</div>
-							</div>
-						</Link>
+							</Link>
+						</div>
 					))}
 				</div>
 			</div>
 		</section>
+
+		{/* Lightbox для перегляду фото у високій якості */}
+		{lightboxOpen && lightboxImage && (
+			<div 
+				className="fixed inset-0 z-50 bg-black/95 flex items-center justify-center p-4 animate-fadeIn"
+				onClick={() => setLightboxOpen(false)}
+			>
+				<button
+					onClick={() => setLightboxOpen(false)}
+					className="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors z-10"
+					aria-label="Close"
+				>
+					<svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+					</svg>
+				</button>
+				<div className="relative max-w-7xl max-h-[90vh] w-full h-full flex items-center justify-center" onClick={(e) => e.stopPropagation()}>
+					<Image
+						src={lightboxImage.src}
+						alt={lightboxImage.alt}
+						width={1920}
+						height={1080}
+						quality={95}
+						className="object-contain w-full h-full lightbox-image"
+						priority
+					/>
+				</div>
+			</div>
+		)}
 		</div>
 	);
 }

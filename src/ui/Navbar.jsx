@@ -39,7 +39,7 @@ function Navbar() {
         >
             <li className="font-montserrat whitespace-nowrap" style={{ fontFamily: 'var(--font-montserrat)' }}>
                 <CustomNavLink 
-                    href={`${baseUrl}/#about`}
+                    href={`${baseUrl}/`}
                     className="hover:text-gray-600 transition-colors font-montserrat"
                     style={{ fontFamily: 'var(--font-montserrat)' }}
                 >

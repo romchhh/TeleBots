@@ -3,6 +3,29 @@
   padding: 2rem 1rem;
 }
 
+/* Lightbox animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Lightbox responsive styles */
+@media (max-width: 768px) {
+  .lightbox-image {
+    max-height: 80vh;
+    width: auto;
+    object-fit: contain;
+  }
+}
+
 @media (max-width: 640px) {
   .portfolio-container {
     padding: 1rem 0.5rem;

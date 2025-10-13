@@ -323,6 +323,10 @@ export const uk = {
       {
         title: "TripVibe — сучасне британське туристичне агентство",
         alt: "Повноцінна платформа для бронювання подорожей з підтримкою 24/7 та захистом ATOL & ABTA"
+      },
+      {
+        title: "TRON Energy Bot — автоматизація криптооперацій",
+        alt: "Telegram-бот з глибокою інтеграцією з блокчейном TRON для економії комісій до 70%"
       }
     ]
   },
@@ -1638,6 +1642,10 @@ export const en = {
       {
         title: "TripVibe — Modern British Travel Agency",
         alt: "Complete platform for booking trips with 24/7 support and ATOL & ABTA protection"
+      },
+      {
+        title: "TRON Energy Bot — Crypto Operations Automation",
+        alt: "Telegram bot with deep TRON blockchain integration for up to 70% fee savings"
       }
     ]
   },
@@ -3372,6 +3380,10 @@ export const pl = {
       {
         title: "TripVibe — nowoczesne brytyjskie biuro podróży",
         alt: "Kompletna platforma do rezerwacji podróży z obsługą 24/7 i ochroną ATOL & ABTA"
+      },
+      {
+        title: "TRON Energy Bot — automatyzacja operacji kryptowalutowych",
+        alt: "Bot Telegram z głęboką integracją z blockchainem TRON do oszczędności opłat do 70%"
       }
     ]
   },
@@ -4088,6 +4100,10 @@ export const ru = {
       {
         title: "TripVibe — современное британское туристическое агентство",
         alt: "Полноценная платформа для бронирования поездок с поддержкой 24/7 и защитой ATOL & ABTA"
+      },
+      {
+        title: "TRON Energy Bot — автоматизация криптоопераций",
+        alt: "Telegram-бот с глубокой интеграцией с блокчейном TRON для экономии комиссий до 70%"
       }
     ]
   },

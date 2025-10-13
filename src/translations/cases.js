@@ -640,6 +640,35 @@ export const cases = {
         { value: "10+", label: "Років досвіду" },
         { value: "5★", label: "Рейтинг клієнтів" }
       ]
+    },
+    'tron-energy-bot': {
+      title: "TRON Energy Bot — автоматизація криптооперацій",
+      subtitle: "Telegram-бот із глибокою інтеграцією з блокчейном TRON для економії комісій",
+      mainImage: "/IMAGE 2025-10-13 22:39:19.jpg",
+      description: "Розробив Telegram-бот із глибокою інтеграцією з блокчейном TRON (TRX, TRC-20). Бот автоматично купує енергію для транзакцій USDT/TRX, дозволяючи користувачам економити до 70% комісій.\n\nБот здійснює реальний моніторинг блокчейну TRON в режимі реального часу, автоматично обробляє депозити та підписує транзакції без втручання користувача. Інтегрований з FeeSaver API для оптимального ціноутворення енергії.\n\nСистема включає детальну статистику, аналітику використання енергії та повну автономність роботи. Користувачі можуть відстежувати всі свої транзакції, баланси та економію в зручному інтерфейсі прямо в Telegram.\n\nВсе працює всередині Telegram — без сторонніх сервісів чи ручного втручання. Це живий приклад того, як виглядає розумна автоматизація криптооперацій у TRON.\n\nТехнічні особливості:\n\n• Реальний моніторинг блокчейну TRON через WebSocket\n• Автоматичні депозити та підписання транзакцій\n• Інтеграція з FeeSaver API для купівлі енергії\n• Node.js сервер з TronWeb для роботи з блокчейном\n• MongoDB для зберігання транзакцій та користувачів\n• Система webhook'ів для відстеження статусу транзакцій\n• Автоматичний розрахунок оптимальної кількості енергії\n• Захист приватних ключів через шифрування\n\nБізнес-логіка:\n\n• Користувач реєструється та отримує унікальну TRON-адресу\n• Бот відстежує депозити на адресу в реальному часі\n• Перед транзакцією автоматично купується енергія\n• Економія до 70% на комісіях порівняно зі стандартними транзакціями\n• Детальна аналітика всіх операцій та економії\n• Автоматичні сповіщення про статус транзакцій",
+      technologies: ["Node.js", "Telegram Bot API", "TronWeb", "TRON Blockchain", "FeeSaver API", "MongoDB", "WebSocket", "Crypto Wallet API"],
+      duration: "5 тижнів",
+      client: "Crypto Trading Platform",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      features: [
+        "Реальний моніторинг блокчейну TRON",
+        "Автоматичні депозити та підписання транзакцій",
+        "Інтеграція з FeeSaver API",
+        "Економія до 70% на комісіях",
+        "Статистика та аналітика використання",
+        "Повна автономність роботи",
+        "Захист приватних ключів",
+        "Відстеження всіх транзакцій",
+        "Автоматичний розрахунок енергії",
+        "Сповіщення в реальному часі"
+      ],
+      results: [
+        { value: "70%", label: "Економія на комісіях" },
+        { value: "24/7", label: "Автоматична робота" },
+        { value: "100%", label: "Автономність" },
+        { value: "0", label: "Ручних операцій" }
+      ]
     }
   },
   
@@ -1281,6 +1310,35 @@ export const cases = {
         { value: "24/7", label: "Customer support" },
         { value: "10+", label: "Years of experience" },
         { value: "5★", label: "Customer rating" }
+      ]
+    },
+    'tron-energy-bot': {
+      title: "TRON Energy Bot — Crypto Operations Automation",
+      subtitle: "Telegram bot with deep TRON blockchain integration for fee savings",
+      mainImage: "/IMAGE 2025-10-13 22:39:19.jpg",
+      description: "Developed a Telegram bot with deep TRON blockchain integration (TRX, TRC-20). The bot automatically purchases energy for USDT/TRX transactions, allowing users to save up to 70% on fees.\n\nThe bot performs real-time TRON blockchain monitoring, automatically processes deposits and signs transactions without user intervention. Integrated with FeeSaver API for optimal energy pricing.\n\nThe system includes detailed statistics, energy usage analytics, and complete autonomy. Users can track all their transactions, balances, and savings in a convenient interface directly in Telegram.\n\nEverything works inside Telegram — no third-party services or manual intervention required. This is a living example of smart automation of crypto operations in TRON.\n\nTechnical Features:\n\n• Real-time TRON blockchain monitoring via WebSocket\n• Automatic deposits and transaction signing\n• Integration with FeeSaver API for energy purchases\n• Node.js server with TronWeb for blockchain interaction\n• MongoDB for storing transactions and users\n• Webhook system for tracking transaction status\n• Automatic calculation of optimal energy amount\n• Private key protection through encryption\n\nBusiness Logic:\n\n• User registers and receives unique TRON address\n• Bot tracks deposits to address in real-time\n• Energy is automatically purchased before transaction\n• Up to 70% savings on fees compared to standard transactions\n• Detailed analytics of all operations and savings\n• Automatic notifications about transaction status",
+      technologies: ["Node.js", "Telegram Bot API", "TronWeb", "TRON Blockchain", "FeeSaver API", "MongoDB", "WebSocket", "Crypto Wallet API"],
+      duration: "5 weeks",
+      client: "Crypto Trading Platform",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      features: [
+        "Real-time TRON blockchain monitoring",
+        "Automatic deposits and transaction signing",
+        "FeeSaver API integration",
+        "Up to 70% fee savings",
+        "Statistics and usage analytics",
+        "Complete autonomy",
+        "Private key protection",
+        "All transactions tracking",
+        "Automatic energy calculation",
+        "Real-time notifications"
+      ],
+      results: [
+        { value: "70%", label: "Fee savings" },
+        { value: "24/7", label: "Automatic operation" },
+        { value: "100%", label: "Autonomy" },
+        { value: "0", label: "Manual operations" }
       ]
     }
   },
@@ -1924,6 +1982,35 @@ export const cases = {
         { value: "10+", label: "Lat doświadczenia" },
         { value: "5★", label: "Ocena klientów" }
       ]
+    },
+    'tron-energy-bot': {
+      title: "TRON Energy Bot — automatyzacja operacji kryptowalutowych",
+      subtitle: "Bot Telegram z głęboką integracją z blockchainem TRON do oszczędności na opłatach",
+      mainImage: "/IMAGE 2025-10-13 22:39:19.jpg",
+      description: "Opracowałem bota Telegram z głęboką integracją z blockchainem TRON (TRX, TRC-20). Bot automatycznie kupuje energię do transakcji USDT/TRX, pozwalając użytkownikom zaoszczędzić do 70% na opłatach.\n\nBot monitoruje blockchain TRON w czasie rzeczywistym, automatycznie przetwarza depozyty i podpisuje transakcje bez interwencji użytkownika. Zintegrowany z FeeSaver API dla optymalnych cen energii.\n\nSystem zawiera szczegółowe statystyki, analitykę wykorzystania energii i pełną autonomię. Użytkownicy mogą śledzić wszystkie swoje transakcje, salda i oszczędności w wygodnym interfejsie bezpośrednio w Telegramie.\n\nWszystko działa w Telegramie — bez usług zewnętrznych ani ręcznej interwencji. To żywy przykład inteligentnej automatyzacji operacji kryptowalutowych w TRON.\n\nCechy techniczne:\n\n• Monitorowanie blockchainu TRON w czasie rzeczywistym przez WebSocket\n• Automatyczne depozyty i podpisywanie transakcji\n• Integracja z FeeSaver API do zakupu energii\n• Serwer Node.js z TronWeb do interakcji z blockchainem\n• MongoDB do przechowywania transakcji i użytkowników\n• System webhook'ów do śledzenia statusu transakcji\n• Automatyczne obliczanie optymalnej ilości energii\n• Ochrona kluczy prywatnych przez szyfrowanie\n\nLogika biznesowa:\n\n• Użytkownik rejestruje się i otrzymuje unikalny adres TRON\n• Bot śledzi depozyty na adres w czasie rzeczywistym\n• Energia jest automatycznie kupowana przed transakcją\n• Do 70% oszczędności na opłatach w porównaniu do standardowych transakcji\n• Szczegółowa analityka wszystkich operacji i oszczędności\n• Automatyczne powiadomienia o statusie transakcji",
+      technologies: ["Node.js", "Telegram Bot API", "TronWeb", "TRON Blockchain", "FeeSaver API", "MongoDB", "WebSocket", "Crypto Wallet API"],
+      duration: "5 tygodni",
+      client: "Crypto Trading Platform",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      features: [
+        "Monitorowanie blockchainu TRON w czasie rzeczywistym",
+        "Automatyczne depozyty i podpisywanie transakcji",
+        "Integracja z FeeSaver API",
+        "Do 70% oszczędności na opłatach",
+        "Statystyki i analityka wykorzystania",
+        "Pełna autonomia",
+        "Ochrona kluczy prywatnych",
+        "Śledzenie wszystkich transakcji",
+        "Automatyczne obliczanie energii",
+        "Powiadomienia w czasie rzeczywistym"
+      ],
+      results: [
+        { value: "70%", label: "Oszczędności na opłatach" },
+        { value: "24/7", label: "Automatyczne działanie" },
+        { value: "100%", label: "Autonomia" },
+        { value: "0", label: "Operacji ręcznych" }
+      ]
     }
   },
   
@@ -2565,6 +2652,35 @@ export const cases = {
         { value: "24/7", label: "Поддержка клиентов" },
         { value: "10+", label: "Лет опыта" },
         { value: "5★", label: "Рейтинг клиентов" }
+      ]
+    },
+    'tron-energy-bot': {
+      title: "TRON Energy Bot — автоматизация криптоопераций",
+      subtitle: "Telegram-бот с глубокой интеграцией с блокчейном TRON для экономии комиссий",
+      mainImage: "/IMAGE 2025-10-13 22:39:19.jpg",
+      description: "Разработал Telegram-бот с глубокой интеграцией с блокчейном TRON (TRX, TRC-20). Бот автоматически покупает энергию для транзакций USDT/TRX, позволяя пользователям экономить до 70% на комиссиях.\n\nБот осуществляет реальный мониторинг блокчейна TRON в режиме реального времени, автоматически обрабатывает депозиты и подписывает транзакции без вмешательства пользователя. Интегрирован с FeeSaver API для оптимального ценообразования энергии.\n\nСистема включает детальную статистику, аналитику использования энергии и полную автономность работы. Пользователи могут отслеживать все свои транзакции, балансы и экономию в удобном интерфейсе прямо в Telegram.\n\nВсе работает внутри Telegram — без сторонних сервисов или ручного вмешательства. Это живой пример того, как выглядит умная автоматизация криптоопераций в TRON.\n\nТехнические особенности:\n\n• Реальный мониторинг блокчейна TRON через WebSocket\n• Автоматические депозиты и подписание транзакций\n• Интеграция с FeeSaver API для покупки энергии\n• Node.js сервер с TronWeb для работы с блокчейном\n• MongoDB для хранения транзакций и пользователей\n• Система webhook'ов для отслеживания статуса транзакций\n• Автоматический расчет оптимального количества энергии\n• Защита приватных ключей через шифрование\n\nБизнес-логика:\n\n• Пользователь регистрируется и получает уникальный TRON-адрес\n• Бот отслеживает депозиты на адрес в реальном времени\n• Перед транзакцией автоматически покупается энергия\n• Экономия до 70% на комиссиях по сравнению со стандартными транзакциями\n• Детальная аналитика всех операций и экономии\n• Автоматические уведомления о статусе транзакций",
+      technologies: ["Node.js", "Telegram Bot API", "TronWeb", "TRON Blockchain", "FeeSaver API", "MongoDB", "WebSocket", "Crypto Wallet API"],
+      duration: "5 недель",
+      client: "Crypto Trading Platform",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      features: [
+        "Реальный мониторинг блокчейна TRON",
+        "Автоматические депозиты и подписание транзакций",
+        "Интеграция с FeeSaver API",
+        "Экономия до 70% на комиссиях",
+        "Статистика и аналитика использования",
+        "Полная автономность работы",
+        "Защита приватных ключей",
+        "Отслеживание всех транзакций",
+        "Автоматический расчет энергии",
+        "Уведомления в реальном времени"
+      ],
+      results: [
+        { value: "70%", label: "Экономия на комиссиях" },
+        { value: "24/7", label: "Автоматическая работа" },
+        { value: "100%", label: "Автономность" },
+        { value: "0", label: "Ручных операций" }
       ]
     }
   }
