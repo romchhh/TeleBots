@@ -1,0 +1,136 @@
+/* Основні стилі для сторінки блогу */
+.blog-page {
+  padding: 0.5rem;
+  min-height: 100vh;
+  background-color: #f9fafb;
+}
+
+@media (min-width: 768px) {
+  .blog-page {
+    padding: 1rem;
+  }
+}
+
+/* Анімація появи елементів */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.blog-header {
+  animation: fadeIn 0.8s ease-out;
+}
+
+.blog-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  animation: fadeIn 0.5s ease-out forwards;
+  opacity: 0;
+}
+
+.blog-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Стилі для зображень */
+.blog-image {
+  position: relative;
+  width: 100%;
+  height: 140px;
+}
+
+@media (min-width: 480px) {
+  .blog-image {
+    height: 160px;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-image {
+    height: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .blog-image {
+    height: 240px;
+  }
+}
+
+.blog-image img {
+  transition: transform 0.3s ease;
+}
+
+.blog-card:hover .blog-image img {
+  transform: scale(1.05);
+}
+
+/* Стилі для тексту */
+.blog-title {
+  color: #1a202c;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.4;
+  font-size: 0.875rem;
+}
+
+.blog-description {
+  color: #4a5568;
+  margin-bottom: 0.75rem;
+  line-height: 1.5;
+  font-size: 0.75rem;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (min-width: 480px) {
+  .blog-title {
+    font-size: 1rem;
+  }
+  
+  .blog-description {
+    font-size: 0.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .blog-title {
+    font-size: 1.125rem;
+    margin-bottom: 0.75rem;
+  }
+  
+  .blog-description {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+  }
+}
+
+/* Анімація для кнопки "Читати далі" */
+.read-more {
+  color: #3182ce;
+  font-weight: 500;
+  transition: color 0.2s ease;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .read-more {
+    font-size: 0.875rem;
+  }
+}
+
+.read-more:hover {
+  color: #2c5282;
+} 
+ 

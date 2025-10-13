@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>TeleBots - Розробка ботів та сайтів</title>
+    <description>Професійна розробка Telegram ботів, веб-сайтів та автоматизації бізнесу. Останні новини, кейси та поради з розробки.</description>
+    <link>https://telebots.site</link>
+    <language>uk</language>
+    <copyright>Copyright 2025 TeleBots</copyright>
+    <managingEditor>roman.fedoniuk@gmail.com (TeleBots Team)</managingEditor>
+    <webMaster>roman.fedoniuk@gmail.com (TeleBots Team)</webMaster>
+    <lastBuildDate>Sat, 04 Jan 2025 12:00:00 +0200</lastBuildDate>
+    <pubDate>Sat, 04 Jan 2025 12:00:00 +0200</pubDate>
+    <ttl>60</ttl>
+    <image>
+      <url>https://telebots.site/logologo.png</url>
+      <title>TeleBots</title>
+      <link>https://telebots.site</link>
+      <width>144</width>
+      <height>144</height>
+    </image>
+    <atom:link href="https://telebots.site/feed.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Топ-10 способів автоматизації бізнесу з Telegram ботами</title>
+      <description>Детальний гід по автоматизації бізнес-процесів за допомогою Telegram ботів. Практичні поради та кейси.</description>
+      <link>https://telebots.site/blog/automation-guide</link>
+      <guid isPermaLink="true">https://telebots.site/blog/automation-guide</guid>
+      <pubDate>Sat, 04 Jan 2025 08:00:00 +0200</pubDate>
+      <dc:creator>Роман Федонюк</dc:creator>
+      <category>Автоматизація</category>
+      <category>Telegram боти</category>
+      <content:encoded><![CDATA[
+        <p>В цій статті ми розглянемо 10 найефективніших способів автоматизації бізнесу за допомогою Telegram ботів...</p>
+      ]]></content:encoded>
+    </item>
+    
+    <item>
+      <title>Як створити Telegram бота з нуля: покроковий гід</title>
+      <description>Повний покроковий гід з створення Telegram бота з нуля. Від реєстрації до запуску.</description>
+      <link>https://telebots.site/blog/your-first-telegram-bot</link>
+      <guid isPermaLink="true">https://telebots.site/blog/your-first-telegram-bot</guid>
+      <pubDate>Fri, 03 Jan 2025 10:00:00 +0200</pubDate>
+      <dc:creator>Роман Федонюк</dc:creator>
+      <category>Розробка</category>
+      <category>Telegram боти</category>
+    </item>
+    
+    <item>
+      <title>Інтеграції для Telegram ботів: WayForPay, CRM, API</title>
+      <description>Огляд найпопулярніших інтеграцій для Telegram ботів. Як підключити платіжні системи та CRM.</description>
+      <link>https://telebots.site/blog/integrations</link>
+      <guid isPermaLink="true">https://telebots.site/blog/integrations</guid>
+      <pubDate>Thu, 02 Jan 2025 14:00:00 +0200</pubDate>
+      <dc:creator>Роман Федонюк</dc:creator>
+      <category>Інтеграції</category>
+      <category>API</category>
+    </item>
+    
+    <item>
+      <title>Розробка веб-сайтів: сучасні технології та тренди 2025</title>
+      <description>Огляд сучасних технологій для розробки веб-сайтів. React, Next.js, та інші фреймворки.</description>
+      <link>https://telebots.site/blog/developing</link>
+      <guid isPermaLink="true">https://telebots.site/blog/developing</guid>
+      <pubDate>Wed, 01 Jan 2025 16:00:00 +0200</pubDate>
+      <dc:creator>Роман Федонюк</dc:creator>
+      <category>Веб-розробка</category>
+      <category>Технології</category>
+    </item>
+    
+    <item>
+      <title>Новий кейс: VSK Technology - ремонт побутової техніки</title>
+      <description>Розглядаємо успішний кейс розробки веб-сайту для компанії VSK Technology з онлайн-записом та інтеграцією Google Maps.</description>
+      <link>https://telebots.site/case/vsk-technology</link>
+      <guid isPermaLink="true">https://telebots.site/case/vsk-technology</guid>
+      <pubDate>Tue, 31 Dec 2024 12:00:00 +0200</pubDate>
+      <dc:creator>Роман Федонюк</dc:creator>
+      <category>Кейси</category>
+      <category>Веб-сайти</category>
+    </item>
+  </channel>
+</rss>

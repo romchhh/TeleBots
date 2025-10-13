@@ -1,0 +1,29 @@
+.highlighted-text-with-dots {
+  position: relative;
+  display: inline-block;
+  color: var(--color-text);
+  padding: 0 10px;
+  background-color: var(--color-background);
+  border-radius: 4px;
+  line-height: 1.5;
+}
+
+.highlighted-text-with-dots::before,
+.highlighted-text-with-dots::after {
+  content: '';
+  position: absolute;
+  width: var(--width-dots);
+  height: var(--width-dots);
+  background-color: var(--color-dots);
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.highlighted-text-with-dots::before {
+  left: calc(-1 * var(--width-dots) / 2);
+}
+
+.highlighted-text-with-dots::after {
+  right: calc(-1 * var(--width-dots) / 2);
+} 

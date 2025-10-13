@@ -1,0 +1,30 @@
+# app-ads.txt for TeleBots
+# This file is used to authorize digital sellers to sell mobile app inventory
+# For more information visit: https://iabtechlab.com/ads-txt/
+
+# Google AdMob
+google.com, pub-1234567890123456, DIRECT, f08c47fec0942fa0
+
+# Facebook Audience Network
+facebook.com, 123456789012345, DIRECT, c3e20eee3f780d68
+
+# Unity Ads
+unity3d.com, 123456789012345, DIRECT, 3d4e5f6g7h8i9j0k
+
+# Vungle
+vungle.com, 123456789012345, DIRECT, 6a7b8c9d0e1f2g3h
+
+# AppLovin
+applovin.com, 123456789012345, DIRECT, 9i0j1k2l3m4n5o6p
+
+# IronSource
+ironsrc.com, 123456789012345, DIRECT, 7h8i9j0k1l2m3n4o
+
+# Chartboost
+chartboost.com, 123456789012345, DIRECT, 5g6h7i8j9k0l1m2n
+
+# AdColony
+adcolony.com, 123456789012345, DIRECT, 3e4f5g6h7i8j9k0l
+
+# InMobi
+inmobi.com, 123456789012345, DIRECT, 1c2d3e4f5g6h7i8j

@@ -1,0 +1,123 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "TeleBots API",
+    "description": "API для TeleBots сервісів з розробки чат-ботів та вебсайтів",
+    "version": "1.0.0",
+    "contact": {
+      "name": "TeleBots Support",
+      "email": "roman.fedoniuk@gmail.com",
+      "url": "https://telebots.site"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://telebots.site/api",
+      "description": "Основний сервер API"
+    }
+  ],
+  "paths": {
+    "/contact": {
+      "post": {
+        "summary": "Надіслати контактну форму",
+        "description": "Дозволяє відправити контактну форму для зв'язку з командою TeleBots",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ContactForm"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Успішно відправлено"
+          }
+        }
+      }
+    },
+    "/services": {
+      "get": {
+        "summary": "Отримати список сервісів",
+        "description": "Отримати повний список доступних сервісів",
+        "responses": {
+          "200": {
+            "description": "Список сервісів",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Service"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ContactForm": {
+        "type": "object",
+        "required": ["name", "email", "message"],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Ім'я користувача"
+          },
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email для зворотного зв'язку"
+          },
+          "phone": {
+            "type": "string",
+            "description": "Телефон для зворотного зв'язку"
+          },
+          "message": {
+            "type": "string",
+            "description": "Текст повідомлення"
+          },
+          "service": {
+            "type": "string",
+            "enum": ["chatbot", "website", "parser"],
+            "description": "Тип сервісу, який цікавить"
+          }
+        }
+      },
+      "Service": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Унікальний ідентифікатор сервісу"
+          },
+          "name": {
+            "type": "string",
+            "description": "Назва сервісу"
+          },
+          "description": {
+            "type": "string",
+            "description": "Опис сервісу"
+          },
+          "price": {
+            "type": "string",
+            "description": "Діапазон цін на послугу"
+          },
+          "features": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Особливості сервісу"
+          }
+        }
+      }
+    }
+  }
+} 

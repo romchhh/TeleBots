@@ -1,0 +1,29 @@
+{
+    "applinks": {
+        "apps": [],
+        "details": [
+            {
+                "appID": "TEAMID.com.telebots.app",
+                "paths": [
+                    "/portfolio/*",
+                    "/case/*",
+                    "/blog/*",
+                    "/chatbots",
+                    "/websites",
+                    "/parsers",
+                    "/prices"
+                ]
+            }
+        ]
+    },
+    "webcredentials": {
+        "apps": [
+            "TEAMID.com.telebots.app"
+        ]
+    },
+    "appclips": {
+        "apps": [
+            "TEAMID.com.telebots.app.Clip"
+        ]
+    }
+}

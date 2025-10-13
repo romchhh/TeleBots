@@ -1,0 +1,28 @@
+# TEAM
+
+    Developer: Роман Федонюк
+    Contact: roman.fedoniuk [at] gmail.com
+    From: Ukraine
+
+# THANKS
+
+    Name: Next.js
+    URL: https://nextjs.org/
+
+    Name: React
+    URL: https://reactjs.org/
+
+    Name: Tailwind CSS
+    URL: https://tailwindcss.com/
+
+    Name: Vercel
+    URL: https://vercel.com/
+
+# SITE
+
+    Last update: 2025/01/04
+    Language: Ukrainian, English, Polish, Russian
+    Doctype: HTML5
+    IDE: VS Code
+    Analytics: Google Analytics
+    Hosting: Vercel

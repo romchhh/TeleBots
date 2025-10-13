@@ -1,0 +1,277 @@
+.advantages-section {
+  padding: 8rem 2rem;
+  background: #ffffff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.advantages-container {
+  max-width: 1400px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.advantages-header {
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.advantages-header h2 {
+  font-size: 3.5rem;
+  color: #000000;
+  margin-bottom: 1.5rem;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+}
+
+.advantages-header p {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+}
+
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease-out;
+}
+
+.advantages-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.advantage-card {
+  background: #ffffff;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 24px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 0.5s ease-out forwards;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(0,0,0,0.02) 0%, rgba(0,0,0,0.01) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.advantage-card:hover {
+  transform: translateY(-12px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card:hover::before {
+  opacity: 1;
+}
+
+.advantage-icon {
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 20px;
+  margin: 0 auto 1.5rem auto;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.advantage-icon::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.2) 100%);
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon {
+  transform: translateY(-5px) scale(1.05);
+  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.advantage-card:hover .advantage-icon::before {
+  opacity: 1;
+}
+
+.advantage-icon svg {
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.advantage-card:hover .advantage-icon svg {
+  transform: scale(1.1);
+  color: #1f2937 !important;
+}
+
+.advantage-title {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.advantage-description {
+  font-size: 1.2rem;
+  color: #333;
+  line-height: 1.7;
+  font-weight: 400;
+}
+
+.contact-section {
+  text-align: center;
+  margin-top: 6rem;
+}
+
+.contact-section p {
+  font-size: 1.8rem;
+  color: #000000;
+  margin-bottom: 2rem;
+  font-weight: 600;
+}
+
+/* Адаптивність */
+@media (max-width: 1200px) {
+  .advantages-section {
+    padding: 6rem 2rem;
+  }
+
+  .advantages-header h2 {
+    font-size: 3rem;
+  }
+
+  .advantages-header p {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .advantages-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .advantages-header {
+    margin-bottom: 4rem;
+  }
+
+  .advantages-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .advantages-header p {
+    font-size: 1.3rem;
+  }
+
+  .advantages-grid {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+
+  .advantage-title {
+    font-size: 1.6rem;
+  }
+
+  .advantage-description {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantages-section {
+    padding: 3rem 1rem;
+  }
+
+  .advantages-header h2 {
+    font-size: 2.2rem;
+  }
+
+  .advantages-header p {
+    font-size: 1.2rem;
+  }
+
+  .advantage-card {
+    padding: 2rem;
+  }
+
+  .advantage-icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  .advantage-icon svg {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .advantage-title {
+    font-size: 1.4rem;
+  }
+
+  .advantage-description {
+    font-size: 1rem;
+  }
+
+  .contact-section {
+    margin-top: 4rem;
+  }
+
+  .contact-section p {
+    font-size: 1.4rem;
+  }
+}
+
+/* Додаємо стилі для кращої адаптивності зображень */
+.advantage-item img {
+  width: 100%;
+  max-width: 60px;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+  .advantage-item img {
+    max-width: 50px;
+  }
+}
+
+@media (max-width: 480px) {
+  .advantage-item img {
+    max-width: 45px;
+  }
+}

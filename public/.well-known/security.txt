@@ -1,0 +1,45 @@
+Contact: mailto:roman.fedoniuk@gmail.com
+Contact: https://telebots.site/contact
+Expires: 2026-01-04T12:00:00.000Z
+Encryption: https://telebots.site/pgp-key.txt
+Acknowledgments: https://telebots.site/security-acknowledgments
+Preferred-Languages: uk, en, ru
+Canonical: https://telebots.site/.well-known/security.txt
+Policy: https://telebots.site/security-policy
+
+# Security Policy
+# We take security seriously and appreciate responsible disclosure
+# of security vulnerabilities. Please report any security issues
+# to the contact information above.
+
+# Scope
+# This security policy applies to:
+# - telebots.site and all subdomains
+# - All services and applications hosted on our infrastructure
+
+# What we're looking for:
+# - Cross-site scripting (XSS)
+# - Cross-site request forgery (CSRF)
+# - SQL injection
+# - Authentication bypass
+# - Authorization flaws
+# - Information disclosure
+# - Remote code execution
+# - Server-side request forgery (SSRF)
+
+# What we're NOT looking for:
+# - Social engineering attacks
+# - Physical attacks
+# - Denial of service attacks
+# - Issues in third-party applications
+# - Issues that require physical access to the device
+
+# Response Timeline:
+# - Initial response: 24 hours
+# - Status update: 7 days
+# - Resolution: 30 days (depending on complexity)
+
+# Recognition:
+# We will acknowledge security researchers who responsibly
+# disclose vulnerabilities and may include them in our
+# security acknowledgments page.

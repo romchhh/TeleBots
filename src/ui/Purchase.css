@@ -1,0 +1,19 @@
+.purchase-section {
+  background: linear-gradient(to bottom, #ffffff, #f8f9fa);
+}
+
+@media (max-width: 768px) {
+  .purchase-section {
+    padding: 3rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .purchase-section {
+    padding: 2rem 0.5rem;
+  }
+  
+  .phase-card {
+    padding: 1.5rem;
+  }
+} 

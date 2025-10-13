@@ -1,0 +1,223 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+.prices-section {
+  min-height: 100vh;
+  padding: 6rem 2rem;
+  background: linear-gradient(135deg, #f6f8ff 0%, #f0f3ff 25%, #e8ecff 50%, #e6e9ff 75%, #e4e7ff 100%);
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+.prices-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(45deg, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 100%);
+  pointer-events: none;
+}
+
+.prices-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.prices-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.prices-header h2 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin-bottom: 1rem;
+  letter-spacing: -0.02em;
+}
+
+.prices-header p {
+  font-size: 1.5rem;
+  color: #4a5568;
+  font-weight: 300;
+}
+
+.prices-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.prices-grid.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.price-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 2.5rem;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.price-card.featured {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-10px);
+  border: 1px solid rgba(79, 70, 229, 0.2);
+}
+
+.price-card:hover {
+  transform: translateY(-5px);
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(79, 70, 229, 0.3);
+}
+
+.price-card h3 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #2d3748;
+  margin-bottom: 1rem;
+}
+
+.price-card .description {
+  color: #4a5568;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  min-height: 60px;
+}
+
+.price-card .price {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+
+.order-button {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: white;
+  background: linear-gradient(135deg, #4a5568 0%, #2d3748 100%);
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.order-button:hover {
+  background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+  transform: translateY(-2px);
+}
+
+.features {
+  margin-top: 2rem;
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  color: #4a5568;
+  font-size: 1rem;
+}
+
+.features .check {
+  color: #4F46E5;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
+/* Додаємо стилі для табів */
+.price-tabs {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 30px;
+  gap: 10px;
+}
+
+.price-tab {
+  padding: 10px 20px;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.price-tab:hover {
+  background-color: #f0f0f0;
+}
+
+.price-tab.active {
+  background-color: var(--primary-color);
+  color: white;
+  border-color: var(--primary-color);
+}
+
+.price-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 10px;
+}
+
+.original-price {
+  text-decoration: line-through;
+  color: #999;
+  font-size: 0.85em;
+}
+
+@media (max-width: 768px) {
+  .prices-section {
+    padding: 4rem 1rem;
+  }
+
+  .prices-header h2 {
+    font-size: 2.5rem;
+  }
+
+  .prices-header p {
+    font-size: 1.2rem;
+  }
+
+  .price-card {
+    padding: 2rem;
+  }
+
+  .price-card h3 {
+    font-size: 1.75rem;
+  }
+
+  .price-card .price {
+    font-size: 2rem;
+  }
+
+  .price-tabs {
+    flex-wrap: wrap;
+  }
+  
+  .price-tab {
+    font-size: 14px;
+    padding: 8px 15px;
+  }
+} 

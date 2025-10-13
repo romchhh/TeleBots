@@ -1,0 +1,64 @@
+# Security Policy for TeleBots
+# Last updated: 2025-01-04
+
+## Contact Information
+- Email: roman.fedoniuk@gmail.com
+- Website: https://telebots.site
+- Phone: +380960908006
+
+## Scope
+This security policy applies to:
+- telebots.site and all subdomains
+- All services and applications hosted on our infrastructure
+- All client projects and data
+
+## Supported Versions
+We provide security updates for the following versions:
+- Current version: 2025.1.0
+- Previous version: 2024.12.0 (until 2025-02-04)
+
+## Reporting a Vulnerability
+If you discover a security vulnerability, please report it to us:
+
+1. **Email**: roman.fedoniuk@gmail.com
+2. **Subject**: Security Vulnerability Report
+3. **Include**:
+   - Description of the vulnerability
+   - Steps to reproduce
+   - Potential impact
+   - Suggested fix (if any)
+
+## Response Timeline
+- **Initial response**: 24 hours
+- **Status update**: 7 days
+- **Resolution**: 30 days (depending on complexity)
+
+## What We're Looking For
+- Cross-site scripting (XSS)
+- Cross-site request forgery (CSRF)
+- SQL injection
+- Authentication bypass
+- Authorization flaws
+- Information disclosure
+- Remote code execution
+- Server-side request forgery (SSRF)
+- Insecure direct object references
+- Security misconfiguration
+
+## What We're NOT Looking For
+- Social engineering attacks
+- Physical attacks
+- Denial of service attacks
+- Issues in third-party applications
+- Issues that require physical access to the device
+- Issues that require social engineering
+- Issues that require access to internal systems
+
+## Recognition
+We will acknowledge security researchers who responsibly disclose vulnerabilities and may include them in our security acknowledgments page.
+
+## Legal
+This policy is for security researchers only. Any activities that violate applicable laws are not covered by this policy.
+
+## Changes
+This policy may be updated from time to time. The latest version will always be available at https://telebots.site/security-policy
