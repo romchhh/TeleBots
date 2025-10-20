@@ -29,6 +29,13 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://telebots.site/en/websites',
+    languages: {
+      'uk': 'https://telebots.site/websites',
+      'en': 'https://telebots.site/en/websites',
+      'pl': 'https://telebots.site/pl/websites',
+      'ru': 'https://telebots.site/ru/websites',
+      'x-default': 'https://telebots.site/websites',
+    },
   },
   robots: {
     index: true,

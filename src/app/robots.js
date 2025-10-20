@@ -37,10 +37,7 @@ export default function robots() {
         crawlDelay: 2,
       }
     ],
-    sitemap: [
-      'https://telebots.site/sitemap.xml',
-      'https://telebots.site/sitemap-0.xml',
-    ],
+    sitemap: 'https://telebots.site/sitemap.xml',
     host: 'https://telebots.site',
   };
 } 

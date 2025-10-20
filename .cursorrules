@@ -1,0 +1,26 @@
+# Performance Optimization Plan
+
+## Критичні проблеми для виправлення:
+
+1. **LCP: 6.8s → <2.5s** - Largest Contentful Paint
+   - Lazy load некритичних компонентів
+   - Preload Hero image
+   - Оптимізувати font loading
+
+2. **FCP: 3.7s → <1.8s** - First Contentful Paint  
+   - Видалити render-blocking CSS/JS
+   - Inline critical CSS
+   - Defer non-critical JavaScript
+
+3. **TBT: 300ms → <200ms** - Total Blocking Time
+   - Code splitting
+   - Lazy load компонентів
+   - Оптимізувати third-party scripts
+
+4. **DOM Size: 1,316 → <800 елементів**
+   - Lazy load Portfolio
+   - Lazy load Reviews
+   - Lazy load non-visible sections
+
+## Швидкі виправлення:
+

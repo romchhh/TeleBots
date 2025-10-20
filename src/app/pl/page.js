@@ -34,7 +34,14 @@ export const metadata = {
     'boty sprzedażowe'
   ],
   alternates: {
-    canonical: 'https://telebots.site/pl'
+    canonical: 'https://telebots.site/pl',
+    languages: {
+      'uk': 'https://telebots.site',
+      'en': 'https://telebots.site/en',
+      'pl': 'https://telebots.site/pl',
+      'ru': 'https://telebots.site/ru',
+      'x-default': 'https://telebots.site',
+    },
   },
   openGraph: {
     title: 'TeleBots | Boty Telegram i Tworzenie Stron Internetowych',

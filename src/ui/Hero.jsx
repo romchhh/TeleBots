@@ -186,7 +186,8 @@ const Hero = memo(function Hero() {
               width={150}
               height={225}
               priority
-              quality={100}
+              fetchPriority="high"
+              quality={90}
               className="logo-image"
               sizes="(max-width: 468px) 100vw, (max-width: 1200px) 50vw, 33vw"
               placeholder="blur"

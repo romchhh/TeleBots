@@ -740,7 +740,7 @@ const BlogPage = () => {
                     : 'Need help with bot development?'}
                 </p>
                 <Link 
-                  href={`/${language === 'uk' ? '' : language === 'ru' ? 'ru/' : language === 'pl' ? 'pl/' : 'en/'}contact`}
+                  href={`/${language === 'uk' ? '' : language === 'ru' ? 'ru/' : language === 'pl' ? 'pl/' : 'en/'}#lead-form`}
                   className="inline-block mt-2 text-blue-600 hover:text-blue-800 text-sm"
                 >
                   {language === 'uk' ? 'Зв\'язатися з нами' : language === 'ru' ? 'Связаться с нами' : language === 'pl' ? 'Skontaktuj się z nami' : 'Contact us'}

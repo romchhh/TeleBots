@@ -33,6 +33,9 @@ export const metadata = {
     languages: {
       'uk': 'https://telebots.site/blog',
       'en': 'https://telebots.site/en/blog',
+      'pl': 'https://telebots.site/pl/blog',
+      'ru': 'https://telebots.site/ru/blog',
+      'x-default': 'https://telebots.site/blog',
     },
   },
 };

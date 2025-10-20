@@ -43,7 +43,9 @@ export const metadata = {
     languages: {
       'uk': 'https://telebots.site/prices',
       'en': 'https://telebots.site/en/prices',
+      'pl': 'https://telebots.site/pl/prices',
       'ru': 'https://telebots.site/ru/prices',
+      'x-default': 'https://telebots.site/prices',
     },
   },
   robots: {

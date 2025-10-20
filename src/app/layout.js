@@ -20,30 +20,30 @@ const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-montserrat',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'],  // Зменшено кількість вагів
   preload: true,
   fallback: ['system-ui', 'arial'],
-  adjustFontFallback: false,
+  adjustFontFallback: true,  // Змінено на true для кращого fallback
 });
 
 const oswald = Oswald({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-oswald',
-  weight: ['400', '500', '600'],
+  weight: ['400', '600'],  // Зменшено кількість вагів
   preload: true,
   fallback: ['system-ui', 'arial'],
-  adjustFontFallback: false,
+  adjustFontFallback: true,
 });
 
 const inter = Inter({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-inter',
-  weight: ['400', '500', '600', '700', '800'],
+  weight: ['400', '600', '700'],  // Зменшено кількість вагів
   preload: true,
   fallback: ['system-ui', 'arial'],
-  adjustFontFallback: false,
+  adjustFontFallback: true,
 });
 
 export const metadata = {
@@ -83,11 +83,6 @@ export const metadata = {
   metadataBase: new URL('https://telebots.site'),
   alternates: {
     canonical: 'https://telebots.site',
-    languages: {
-      'uk-UA': '/',
-      'en-US': '/en',
-      'ru-RU': '/ru',
-    },
     types: {
       'application/rss+xml': 'https://telebots.site/feed.xml',
     },
@@ -183,11 +178,14 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
-  // За замовчуванням українська мова
-  // Мова буде визначена через metadata в кожній сторінці окремо
+export default async function RootLayout({ children }) {
+  // Use async to enable reading headers
+  const { headers } = await import('next/headers');
+  const headersList = headers();
+  const lang = headersList.get('x-lang') || 'uk';
+  
   return (
-    <html lang="uk" className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
+    <html lang={lang} suppressHydrationWarning className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -260,12 +258,7 @@ export default function RootLayout({ children }) {
         <meta name="distribution" content="Global" />
         <meta name="rating" content="General" />
         
-        {/* Метатеги для міжнародної SEO */}
-        <link rel="alternate" hrefLang="uk" href="https://telebots.site" />
-        <link rel="alternate" hrefLang="en" href="https://telebots.site/en" />
-        <link rel="alternate" hrefLang="pl" href="https://telebots.site/pl" />
-        <link rel="alternate" hrefLang="ru" href="https://telebots.site/ru" />
-        <link rel="alternate" hrefLang="x-default" href="https://telebots.site" />
+        {/* Метатеги для міжнародної SEO - видалено, бо кожна сторінка має свої hreflang через metadata */}
         
         {/* Метатеги для структурованих даних */}
         <meta name="structured-data" content="json-ld" />
@@ -384,38 +377,21 @@ export default function RootLayout({ children }) {
           href="https://www.google-analytics.com"
         />
         
-        {/* Preload critical resources */}
-        <link rel="preload" href="/laptop.png" as="image" type="image/png" />
-        <link rel="preload" href="/logo.png" as="image" type="image/png" />
+        {/* Preload only critical above-the-fold resources */}
+        <link rel="preload" href="/logo.png" as="image" type="image/png" fetchPriority="high" />
+        <link rel="preload" href="/Group 1000007030.png" as="image" type="image/png" fetchPriority="high" />
         
-        {/* Preload critical CSS */}
+        {/* Critical CSS preload видалено - Next.js автоматично це робить */}
+        {/* Font Awesome - defer to не блокувати rendering */}
         <link 
-          rel="preload"
-          href="/_next/static/css/07588c8f743fd107.css"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
+          rel="stylesheet" 
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
+          integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
+          crossOrigin="anonymous" 
+          referrerPolicy="no-referrer"
+          media="print"
+          onLoad="this.media='all'"
         />
-        <link 
-          rel="preload"
-          href="/_next/static/css/b32a757c1b71a6fc.css"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <link 
-          rel="preload"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
-          as="style"
-          onLoad="this.onload=null;this.rel='stylesheet'"
-        />
-        <noscript>
-          <link 
-            rel="stylesheet" 
-            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" 
-            integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" 
-            crossOrigin="anonymous" 
-            referrerPolicy="no-referrer" 
-          />
-        </noscript>
       </head>
       <body className={`${montserrat.className} bg-white`} itemScope itemType="https://schema.org/WebPage">
         <NavbarProvider>
@@ -430,9 +406,9 @@ export default function RootLayout({ children }) {
         </NavbarProvider>
         <Script 
           src="https://www.googletagmanager.com/gtag/js?id=G-7YWVBBJP8X" 
-          strategy="afterInteractive" 
+          strategy="lazyOnload"
         />
-        <Script id="google-analytics" strategy="afterInteractive">
+        <Script id="google-analytics" strategy="lazyOnload">
           {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
@@ -441,7 +417,7 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         
-        <Script id="service-worker" strategy="afterInteractive">
+        <Script id="service-worker" strategy="lazyOnload">
           {`
             if ('serviceWorker' in navigator) {
               window.addEventListener('load', function() {
@@ -457,18 +433,6 @@ export default function RootLayout({ children }) {
           `}
         </Script>
         
-        <Script id="set-html-lang" strategy="beforeInteractive">
-          {`
-            (function() {
-              const path = window.location.pathname;
-              let lang = 'uk';
-              if (path.startsWith('/en')) lang = 'en';
-              else if (path.startsWith('/ru')) lang = 'ru';
-              else if (path.startsWith('/pl')) lang = 'pl';
-              document.documentElement.lang = lang;
-            })();
-          `}
-        </Script>
         <script
           id="local-business-schema"
           type="application/ld+json"

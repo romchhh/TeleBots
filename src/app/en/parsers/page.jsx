@@ -29,6 +29,13 @@ export const metadata = {
   },
   alternates: {
     canonical: 'https://telebots.site/en/parsers',
+    languages: {
+      'uk': 'https://telebots.site/parsers',
+      'en': 'https://telebots.site/en/parsers',
+      'pl': 'https://telebots.site/pl/parsers',
+      'ru': 'https://telebots.site/ru/parsers',
+      'x-default': 'https://telebots.site/parsers',
+    },
   },
   robots: {
     index: true,
