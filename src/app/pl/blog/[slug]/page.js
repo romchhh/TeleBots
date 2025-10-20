@@ -138,8 +138,12 @@ export async function generateMetadata({ params }) {
     description: post.description,
     keywords: post.keywords,
     openGraph: {
+      type: 'article',
       title: post.title,
       description: post.description,
+      url: `https://telebots.site/pl/blog/${params.slug}`,
+      siteName: 'TeleBots',
+      locale: 'pl_PL',
       images: [
         {
           url: `https://telebots.site${post.image}`,
@@ -150,10 +154,13 @@ export async function generateMetadata({ params }) {
       ],
     },
     alternates: {
-      canonical: `https://telebots.site/en/blog/${params.slug}`,
+      canonical: `https://telebots.site/pl/blog/${params.slug}`,
       languages: {
         'uk': `https://telebots.site/blog/${params.slug}`,
         'en': `https://telebots.site/en/blog/${params.slug}`,
+        'pl': `https://telebots.site/pl/blog/${params.slug}`,
+        'ru': `https://telebots.site/ru/blog/${params.slug}`,
+        'x-default': `https://telebots.site/blog/${params.slug}`,
       },
     },
   }

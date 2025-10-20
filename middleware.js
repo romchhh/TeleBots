@@ -16,8 +16,9 @@ export function middleware(request) {
   // Create response
   const response = NextResponse.next();
   
-  // Add language header for the layout to read
+  // Add language and pathname headers for the layout to read
   response.headers.set('x-lang', lang);
+  response.headers.set('x-pathname', pathname);
   
   return response;
 }

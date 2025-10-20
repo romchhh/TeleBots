@@ -103,6 +103,26 @@ const nextConfig = {
         destination: '/',
         permanent: true,
       },
+      {
+        source: '/contact',
+        destination: '/#lead-form',
+        permanent: true,
+      },
+      {
+        source: '/en/contact',
+        destination: '/en#lead-form',
+        permanent: true,
+      },
+      {
+        source: '/pl/contact',
+        destination: '/pl#lead-form',
+        permanent: true,
+      },
+      {
+        source: '/ru/contact',
+        destination: '/ru#lead-form',
+        permanent: true,
+      },
     ]
   },
 

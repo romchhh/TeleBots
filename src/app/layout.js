@@ -1,6 +1,7 @@
 import { Montserrat, Oswald, Inter } from 'next/font/google';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
+import { headers } from 'next/headers';
 import { NavbarProvider } from '../context/NavbarContext'
 import { LanguageProvider } from '../context/LanguageContext'
 import Header from '../ui/Header'
@@ -178,14 +179,9 @@ export const metadata = {
   },
 };
 
-export default async function RootLayout({ children }) {
-  // Use async to enable reading headers
-  const { headers } = await import('next/headers');
-  const headersList = headers();
-  const lang = headersList.get('x-lang') || 'uk';
-  
+export default function RootLayout({ children }) {
   return (
-    <html lang={lang} suppressHydrationWarning className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
+    <html lang="uk" suppressHydrationWarning className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

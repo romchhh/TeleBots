@@ -17,8 +17,12 @@ export const metadata = {
     'blog automatyzacji biznesu'
   ],
   openGraph: {
+    type: 'website',
     title: 'Blog o tworzeniu botów Telegram | TeleBots',
     description: 'Przeczytaj przydatne artykuły o tworzeniu botów Telegram, automatyzacji biznesu i zwiększaniu sprzedaży. Praktyczne wskazówki i prawdziwe studia przypadków.',
+    url: 'https://telebots.site/pl/blog',
+    siteName: 'TeleBots',
+    locale: 'pl_PL',
     images: [
       {
         url: 'https://telebots.site/blog-preview.jpg',
@@ -33,8 +37,9 @@ export const metadata = {
     languages: {
       'uk': 'https://telebots.site/blog',
       'en': 'https://telebots.site/en/blog',
-      'ru': 'https://telebots.site/ru/blog',
       'pl': 'https://telebots.site/pl/blog',
+      'ru': 'https://telebots.site/ru/blog',
+      'x-default': 'https://telebots.site/blog',
     },
   },
 };

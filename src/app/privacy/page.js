@@ -4,7 +4,14 @@ export const metadata = {
   title: 'Політика конфіденційності | TeleBots',
   description: 'Політика конфіденційності TeleBots щодо обробки персональних даних користувачів та захисту їх приватності.',
   alternates: {
-    canonical: 'https://telebots.site/privacy'
+    canonical: 'https://telebots.site/privacy',
+    languages: {
+      'uk': 'https://telebots.site/privacy',
+      'en': 'https://telebots.site/en/privacy',
+      'pl': 'https://telebots.site/pl/privacy',
+      'ru': 'https://telebots.site/ru/privacy',
+      'x-default': 'https://telebots.site/privacy',
+    },
   }
 };
 

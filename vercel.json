@@ -2,5 +2,12 @@
     "rewrites": [
         { "source": "/blog", "destination": "/index.html" },
         { "source": "/blog/**", "destination": "/index.html" }
+    ],
+    "redirects": [
+        {
+            "source": "https://www.telebots.site/:path*",
+            "destination": "https://telebots.site/:path*",
+            "permanent": true
+        }
     ]
 }

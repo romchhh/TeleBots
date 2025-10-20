@@ -142,14 +142,17 @@ export async function generateMetadata({ params }) {
       languages: {
         'uk': `https://telebots.site/blog/${params.slug}`,
         'en': `https://telebots.site/en/blog/${params.slug}`,
+        'pl': `https://telebots.site/pl/blog/${params.slug}`,
         'ru': `https://telebots.site/ru/blog/${params.slug}`,
         'x-default': `https://telebots.site/blog/${params.slug}`,
       },
     },
     openGraph: {
+      type: 'article',
       title: post.title,
       description: post.description,
       url: `https://telebots.site/en/blog/${params.slug}`,
+      siteName: 'TeleBots',
       locale: 'en_US',
       images: [
         {

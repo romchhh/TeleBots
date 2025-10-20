@@ -18,7 +18,9 @@ export const metadata = {
     languages: {
       'uk': 'https://telebots.site/privacy',
       'en': 'https://telebots.site/en/privacy',
+      'pl': 'https://telebots.site/pl/privacy',
       'ru': 'https://telebots.site/ru/privacy',
+      'x-default': 'https://telebots.site/privacy',
     },
   },
 }

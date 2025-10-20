@@ -23,6 +23,12 @@ export default function sitemap() {
       priority: 1.0,
     },
     {
+      url: `${baseUrl}/pl`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 1.0,
+    },
+    {
       url: `${baseUrl}/chatbots`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -36,6 +42,12 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/ru/chatbots`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pl/chatbots`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -59,6 +71,12 @@ export default function sitemap() {
       priority: 0.9,
     },
     {
+      url: `${baseUrl}/pl/websites`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/parsers`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
@@ -72,6 +90,12 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/ru/parsers`,
+      lastModified: currentDate,
+      changeFrequency: 'weekly',
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/pl/parsers`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
       priority: 0.9,
@@ -95,6 +119,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/pl/prices`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/blog`,
       lastModified: currentDate,
       changeFrequency: 'daily',
@@ -113,6 +143,12 @@ export default function sitemap() {
       priority: 0.8,
     },
     {
+      url: `${baseUrl}/pl/blog`,
+      lastModified: currentDate,
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    {
       url: `${baseUrl}/privacy`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
@@ -126,6 +162,12 @@ export default function sitemap() {
     },
     {
       url: `${baseUrl}/ru/privacy`,
+      lastModified: currentDate,
+      changeFrequency: 'yearly',
+      priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/pl/privacy`,
       lastModified: currentDate,
       changeFrequency: 'yearly',
       priority: 0.3,
@@ -175,6 +217,14 @@ export default function sitemap() {
     priority: post.priority,
   }));
 
+  // Польські статті блогу
+  const polishBlogRoutes = blogPosts.map((post) => ({
+    url: `${baseUrl}/pl/blog/${post.slug}`,
+    lastModified: post.lastMod || currentDate,
+    changeFrequency: 'monthly',
+    priority: post.priority,
+  }));
+
   // Case studies (portfolio items)
   const caseIds = [
     'dr-tolstikova-bot',
@@ -202,7 +252,8 @@ export default function sitemap() {
     'offer-dpuchkov',
     'vsk-technology',
     'v12-auto',
-    'tripvibe'
+    'tripvibe',
+    'tron-energy-bot'
   ];
 
   // Portfolio page routes
@@ -270,6 +321,7 @@ export default function sitemap() {
     ...ukrainianBlogRoutes, 
     ...englishBlogRoutes, 
     ...russianBlogRoutes,
+    ...polishBlogRoutes,
     ...portfolioRoutes,
     ...ukrainianCaseRoutes,
     ...englishCaseRoutes,

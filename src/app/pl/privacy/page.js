@@ -1,5 +1,20 @@
 import { useTranslation } from '../../../hooks/useTranslation';
 
+export const metadata = {
+  title: 'Polityka prywatności | TeleBots',
+  description: 'Polityka prywatności TeleBots dotycząca przetwarzania danych osobowych użytkowników i ochrony ich prywatności.',
+  alternates: {
+    canonical: 'https://telebots.site/pl/privacy',
+    languages: {
+      'uk': 'https://telebots.site/privacy',
+      'en': 'https://telebots.site/en/privacy',
+      'pl': 'https://telebots.site/pl/privacy',
+      'ru': 'https://telebots.site/ru/privacy',
+      'x-default': 'https://telebots.site/privacy',
+    },
+  }
+};
+
 export default function Privacy() {
   return (
     <div className="min-h-screen py-10 px-4 md:px-8 max-w-4xl mx-auto">
