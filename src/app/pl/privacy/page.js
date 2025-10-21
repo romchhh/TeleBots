@@ -12,7 +12,15 @@ export const metadata = {
       'ru': 'https://telebots.site/ru/privacy',
       'x-default': 'https://telebots.site/privacy',
     },
-  }
+  },
+  openGraph: {
+    title: 'Polityka prywatności | TeleBots',
+    description: 'Polityka prywatności TeleBots dotycząca przetwarzania danych osobowych użytkowników i ochrony ich prywatności.',
+    url: 'https://telebots.site/pl/privacy',
+    siteName: 'TeleBots',
+    locale: 'pl_PL',
+    type: 'website',
+  },
 };
 
 export default function Privacy() {

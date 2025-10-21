@@ -23,6 +23,14 @@ export const metadata = {
       'x-default': 'https://telebots.site/privacy',
     },
   },
+  openGraph: {
+    title: 'Политика конфиденциальности | TeleBots',
+    description: 'Политика конфиденциальности TeleBots. Узнайте, как мы собираем, используем и защищаем вашу личную информацию.',
+    url: 'https://telebots.site/ru/privacy',
+    siteName: 'TeleBots',
+    locale: 'ru_RU',
+    type: 'website',
+  },
 }
 
 export default function Page() {

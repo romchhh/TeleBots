@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Font import removed - fonts loaded in layout.js for better performance */
 
 .service-hero-container {
     background: linear-gradient(135deg, 
@@ -51,8 +51,23 @@
 }
 
 @keyframes pulseGradient {
-    0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; }
+    0%, 100% { 
+        opacity: 0.7;
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 1;
+        transform: scale(1.02);
+    }
+}
+
+/* Optimize animations with GPU acceleration */
+.service-hero-container::before,
+.service-hero-container::after {
+    will-change: opacity, transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
 }
 
 .service-hero-content {

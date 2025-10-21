@@ -377,6 +377,15 @@ export default function RootLayout({ children }) {
         <link rel="preload" href="/logo.png" as="image" type="image/png" fetchPriority="high" />
         <link rel="preload" href="/Group 1000007030.png" as="image" type="image/png" fetchPriority="high" />
         
+        {/* Preload critical fonts */}
+        <link 
+          rel="preload" 
+          href="https://fonts.gstatic.com/s/montserrat/v25/JTUSjIg1_i6t8kCHKm459WlhyyTh89Y.woff2" 
+          as="font" 
+          type="font/woff2" 
+          crossOrigin="anonymous"
+        />
+        
         {/* Critical CSS preload видалено - Next.js автоматично це робить */}
         {/* Font Awesome - defer to не блокувати rendering */}
         <link 

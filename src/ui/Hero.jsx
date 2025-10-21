@@ -112,8 +112,9 @@ const Hero = memo(function Hero() {
                     rel="noopener noreferrer"
                     className="social-icon-wrapper"
                     data-social={social.name}
+                    aria-label={`Visit our ${social.name} page`}
                   >
-                    <span className="social-icon">{social.icon}</span>
+                    <span className="social-icon" aria-hidden="true">{social.icon}</span>
                   </a>
                 ))}
               </div>
@@ -129,6 +130,7 @@ const Hero = memo(function Hero() {
               <div className="mt-6 sm:mt-8 flex justify-start w-full max-w-full">
                 <button 
                   onClick={() => setIsModalOpen(true)}
+                  aria-label={t("hero.cta") || "Get Started - Order your Telegram bot"}
                   className="group relative px-6 sm:px-12 md:px-16 py-4 sm:py-5 md:py-6 text-sm sm:text-base md:text-lg font-medium text-white rounded-2xl sm:rounded-3xl transition-all duration-700 flex items-center justify-center gap-3 sm:gap-5 hover:gap-7 w-full sm:w-auto sm:min-w-[320px] md:min-w-[380px] max-w-full"
                   style={{
                     fontFamily: 'Montserrat, system-ui, -apple-system, sans-serif',
@@ -182,7 +184,7 @@ const Hero = memo(function Hero() {
           <div className="hero-right">
             <Image
               src="/Group 1000007030.png"
-              alt="Company Logo"
+              alt="TeleBots - Professional Telegram bot and website development company logo with modern design"
               width={150}
               height={225}
               priority

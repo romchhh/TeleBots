@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+/* Font import removed - fonts loaded in layout.js for better performance */
 
 /* Основні стилі сторінки з анімацією появи */
 .prices-page {
@@ -334,6 +334,9 @@ button:hover::after {
 
 .tech-card:hover {
   animation: float 2s ease-in-out infinite;
+  will-change: transform;
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }
 
 /* Покращення для інформаційних секцій */
@@ -342,8 +345,10 @@ button:hover::after {
 }
 
 .info-section:hover {
-  transform: translateY(-5px);
+  transform: translateY(-5px) translateZ(0);
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+  will-change: transform, box-shadow;
+  backface-visibility: hidden;
 }
 
 /* Іконки в заголовках */

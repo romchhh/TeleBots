@@ -85,11 +85,12 @@ function Header() {
                 <a
                     href={language === 'uk' ? 'https://telebots.site/' : language === 'en' ? 'https://telebots.site/en' : language === 'ru' ? 'https://telebots.site/ru' : language === 'pl' ? 'https://telebots.site/pl' : 'https://telebots.site/'}
                     onClick={scrollToTop}
+                    aria-label="TeleBots - Home page"
                     className='z-30 relative flex items-end xl:text-4xl text-2xl uppercase font-medium gap-2 cursor-pointer lg:-ml-16 ml-0'
                 >
                     <img 
                         src='/logo.png' 
-                        alt='TeleBots Logo' 
+                        alt='TeleBots - Professional Telegram bot and website development company logo' 
                         className='xl:max-h-28 max-h-20' 
                         width={70}
                         height={80}
@@ -109,7 +110,7 @@ function Header() {
                         <div className="lg:block hidden">
                             <LanguageToggle />
                         </div>
-                        <a href='#lead-form' onClick={handleContactClick} className="inline-block">
+                        <a href='#lead-form' onClick={handleContactClick} className="inline-block" aria-label="Contact us - Get in touch for a free consultation">
                             <Button className="whitespace-nowrap">
                                 {translations[currentLanguage].contactUs}
                             </Button>
@@ -122,6 +123,8 @@ function Header() {
 
                 <div className='block lg:hidden z-50'>
                     <button
+                        aria-label={isActiveNav ? "Close navigation menu" : "Open navigation menu"}
+                        aria-expanded={isActiveNav}
                         className='p-2 rounded-xl text-white transition-all duration-300'
                         onClick={handleToggleNavbar}
                         style={{ 
@@ -137,8 +140,8 @@ function Header() {
                             e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 0, 0, 0.4), 0 1px 3px rgba(0, 0, 0, 0.3)';
                         }}
                     >
-                        {!isActiveNav && <MdMenu size={28} />}
-                        {isActiveNav && <MdClose size={28} />}
+                        {!isActiveNav && <MdMenu size={28} aria-hidden="true" />}
+                        {isActiveNav && <MdClose size={28} aria-hidden="true" />}
                     </button>
                 </div>
             </div>

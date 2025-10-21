@@ -7,13 +7,30 @@ import { FaRobot, FaDesktop, FaDatabase, FaArrowRight } from 'react-icons/fa'
 import Hero from '../ui/Hero'
 import About from '../ui/About'
 
-// Non-critical - lazy load
-const Statistics = dynamic(() => import('../ui/Statistics'), { ssr: true })
-const Advantages = dynamic(() => import('../ui/Advantages'), { ssr: true })
-const LeadForm = dynamic(() => import('../ui/LeadForm'), { ssr: true })
-const Portfolio = dynamic(() => import('../ui/Portfolio'), { ssr: false, loading: () => <div style={{minHeight: '400px'}} /> })
-const Purchase = dynamic(() => import('../ui/Purchase'), { ssr: true })
-const Reviews = dynamic(() => import('../ui/Reviews'), { ssr: false, loading: () => <div style={{minHeight: '300px'}} /> })
+// Non-critical - lazy load with viewport intersection
+const Statistics = dynamic(() => import('../ui/Statistics'), { 
+  ssr: false, 
+  loading: () => <div style={{minHeight: '300px'}} /> 
+})
+const Advantages = dynamic(() => import('../ui/Advantages'), { 
+  ssr: false, 
+  loading: () => <div style={{minHeight: '400px'}} /> 
+})
+const LeadForm = dynamic(() => import('../ui/LeadForm'), { 
+  ssr: true  // Keep SSR for forms for better SEO
+})
+const Portfolio = dynamic(() => import('../ui/Portfolio'), { 
+  ssr: false, 
+  loading: () => <div style={{minHeight: '600px'}} /> 
+})
+const Purchase = dynamic(() => import('../ui/Purchase'), { 
+  ssr: false, 
+  loading: () => <div style={{minHeight: '400px'}} /> 
+})
+const Reviews = dynamic(() => import('../ui/Reviews'), { 
+  ssr: false, 
+  loading: () => <div style={{minHeight: '400px'}} /> 
+})
 
 export const metadata = {
   title: 'TeleBots | Розробка Телеграм ботів, веб-сайтів та автоматизації бізнесу в Україні',
