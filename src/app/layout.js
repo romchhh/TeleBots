@@ -1,4 +1,4 @@
-import { Montserrat, Oswald, Inter } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
 import { headers } from 'next/headers';
@@ -21,27 +21,7 @@ const montserrat = Montserrat({
   subsets: ['latin', 'cyrillic'],
   display: 'swap',
   variable: '--font-montserrat',
-  weight: ['400', '600', '700'],  // Зменшено кількість вагів
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,  // Змінено на true для кращого fallback
-});
-
-const oswald = Oswald({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-oswald',
-  weight: ['400', '600'],  // Зменшено кількість вагів
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
-});
-
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '600', '700'],  // Зменшено кількість вагів
+  weight: ['400', '600', '700'],
   preload: true,
   fallback: ['system-ui', 'arial'],
   adjustFontFallback: true,
@@ -181,7 +161,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="uk" suppressHydrationWarning className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
+    <html lang="uk" suppressHydrationWarning className={`${montserrat.variable}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
@@ -402,11 +382,9 @@ export default function RootLayout({ children }) {
         <NavbarProvider>
           <LanguageProvider>
             <ToastContainer />
-            <div className='min-h-[150vh]'>
               <Header />
               {children}
               <Footer />
-            </div>
           </LanguageProvider>
         </NavbarProvider>
         <Script 

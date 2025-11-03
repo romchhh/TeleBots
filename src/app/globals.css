@@ -113,12 +113,6 @@
     src: local('Montserrat');
   }
   
-  @font-face {
-    font-family: 'Oswald';
-    font-display: swap;
-    src: local('Oswald');
-  }
-
   /* Prevent layout shift */
   html {
     scroll-behavior: smooth;
@@ -184,7 +178,28 @@
     min-height: 100vh;
     display: flex;
     align-items: center;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-image: url('/background.png') !important;
+    background-size: cover !important;
+    background-position: center center !important;
+    background-repeat: no-repeat !important;
+    background-attachment: fixed !important;
+  }
+  
+  @media (max-width: 1024px) {
+    .hero-section {
+      background-attachment: scroll !important;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .hero-section {
+      min-height: auto;
+      display: flex;
+      align-items: center;
+      background-attachment: scroll !important;
+      background-size: cover !important;
+      background-position: center center !important;
+    }
   }
 
   .btn-primary {
@@ -344,7 +359,7 @@ body > div > header a {
   font-size: 1.5rem !important;
   font-weight: 700 !important;
   color: #2d3748 !important;
-  font-family: var(--font-oswald) !important;
+  font-family: var(--font-montserrat) !important;
 }
 
 .logo {
@@ -352,7 +367,7 @@ body > div > header a {
   -webkit-background-clip: text !important;
   -webkit-text-fill-color: transparent !important;
   background-clip: text !important;
-  font-family: var(--font-oswald) !important;
+  font-family: var(--font-montserrat) !important;
 }
 
 /* Стилі для навігації */
@@ -408,5 +423,107 @@ a {
 
   .header-nav {
     gap: 1rem !important;
+  }
+}
+
+/* Фонове зображення тепер тільки в hero-section */
+
+/* Фонове зображення для секції Purchase */
+.purchase-section {
+  background-image: url('/background.png') !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+}
+
+@media (max-width: 1024px) {
+  .purchase-section {
+    background-attachment: scroll !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .purchase-section {
+    background-attachment: scroll !important;
+    background-size: cover !important;
+    background-position: center center !important;
+  }
+}
+
+/* Фон для портфоліо видалено - тепер тільки в ServiceHero */
+
+/* Стилі для сторінки кейсу */
+.case-page-container {
+  min-height: 100vh;
+  background-color: #ffffff;
+}
+
+.case-page-header {
+  background-image: url('/Group 1949.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 85vh;
+  width: 100%;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.case-page-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  text-align: left;
+  width: 100%;
+}
+
+.case-page-right {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  width: 100%;
+}
+
+/* На мобільних пристроях все по центру */
+@media (max-width: 1023px) {
+  .case-page-left {
+    text-align: center;
+    align-items: center;
+  }
+  
+  .case-page-right {
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .case-page-header {
+    min-height: auto;
+    padding: 2rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .case-page-header {
+    padding: 1.5rem 0;
+  }
+  
+  .case-page-left {
+    text-align: center;
+  }
+  
+  /* Збільшені тексти для мобільних */
+  .case-page-left h1 {
+    font-size: 1.875rem !important; /* text-3xl */
+    line-height: 2.25rem;
+  }
+  
+  .case-page-left p {
+    font-size: 1.25rem !important; /* text-xl */
+    line-height: 1.75rem;
+  }
+  
+  .case-page-left span {
+    font-size: 1.125rem !important; /* text-lg */
   }
 } 

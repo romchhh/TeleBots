@@ -8,8 +8,8 @@ export default function PortfolioPage() {
 	const { language } = useLanguage();
 
 	return (
-		<main className="min-h-screen pt-8 pb-16">
-			<Portfolio />
+		<main className="min-h-screen">
+			<Portfolio isStandalonePage={true} />
 		</main>
 	);
 }

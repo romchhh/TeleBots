@@ -4,7 +4,8 @@ import { cases } from './cases';
 export const uk = {
   // Hero
   hero: {
-    title: "Чат-боти, сайти,\ne-commerce",
+    greeting: "Привіт, ми розробляємо",
+    title: "чат-боти, сайти та e-commerce рішення",
     subtitle: "Розробка телеграм ботів, сайтів,\nлендінгів інтернет магазинів,\nпарсерів та ботів з AI на замовлення\nпід ключ",
     ctaButton: "Замовити зараз",
     orderButton: "Обговорити проєкт",
@@ -19,6 +20,17 @@ export const uk = {
       text1: "Налаштовуйте автовідповіді,",
       text2: "Запускайте розсилки",
       text3: "І автоматизуйте бізнес-процеси за допомогою ботів"
+    },
+    stats: {
+      title: "Трішки статистики",
+      projects: "200+",
+      projectsLabel: "Реалізованих проектів",
+      clients: "98%",
+      clientsLabel: "Задоволених клієнтів",
+      hours: "5000+",
+      hoursLabel: "Годин розробки",
+      experience: "2+",
+      experienceLabel: "Років досвіду"
     }
   },
   
@@ -327,6 +339,14 @@ export const uk = {
       {
         title: "TRON Energy Bot — автоматизація криптооперацій",
         alt: "Telegram-бот з глибокою інтеграцією з блокчейном TRON для економії комісій до 70%"
+      },
+      {
+        title: "CHARS Kyiv — e-commerce платформа для чоловічого одягу",
+        alt: "Розробили e-commerce платформу з каталогом, фільтрами, оплатою онлайн, доставкою через Нову Пошту, адмін-панеллю та Telegram-сповіщеннями про нові покупки"
+      },
+      {
+        title: "StyleChatBot — особистий асистент стиліста в Telegram",
+        alt: "Бот для стиліста, який автоматизує першу консультацію: опитування клієнтів, показ портфоліо, персональні рекомендації та прийом заявок прямо в чаті"
       }
     ]
   },
@@ -338,314 +358,6 @@ export const uk = {
     categories: ["Все", "Telegram боти", "Веб-сайти", "Парсери"]
   },
   
-  // Reviews
-  reviews: {
-    title: "Відгуки клієнтів",
-    description: "Що кажуть наші клієнти про нас",
-    moreButton: "Докладніше",
-    hideButton: "Приховати",
-    detailsSection: {
-      title: "Про автоматизацію процесів та розробку",
-      sections: {
-        telegramBots: {
-          title: "Боти Телеграм",
-          description: "Потужні інструменти для автоматизації рутинних завдань, обробки замовлень та відповідей на запити клієнтів. Значно підвищують ефективність бізнесу та зменшують витрати на обслуговування."
-        },
-        botDevelopment: {
-          title: "Розробка ботів",
-          description: "Створення та налаштування ботів з використанням сучасних технологій. Інтеграція з популярними сервісами та платформами для максимальної ефективності."
-        },
-        dataParsers: {
-          title: "Парсери даних",
-          description: "Автоматичний збір та аналіз даних з веб-сайтів. Моніторинг цін конкурентів, збір відгуків та аналіз ринку для прийняття обґрунтованих рішень."
-        },
-        integrations: {
-          title: "Інтеграції",
-          description: "Повна інтеграція з CRM, сайтами, платіжними системами, Google сервісами та іншими платформами для створення єдиної екосистеми."
-        },
-        ecommerceSolutions: {
-          title: "E-commerce рішення",
-          description: "Автоматизація процесів продажу, обробки замовлень та підтримки клієнтів. Персоналізовані рекомендації для збільшення продажів."
-        },
-        support: {
-          title: "Підтримка 24/7",
-          description: "Цілодобова автоматизована підтримка клієнтів. Швидкі та точні відповіді на запити, зменшення навантаження на команду підтримки."
-        }
-      },
-      developmentProcess: {
-        title: "Процес розробки",
-        steps: [
-          {
-            number: "1",
-            title: "Аналіз потреб",
-            description: "Вивчення ваших потреб та розробка детального плану проекту"
-          },
-          {
-            number: "2",
-            title: "Розробка концепту",
-            description: "Створення логіки роботи та користувацьких сценаріїв"
-          },
-          {
-            number: "3",
-            title: "Програмування",
-            description: "Розробка функціоналу та інтеграція з сервісами"
-          },
-          {
-            number: "4",
-            title: "Тестування",
-            description: "Комплексне тестування всіх функцій"
-          },
-          {
-            number: "5",
-            title: "Запуск",
-            description: "Розміщення на серверах та налаштування"
-          },
-          {
-            number: "6",
-            title: "Підтримка",
-            description: "Технічна підтримка та моніторинг роботи"
-          }
-        ]
-      },
-      botCapabilities: {
-        title: "Можливості ботів",
-        items: [
-          "Автоматизація рутинних процесів",
-          "Цілодобова підтримка клієнтів",
-          "Збір та аналіз даних",
-          "Інтеграція з CRM системами",
-          "Автоматизація продажів"
-        ]
-      },
-      technicalFeatures: {
-        title: "Технічні особливості",
-        items: [
-          "Сучасні технології розробки",
-          "Безпечне зберігання даних",
-          "Масштабовані рішення",
-          "Гнучка архітектура",
-          "Швидка розробка та впровадження"
-        ]
-      },
-      professionalDevelopment: {
-        title: "Професійна розробка Telegram ботів",
-        description: "Наша команда має великий досвід у створенні ботів різної складності - від простих помічників до комплексних систем з інтеграцією CRM та платіжних систем. Кожен проект розробляється з урахуванням специфіки вашого бізнесу та потреб цільової аудиторії."
-      },
-      keyAdvantages: {
-        title: "Ключові переваги наших рішень",
-        items: [
-          "Оптимізація бізнес-процесів",
-          "Автоматизація обробки замовлень",
-          "Інтеграція з CRM системами",
-          "Цілодобова підтримка",
-          "Аналітика та статистика",
-          "Безпечне зберігання даних"
-        ]
-      },
-      industrialSolutions: {
-        title: "Галузеві рішення",
-        ecommerce: {
-          title: "E-commerce",
-          items: [
-            "Автоматизація замовлень",
-            "Каталог з фото",
-            "Платіжні системи"
-          ]
-        },
-        services: {
-          title: "Сфера послуг",
-          items: [
-            "Онлайн-запис",
-            "Розклад роботи",
-            "Система відгуків"
-          ]
-        }
-      },
-      additionalCapabilities: {
-        title: "Додаткові можливості",
-        columns: [
-          [
-            "Мультимовність",
-            "API інтеграції",
-            "Розсилки"
-          ],
-          [
-            "Геолокація",
-            "Медіа контент",
-            "Опитування"
-          ],
-          [
-            "Аналітика",
-            "Захист даних",
-            "Лояльність"
-          ]
-        ]
-      },
-      comprehensiveApproach: {
-        title: "Комплексний підхід",
-        description: "Ми пропонуємо повний цикл розробки: від створення концепції та дизайну до технічної реалізації та подальшої підтримки. Наша команда забезпечує індивідуальний підхід до кожного проекту, гарантуючи високу якість та надійність рішень.",
-        discussButton: "Обговорити проект"
-      },
-      telegramBotsDevelopment: {
-        title: "Розробка Telegram ботів в Україні",
-        paragraphs: [
-          "Наша компанія спеціалізується на створенні чат-ботів для Telegram в Україні. Ми розробляємо ботів для бізнесу будь-якої складності: від простих інформаційних помічників до складних автоматизованих систем з інтеграцією CRM та платіжних систем.",
-          "Telegram бот - це ефективний інструмент для автоматизації бізнес-процесів, який допомагає оптимізувати роботу компанії та покращити комунікацію з клієнтами. Наші боти підтримують різні функції: від простих команд до складних алгоритмів штучного інтелекту.",
-          "Розробка чат бота включає в себе повний цикл послуг: аналіз вимог, створення технічного завдання, дизайн інтерфейсу, програмування, тестування та впровадження. Ми також надаємо послуги з технічної підтримки та оновлення ботів після запуску."
-        ],
-        popularQueries: {
-          title: "Популярні запити:",
-          items: [
-            "Створення бота Телеграм",
-            "Розробка чат бота",
-            "Telegram бот для бізнесу",
-            "Бот для магазину в Telegram",
-            "Автоматизація в Telegram"
-          ]
-        },
-        ourAdvantages: {
-          title: "Наші переваги:",
-          items: [
-            "Досвід розробки понад 5 років",
-            "Більше 200 успішних проектів",
-            "Підтримка 24/7",
-            "Гарантія якості",
-            "Індивідуальний підхід"
-          ]
-        }
-      },
-      websiteAndBusinessAutomation: {
-        title: "Розробка веб-сайтів та автоматизація бізнесу",
-        modernWebsites: {
-          title: "Створення сучасних веб-сайтів",
-          description: "Розробляємо професійні веб-сайти з сучасним дизайном та адаптивною версткою. Наші сайти оптимізовані під пошукові системи та швидко завантажуються на всіх пристроях.",
-          items: [
-            "Корпоративні сайти",
-            "Лендінг сторінки",
-            "Сайти-візитки",
-            "Портфоліо",
-            "SEO оптимізація"
-          ]
-        },
-        onlineStores: {
-          title: "Інтернет-магазини під ключ",
-          description: "Створюємо потужні інтернет-магазини з повним функціоналом для успішної онлайн-торгівлі. Інтегруємо платіжні системи та налаштовуємо автоматизацію процесів.",
-          items: [
-            "Каталог товарів",
-            "Система управління замовленнями",
-            "Особистий кабінет",
-            "Інтеграція з CRM",
-            "Автоматизація процесів"
-          ]
-        },
-        parsersAndAutomation: {
-          title: "Парсери та автоматизація",
-          description: "Розробляємо інструменти для автоматичного збору та аналізу даних. Наші парсери допомагають відслідковувати ціни конкурентів, збирати контакти та автоматизувати рутинні процеси.",
-          column1: [
-            "Парсинг сайтів та маркетплейсів",
-            "Моніторинг цін конкурентів",
-            "Збір контактів та даних"
-          ],
-          column2: [
-            "Автоматизація процесів",
-            "Аналіз даних та звіти",
-            "Інтеграція з CRM системами"
-          ]
-        },
-        keySolutionFeatures: {
-          title: "Ключові особливості наших рішень:",
-          items: [
-            "Швидка розробка",
-            "Безпека даних",
-            "Надійний хостинг",
-            "SEO оптимізація",
-            "Адаптивний дизайн",
-            "Технічна підтримка"
-          ]
-        }
-      }
-    },
-    clientReviews: [
-      {
-        name: "Данііл Бережанський",
-        text: "Чудовий сервіс! Я дуже задоволений. Хоч і виникли проблеми на етапі розробки, але команда допомогла їх вирішити.",
-        photo: "photo1.png",
-        alt: "Телеграм бот відгук"
-      },
-      {
-        name: "Андрій Коваль (Власник мережі каналів)",
-        text: "Роботою дуже задоволений, вдалось реалізувати мою ідею з ботом, дослухались до моїх думок і підказували на етапі розробки функціоналу. Тому раджу кожному хто задумується над створенням бота. Дякую",
-        photo: "photo2.png",
-        alt: "Телеграм бот відгук"
-      },
-      {
-        name: "Роман (Арбітраж)",
-        text: "И спасибо тебе за бота, Очень классный и удобный бот получился⚡️",
-        photo: "photo3.png",
-        alt: "Чат-бот відгук"
-      },
-      {
-        name: "Анна Коваленко",
-        text: "Відмінний сервіс, констультували на кожному етапі розробки бота, дякую за допомогу!",
-        photo: "photo4.png",
-        alt: "Чат-бот відгук"
-      },
-      {
-        name: "Богдан Тимченко (Мережа косметики Cosmy)",
-        text: "Все пройшло на вищому рівні. Ви молодець, дякую 🙏🏻",
-        photo: "photo5.png",
-        alt: "Чат-бот відгук"
-      },
-      {
-        name: "Софія Павлік (Дизайнер)",
-        text: "Команда допомогала мені з стартапом з першого етапу, консультували, пропонували, були повністю задіяні в проєкті, якщо плануєте розробку чат-бота, звертайтесь до цієї команди, не пожалієте. 10 з 10❤️",
-        photo: "photo6.png",
-        alt: "Чат-бот відгук"
-      },
-      {
-        name: "Андрій Костюков (Бізнес)",
-        text: "Після кількох невдалих спроб знайти професійний сервіс для мого стартапу, я нарешті знайшов цю команду.",
-        photo: "photo7.png",
-        alt: "Телеграм-бот відгук"
-      },
-      {
-        name: "Вiталiй Левченко",
-        text: "Привіт, воу оце крутяк ☺️. Наша компанія шукала спосіб швидко та якісно покращити підтримку клієнтів, Роман допоміг вирішити нашу проблему.",
-        photo: "photo8.png",
-        alt: "Чат-бот відгук"
-      },
-      {
-        name: "Григорій Малюк",
-        text: "Я завжди скептично ставився до сервісів, але тут якість розробки та комунцікацій мене задоволнила.",
-        photo: "photo9.png",
-        alt: "Телеграм-бот відгук"
-      },
-      {
-        name: "Марія Петренко",
-        text: "Чудовий сервіс для автоматизації бізнесу! Бот працює бездоганно і значно спростив нашу роботу з клієнтами.",
-        photo: null,
-        alt: "Телеграм бот відгук"
-      },
-      {
-        name: "Олексій Мірошниченко",
-        text: "Дуже професійний підхід до розробки. Команда врахувала всі наші побажання і створила саме такого бота, якого ми хотіли.",
-        photo: null,
-        alt: "Телеграм бот відгук"
-      },
-      {
-        name: "Ірина Ковальчук",
-        text: "Приємно вражена швидкістю роботи та якістю підтримки. Бот значно покращив нашу комунікацію з клієнтами.",
-        photo: null,
-        alt: "Телеграм бот відгук"
-      },
-      {
-        name: "Максим Литвиненко",
-        text: "Відмінне рішення для нашого бізнесу. Автоматизація процесів через бота перевершила наші очікування.",
-        photo: null,
-        alt: "Телеграм бот відгук"
-      }
-    ]
-  },
   
   // LeadForm
   leadForm: {
@@ -1205,7 +917,8 @@ export const uk = {
 export const en = {
   // Hero
   hero: {
-    title: "Chatbots, Websites,\nE-commerce",
+    greeting: "Hi, we develop",
+    title: "chatbots, websites and e-commerce",
     subtitle: "Development of Telegram bots, websites,\nlanding pages, online stores,\nparsers and AI bots on demand,\nturnkey solutions",
     ctaButton: "Order Now",
     orderButton: "Discuss Project",
@@ -1220,6 +933,17 @@ export const en = {
       text1: "Set up auto-replies,",
       text2: "Launch newsletters",
       text3: "And automate business processes with bots"
+    },
+    stats: {
+      title: "Some Statistics",
+      projects: "200+",
+      projectsLabel: "Completed Projects",
+      clients: "98%",
+      clientsLabel: "Satisfied Clients",
+      hours: "5000+",
+      hoursLabel: "Development Hours",
+      experience: "2+",
+      experienceLabel: "Years of Experience"
     }
   },
   
@@ -1646,6 +1370,14 @@ export const en = {
       {
         title: "TRON Energy Bot — Crypto Operations Automation",
         alt: "Telegram bot with deep TRON blockchain integration for up to 70% fee savings"
+      },
+      {
+        title: "CHARS Kyiv — E-commerce Platform for Men's Clothing",
+        alt: "Developed e-commerce platform with catalog, filters, online payment, delivery via Nova Poshta, admin panel and Telegram notifications for new purchases"
+      },
+      {
+        title: "StyleChatBot — Personal Stylist Assistant in Telegram",
+        alt: "Bot for stylist that automates first consultation: client surveys, portfolio showcase, personal recommendations and order acceptance directly in chat"
       }
     ]
   },
@@ -1806,255 +1538,6 @@ export const en = {
       }
     ]
   },
-  
-  // Reviews
-  reviews: {
-    title: "Client Reviews",
-    description: "What our clients say about us",
-    moreButton: "Read more",
-    hideButton: "Hide",
-    detailsSection: {
-      title: "About automation and development",
-      sections: {
-        telegramBots: {
-          title: "Telegram bots",
-          description: "Powerful tools for automating routine tasks, order processing and customer queries. Significantly increase the efficiency of the business and reduce costs for maintenance."
-        },
-        botDevelopment: {
-          title: "Bot development",
-          description: "Creating and configuring bots using modern technologies. Integration with popular services and platforms for maximum efficiency."
-        },
-        dataParsers: {
-          title: "Data parsers",
-          description: "Automatic collection and analysis of data from websites. Monitoring competitor prices, collecting reviews and market analysis to make informed decisions."
-        },
-        integrations: {
-          title: "Integrations",
-          description: "Full integration with CRM, websites, payment systems, Google services and other platforms to create a unified ecosystem."
-        },
-        ecommerceSolutions: {
-          title: "E-commerce solutions",
-          description: "Automation of sales processes, order processing and customer support. Personalized recommendations to increase sales."
-        },
-        support: {
-          title: "24/7 support",
-          description: "24/7 automated customer support. Fast and accurate responses, reducing the load on the support team."
-        }
-      },
-      developmentProcess: {
-        title: "Development process",
-        steps: [
-          {
-            number: "1",
-            title: "Analysis of needs",
-            description: "Study of your needs and development of a detailed project plan"
-          },
-          {
-            number: "2",
-            title: "Concept development",
-            description: "Creating a logic of work and user scenarios"
-          },
-          {
-            number: "3",
-            title: "Programming",
-            description: "Development of functionality and integration with services"
-          },
-          {
-            number: "4",
-            title: "Testing",
-            description: "Comprehensive testing of all functions"
-          },
-          {
-            number: "5",
-            title: "Launch",
-            description: "Placement on servers and configuration"
-          },
-          {
-            number: "6",
-            title: "Support",
-            description: "Technical support and monitoring of work"
-          }
-        ]
-      },
-      botCapabilities: {
-        title: "Bot capabilities",
-        items: [
-          "Automation of routine processes",
-          "24/7 customer support",
-          "Data collection and analysis",
-          "Integration with CRM systems",
-          "Sales automation"
-        ]
-      },
-      technicalFeatures: {
-        title: "Technical features",
-        items: [
-          "Modern development technologies",
-          "Safe data storage",
-          "Scalable solutions",
-          "Flexible architecture",
-          "Fast development and implementation"
-        ]
-      },
-      professionalDevelopment: {
-        title: "Professional Telegram bot development",
-        description: "Our team has extensive experience in creating bots of various complexity - from simple assistants to complex systems with CRM and payment systems integration. Each project is developed taking into account the specifics of your business and the needs of the target audience."
-      },
-      keyAdvantages: {
-        title: "Key advantages of our solutions",
-        items: [
-          "Optimization of business processes",
-          "Order processing automation",
-          "Integration with CRM systems",
-          "24/7 support",
-          "Analytics and statistics",
-          "Safe data storage"
-        ]
-      },
-      industrialSolutions: {
-        title: "Industrial solutions",
-        ecommerce: {
-          title: "E-commerce",
-          items: [
-            "Order automation",
-            "Photo catalog",
-            "Payment systems"
-          ]
-        },
-        services: {
-          title: "Service sphere",
-          items: [
-            "Online booking",
-            "Work schedule",
-            "Feedback system"
-          ]
-        }
-      },
-      additionalCapabilities: {
-        title: "Additional capabilities",
-        columns: [
-          [
-            "Multilingualism",
-            "API integrations",
-            "Newsletters"
-          ],
-          [
-            "Geolocation",
-            "Media content",
-            "Surveys"
-          ],
-          [
-            "Analytics",
-            "Data protection",
-            "Loyalty"
-          ]
-        ]
-      },
-      comprehensiveApproach: {
-        title: "Comprehensive approach",
-        description: "We offer a full development cycle: from concept creation and design to technical implementation and follow-up support. Our team provides an individual approach to each project, guaranteeing high quality and reliability of solutions.",
-        discussButton: "Discuss project"
-      },
-      telegramBotsDevelopment: {
-        title: "Telegram bot development in Ukraine",
-        paragraphs: [
-          "Our company specializes in creating chatbots for Telegram in Ukraine. We develop bots for businesses of any complexity: from simple information assistants to complex automated systems with CRM and payment system integration.",
-          "Telegram bot is an effective tool for automating business processes, which helps optimize the company's work and improve communication with customers. Our bots support various functions: from simple commands to complex artificial intelligence algorithms.",
-          "Chatbot development includes a full cycle of services: requirements analysis, technical specification creation, interface design, programming, testing, and implementation. We also provide technical support and bot updates after launch."
-        ],
-        popularQueries: {
-          title: "Popular queries:",
-          items: [
-            "Telegram bot creation",
-            "Chatbot development",
-            "Telegram bot for business",
-            "Bot for Telegram store",
-            "Automation in Telegram"
-          ]
-        },
-        ourAdvantages: {
-          title: "Our advantages:",
-          items: [
-            "Development experience more than 5 years",
-            "More than 200 successful projects",
-            "24/7 support",
-            "Quality guarantee",
-            "Individual approach"
-          ]
-        }
-      },
-      websiteAndBusinessAutomation: {
-        title: "Website development and business automation",
-        modernWebsites: {
-          title: "Creating modern websites",
-          description: "We develop professional websites with modern design and responsive layout. Our sites are optimized for search engines and load quickly on all devices.",
-          items: [
-            "Corporate websites",
-            "Landing pages",
-            "Portfolio",
-            "SEO optimization"
-          ]
-        },
-        onlineStores: {
-          title: "Online stores under key",
-          description: "We create powerful online stores with full functionality for successful online trading. We integrate payment systems and set up process automation.",
-          items: [
-            "Catalog of goods",
-            "Order management system",
-            "Personal account",
-            "CRM integration",
-            "Process automation"
-          ]
-        },
-        parsersAndAutomation: {
-          title: "Parsers and automation",
-          description: "We develop tools for automatic data collection and analysis. Our parsers help track competitor prices, collect contacts and automate routine processes.",
-          column1: [
-            "Website and marketplace parsing",
-            "Competitor price monitoring",
-            "Contact collection and data"
-          ],
-          column2: [
-            "Process automation",
-            "Data analysis and reports",
-            "Integration with CRM systems"
-          ]
-        },
-        keySolutionFeatures: {
-          title: "Key features of our solutions:",
-          items: [
-            "Fast development",
-            "Data security",
-            "Reliable hosting",
-            "SEO optimization",
-            "Adaptive design",
-            "Technical support"
-          ]
-        }
-      }
-    },
-    clientReviews: [
-      {
-        name: "Alexander",
-        company: "Space Traffic",
-        text: "Excellent work! The bot works like a clock, the client is satisfied. I recommend!",
-        rating: 5
-      },
-      {
-        name: "Maria",
-        company: "E-commerce Store",
-        text: "Professional approach, quickly completed the order. The site looks modern and functional.",
-        rating: 5
-      },
-      {
-        name: "Dmitriy",
-        company: "Startup",
-        text: "Very satisfied with cooperation. The bot helped automate sales and increase income.",
-        rating: 5
-      }
-    ]
-  },
-  
   // Contact
   contact: {
     title: "Contact Us",
@@ -2694,7 +2177,8 @@ export const en = {
 export const pl = {
   // Hero
   hero: {
-    title: "Chatboty, Strony internetowe,\nE-commerce",
+    greeting: "Cześć, tworzymy",
+    title: "chatboty, strony internetowe i e-commerce",
     subtitle: "Tworzenie botów Telegram, stron internetowych,\nstron docelowych, sklepów internetowych,\nparserów i botów AI na zamówienie,\nrozwiązania pod klucz",
     ctaButton: "Zamów teraz",
     orderButton: "Omów projekt",
@@ -2709,6 +2193,17 @@ export const pl = {
       text1: "Skonfiguruj automatyczne odpowiedzi,",
       text2: "Uruchom newslettery",
       text3: "I zautomatyzuj procesy biznesowe za pomocą botów"
+    },
+    stats: {
+      title: "Trochę statystyk",
+      projects: "200+",
+      projectsLabel: "Zrealizowanych projektów",
+      clients: "98%",
+      clientsLabel: "Zadowolonych klientów",
+      hours: "5000+",
+      hoursLabel: "Godzin rozwoju",
+      experience: "2+",
+      experienceLabel: "Lat doświadczenia"
     }
   },
   
@@ -2880,110 +2375,6 @@ export const pl = {
           "Zarządzanie zamówieniami",
           "Wsparcie klientów"
         ]
-      }
-    ]
-  },
-  
-  // Reviews
-  reviews: {
-    title: "Opinie klientów",
-    subtitle: "Co mówią o nas nasi klienci",
-    hideButton: "Ukryj szczegóły",
-    moreButton: "Pokaż więcej",
-    detailsSection: {
-      title: "Szczegółowe informacje o naszych usługach",
-      sections: {
-        telegramBots: {
-          title: "Boty Telegram",
-          description: "Tworzymy zaawansowane boty Telegram do automatyzacji biznesu, obsługi klientów i zwiększania sprzedaży."
-        },
-        botDevelopment: {
-          title: "Rozwój botów",
-          description: "Profesjonalne tworzenie chatbotów z integracją CRM i systemami płatności."
-        },
-        dataParsers: {
-          title: "Parsery danych",
-          description: "Automatyzacja zbierania i przetwarzania danych z różnych źródeł."
-        },
-        integrations: {
-          title: "Integracje",
-          description: "Łączenie systemów i platform w celu optymalizacji procesów biznesowych."
-        },
-        ecommerceSolutions: {
-          title: "Rozwiązania e-commerce",
-          description: "Kompleksowe sklepy internetowe z zaawansowaną funkcjonalnością."
-        },
-        support: {
-          title: "Wsparcie",
-          description: "24/7 wsparcie techniczne i konserwacja wszystkich naszych rozwiązań."
-        }
-      },
-      developmentProcess: {
-        title: "Proces rozwoju"
-      },
-      botCapabilities: {
-        title: "Możliwości botów"
-      },
-      technicalFeatures: {
-        title: "Funkcje techniczne"
-      },
-      professionalDevelopment: {
-        title: "Profesjonalny rozwój",
-        description: "Nasz zespół ma wieloletnie doświadczenie w tworzeniu zaawansowanych rozwiązań technicznych."
-      },
-      keyAdvantages: {
-        title: "Kluczowe zalety"
-      },
-      industrialSolutions: {
-        title: "Rozwiązania przemysłowe",
-        ecommerce: {
-          title: "E-commerce"
-        },
-        services: {
-          title: "Usługi"
-        }
-      },
-      additionalCapabilities: {
-        title: "Dodatkowe możliwości"
-      },
-      comprehensiveApproach: {
-        title: "Kompleksowe podejście",
-        description: "Oferujemy pełny cykl rozwoju - od analizy potrzeb po wdrożenie i wsparcie.",
-        discussButton: "Omów projekt"
-      },
-      telegramBotsDevelopment: {
-        title: "Rozwój botów Telegram",
-        popularQueries: {
-          title: "Popularne zapytania"
-        },
-        ourAdvantages: {
-          title: "Nasze zalety"
-        }
-      },
-      websiteAndBusinessAutomation: {
-        title: "Strony internetowe i automatyzacja biznesu",
-        modernWebsites: {
-          title: "Nowoczesne strony internetowe",
-          description: "Tworzymy responsywne, szybkie i zoptymalizowane pod kątem SEO strony internetowe."
-        },
-        onlineStores: {
-          title: "Sklepy internetowe",
-          description: "Kompleksowe rozwiązania e-commerce z integracją płatności i systemów zarządzania."
-        },
-        parsersAndAutomation: {
-          title: "Parsery i automatyzacja",
-          description: "Narzędzia do automatycznego zbierania danych i optymalizacji procesów biznesowych."
-        }
-      }
-    },
-    items: [
-      {
-        id: 1,
-        name: "Anna Kowalska",
-        company: "E-Shop Plus",
-        rating: 5,
-        text: "Fantastyczny bot Telegram! Zwiększył naszą sprzedaż o 40%. Zespół bardzo profesjonalny i zawsze gotowy do pomocy.",
-        avatar: "/photo1.jpg"
       }
     ]
   },
@@ -3384,6 +2775,14 @@ export const pl = {
       {
         title: "TRON Energy Bot — automatyzacja operacji kryptowalutowych",
         alt: "Bot Telegram z głęboką integracją z blockchainem TRON do oszczędności opłat do 70%"
+      },
+      {
+        title: "CHARS Kyiv — platforma e-commerce dla męskiej odzieży",
+        alt: "Opracowana platforma e-commerce z katalogiem, filtrami, płatnością online, dostawą przez Nova Poshta, panelem administracyjnym i powiadomieniami Telegram o nowych zakupach"
+      },
+      {
+        title: "StyleChatBot — osobisty asystent stylisty w Telegram",
+        alt: "Bot dla stylisty, który automatyzuje pierwszą konsultację: ankiety klientów, pokaz portfolio, osobiste rekomendacje i przyjmowanie zamówień bezpośrednio w czacie"
       }
     ]
   },
@@ -3770,7 +3169,8 @@ export const pl = {
 export const ru = {
   // Hero
   hero: {
-    title: "Чат-боты, сайты,\ne-commerce",
+    greeting: "Привет, мы разрабатываем",
+    title: "чат-боты, сайты и e-commerce",
     subtitle: "Разработка телеграм ботов, сайтов,\nлендингов интернет магазинов,\nпарсеров и ботов с ИИ на заказ\nпод ключ",
     ctaButton: "Заказать сейчас",
     orderButton: "Обсудить проект",
@@ -3785,6 +3185,17 @@ export const ru = {
       text1: "Настраивайте автоответы,",
       text2: "Запускайте рассылки",
       text3: "И автоматизируйте бизнес-процессы с помощью ботов"
+    },
+    stats: {
+      title: "Немного статистики",
+      projects: "200+",
+      projectsLabel: "Реализованных проектов",
+      clients: "98%",
+      clientsLabel: "Довольных клиентов",
+      hours: "5000+",
+      hoursLabel: "Часов разработки",
+      experience: "2+",
+      experienceLabel: "Лет опыта"
     }
   },
   
@@ -4104,6 +3515,14 @@ export const ru = {
       {
         title: "TRON Energy Bot — автоматизация криптоопераций",
         alt: "Telegram-бот с глубокой интеграцией с блокчейном TRON для экономии комиссий до 70%"
+      },
+      {
+        title: "CHARS Kyiv — e-commerce платформа для мужской одежды",
+        alt: "Разработали e-commerce платформу с каталогом, фильтрами, онлайн оплатой, доставкой через Нова Пошта, админ-панелью и Telegram-уведомлениями о новых покупках"
+      },
+      {
+        title: "StyleChatBot — личный ассистент стилиста в Telegram",
+        alt: "Бот для стилиста, который автоматизирует первую консультацию: опросы клиентов, показ портфолио, персональные рекомендации и прием заявок прямо в чате"
       }
     ]
   },
@@ -4244,254 +3663,6 @@ export const ru = {
           "Запуск проекта",
           "Техническая поддержка"
         ]
-      }
-    ]
-  },
-  
-  // Reviews
-  reviews: {
-    title: "Отзывы клиентов",
-    description: "Что говорят наши клиенты",
-    moreButton: "Читать больше",
-    hideButton: "Скрыть",
-    detailsSection: {
-      title: "О автоматизации и разработке",
-      sections: {
-        telegramBots: {
-          title: "Чат-боты в Telegram",
-          description: "Мощные инструменты для автоматизации рутинных задач, обработки заказов и обработки запросов клиентов. Значительно повышает эффективность бизнеса и снижает затраты на обслуживание."
-        },
-        botDevelopment: {
-          title: "Разработка чат-ботов",
-          description: "Создание и настройка чат-ботов с использованием современных технологий. Интеграция с популярными сервисами и платформами для максимальной эффективности."
-        },
-        dataParsers: {
-          title: "Парсеры данных",
-          description: "Автоматический сбор и анализ данных с веб-сайтов. Мониторинг цен конкурентов, сбор отзывов и анализ рынка для принятия обоснованных решений."
-        },
-        integrations: {
-          title: "Интеграции",
-          description: "Полная интеграция с CRM, веб-сайтами, платежными системами, сервисами Google и другими платформами для создания единого экосистемы."
-        },
-        ecommerceSolutions: {
-          title: "E-commerce решения",
-          description: "Автоматизация процессов продаж, обработки заказов и поддержки клиентов. Персонализированные рекомендации для увеличения продаж."
-        },
-        support: {
-          title: "Поддержка 24/7",
-          description: "24/7 автоматическая поддержка клиентов. Быстрые и точные ответы, снижение нагрузки на команду поддержки."
-        }
-      },
-      developmentProcess: {
-        title: "Процесс разработки",
-        steps: [
-          {
-            number: "1",
-            title: "Анализ потребностей",
-            description: "Изучение ваших потребностей и разработка детального плана проекта"
-          },
-          {
-            number: "2",
-            title: "Разработка концепции",
-            description: "Создание логики работы и сценариев пользователя"
-          },
-          {
-            number: "3",
-            title: "Программирование",
-            description: "Разработка функционала и интеграция с сервисами"
-          },
-          {
-            number: "4",
-            title: "Тестирование",
-            description: "Тщательное тестирование всех функций"
-          },
-          {
-            number: "5",
-            title: "Запуск",
-            description: "Размещение на серверах и настройка"
-          },
-          {
-            number: "6",
-            title: "Поддержка",
-            description: "Техническая поддержка и мониторинг работы"
-          }
-        ]
-      },
-      botCapabilities: {
-        title: "Возможности чат-ботов",
-        items: [
-          "Автоматизация рутинных процессов",
-          "Поддержка 24/7",
-          "Сбор и анализ данных",
-          "Интеграция с CRM системами",
-          "Автоматизация продаж"
-        ]
-      },
-      technicalFeatures: {
-        title: "Технические возможности",
-        items: [
-          "Современные технологии разработки",
-          "Безопасное хранение данных",
-          "Масштабируемые решения",
-          "Гибкая архитектура",
-          "Быстрая разработка и внедрение"
-        ]
-      },
-      professionalDevelopment: {
-        title: "Профессиональная разработка чат-ботов",
-        description: "Наша команда имеет широкий опыт создания чат-ботов различной сложности - от простых помощников до сложных систем с интеграцией CRM и платежных систем. Каждый проект разрабатывается с учетом специфики вашего бизнеса и потребностей целевой аудитории."
-      },
-      keyAdvantages: {
-        title: "Ключевые преимущества наших решений",
-        items: [
-          "Оптимизация бизнес-процессов",
-          "Автоматизация обработки заказов",
-          "Интеграция с CRM системами",
-          "Поддержка 24/7",
-          "Анализ и статистики",
-          "Безопасное хранение данных"
-        ]
-      },
-      industrialSolutions: {
-        title: "Промышленные решения",
-        ecommerce: {
-          title: "E-commerce",
-          items: [
-            "Автоматизация заказов",
-            "Фотокаталог",
-            "Платежные системы"
-          ]
-        },
-        services: {
-          title: "Сфера услуг",
-          items: [
-            "Онлайн бронирование",
-            "Рабочий график",
-            "Система обратной связи"
-          ]
-        }
-      },
-      additionalCapabilities: {
-        title: "Дополнительные возможности",
-        columns: [
-          [
-            "Многоязычность",
-            "Интеграция API",
-            "Рассылки"
-          ],
-          [
-            "Геолокация",
-            "Медиа-контент",
-            "Опросы"
-          ],
-          [
-            "Анализ",
-            "Защита данных",
-            "Лояльность"
-          ]
-        ]
-      },
-      comprehensiveApproach: {
-        title: "Комплексный подход",
-        description: "Мы предлагаем полный цикл разработки: от создания концепции и дизайна до технической реализации и последующей поддержки. Наша команда предоставляет индивидуальный подход к каждому проекту, гарантируя высокое качество и надежность решений.",
-        discussButton: "Обсудить проект"
-      },
-      telegramBotsDevelopment: {
-        title: "Разработка чат-ботов в Украине",
-        paragraphs: [
-          "Наша компания специализируется на создании чат-ботов для Telegram в Украине. Мы разрабатываем боты для бизнеса любой сложности: от простых информационных помощников до сложных автоматизированных систем с интеграцией CRM и платежных систем.",
-          "Telegram бот является эффективным инструментом для автоматизации бизнес-процессов, который помогает оптимизировать работу компании и улучшить коммуникацию с клиентами. Наши боты поддерживают различные функции: от простых команд до сложных алгоритмов искусственного интеллекта.",
-          "Разработка чат-ботов включает в себя полный цикл услуг: анализ требований, создание технического задания, дизайн интерфейса, программирование, тестирование и внедрение. Мы также предоставляем техническую поддержку и обновления бота после запуска."
-        ],
-        popularQueries: {
-          title: "Популярные запросы:",
-          items: [
-            "Создание Telegram бота",
-            "Разработка чат-ботов",
-            "Telegram бот для бизнеса",
-            "Бот для Telegram магазина",
-            "Автоматизация в Telegram"
-          ]
-        },
-        ourAdvantages: {
-          title: "Наши преимущества:",
-          items: [
-            "Опыт разработки более 5 лет",
-            "Более 200 успешных проектов",
-            "Поддержка 24/7",
-            "Гарантия качества",
-            "Индивидуальный подход"
-          ]
-        }
-      },
-      websiteAndBusinessAutomation: {
-        title: "Разработка сайтов и автоматизация бизнеса",
-        modernWebsites: {
-          title: "Создание современных сайтов",
-          description: "Мы разрабатываем профессиональные сайты с современным дизайном и адаптивным макетом. Наши сайты оптимизированы для поисковых систем и быстро загружаются на всех устройствах.",
-          items: [
-            "Корпоративные сайты",
-            "Лендинги",
-            "Портфолио",
-            "SEO оптимизация"
-          ]
-        },
-        onlineStores: {
-          title: "Онлайн магазины под ключ",
-          description: "Мы создаем мощные онлайн магазины с полной функциональностью для успешной онлайн торговли. Мы интегрируем платежные системы и настраиваем автоматизацию процессов.",
-          items: [
-            "Каталог товаров",
-            "Система управления заказами",
-            "Личный кабинет",
-            "Интеграция CRM",
-            "Автоматизация процессов"
-          ]
-        },
-        parsersAndAutomation: {
-          title: "Парсеры и автоматизация",
-          description: "Мы разрабатываем инструменты для автоматического сбора и анализа данных. Наши парсеры помогают отслеживать цены конкурентов, собирать контакты и автоматизировать рутинные процессы.",
-          column1: [
-            "Парсинг сайтов и маркетплейсов",
-            "Мониторинг цен конкурентов",
-            "Сбор контактов и данных"
-          ],
-          column2: [
-            "Автоматизация процессов",
-            "Анализ данных и отчеты",
-            "Интеграция с CRM системами"
-          ]
-        },
-        keySolutionFeatures: {
-          title: "Ключевые особенности наших решений:",
-          items: [
-            "Быстрая разработка",
-            "Защита данных",
-            "Надежное хостинг",
-            "SEO оптимизация",
-            "Адаптивный дизайн",
-            "Техническая поддержка"
-          ]
-        }
-      }
-    },
-    clientReviews: [
-      {
-        name: "Александр",
-        company: "Space Traffic",
-        text: "Отличная работа! Бот работает как часы, клиент доволен. Рекомендую!",
-        rating: 5
-      },
-      {
-        name: "Мария",
-        company: "E-commerce Store",
-        text: "Профессиональный подход, быстро выполнил заказ. Сайт выглядит современным и функциональным.",
-        rating: 5
-      },
-      {
-        name: "Дмитрий",
-        company: "Startup",
-        text: "Очень доволен сотрудничеством. Бот помог автоматизировать продажи и увеличить доход.",
-        rating: 5
       }
     ]
   },

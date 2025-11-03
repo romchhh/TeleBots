@@ -87,9 +87,10 @@ p {
         font-size: 14px;
     }
     .about {
-        background-image: url('/about.jpg');
-        background-size: auto 100%;
+        background-image: url('/Group 1948.png');
+        background-size: cover;
         background-repeat: no-repeat;
+        background-position: center center;
         position: relative;
     }
     .purchase-section {
@@ -121,31 +122,10 @@ p {
         border-left: 5px solid #2196f3;
         /* Синій колір для секції Запуск */
     }
-    .about::before {
-        content: '';
-        position: absolute;
-        top: 0;
-        right: 0;
-        width: 75%;
-        height: 100%;
-        background: linear-gradient( to left, rgba(255, 255, 255, 1) 52%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%);
-    }
-    @media (max-width: 768px) {
-        .hero {
-            background-attachment: scroll;
-            background-position: center;
-        }
-        .about::before {
-            background: linear-gradient(to left, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%);
-        }
-    }
     @media (max-width: 1280px) {
         .hero {
             background-attachment: scroll;
             background-position: center;
-        }
-        .about::before {
-            background: linear-gradient( to left, rgba(255, 255, 255, 1) 60%, rgba(255, 255, 255, 0.5) 80%, rgba(255, 255, 255, 0) 100%);
         }
     }
     .advantages {
@@ -180,9 +160,6 @@ p {
         .advantages {
             background-attachment: scroll;
         }
-        .about::before {
-            width: 100%;
-        }
     }
     @media (max-width: 768px) {
         .socials {
@@ -191,10 +168,6 @@ p {
         }
         .advantages {
             background-attachment: scroll;
-        }
-        .about::before {
-            width: 100%;
-            background-color: white;
         }
     }
 }

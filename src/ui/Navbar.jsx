@@ -75,15 +75,6 @@ function Navbar() {
             </li>
             <li className="font-montserrat whitespace-nowrap" style={{ fontFamily: 'var(--font-montserrat)' }}>
                 <CustomNavLink 
-                    href={`${baseUrl}/prices`}
-                    className="hover:text-gray-600 transition-colors font-montserrat"
-                    style={{ fontFamily: 'var(--font-montserrat)' }}
-                >
-                    {t('navbar.prices')}
-                </CustomNavLink>
-            </li>
-            <li className="font-montserrat whitespace-nowrap" style={{ fontFamily: 'var(--font-montserrat)' }}>
-                <CustomNavLink 
                     href={`${baseUrl}/portfolio`}
                     className="hover:text-gray-600 transition-colors font-montserrat"
                     style={{ fontFamily: 'var(--font-montserrat)' }}

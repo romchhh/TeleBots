@@ -133,7 +133,10 @@ export async function generateStaticParams() {
     'offer-dpuchkov',
     'vsk-technology',
     'v12-auto',
-    'tripvibe'
+    'tripvibe',
+    'tron-energy-bot',
+    'chars-kyiv',
+    'style-chat-vakhula'
   ];
 
   return caseIds.map((id) => ({

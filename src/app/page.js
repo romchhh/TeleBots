@@ -8,14 +8,6 @@ import Hero from '../ui/Hero'
 import About from '../ui/About'
 
 // Non-critical - lazy load with viewport intersection
-const Statistics = dynamic(() => import('../ui/Statistics'), { 
-  ssr: false, 
-  loading: () => <div style={{minHeight: '300px'}} /> 
-})
-const Advantages = dynamic(() => import('../ui/Advantages'), { 
-  ssr: false, 
-  loading: () => <div style={{minHeight: '400px'}} /> 
-})
 const LeadForm = dynamic(() => import('../ui/LeadForm'), { 
   ssr: true  // Keep SSR for forms for better SEO
 })
@@ -27,11 +19,6 @@ const Purchase = dynamic(() => import('../ui/Purchase'), {
   ssr: false, 
   loading: () => <div style={{minHeight: '400px'}} /> 
 })
-const Reviews = dynamic(() => import('../ui/Reviews'), { 
-  ssr: false, 
-  loading: () => <div style={{minHeight: '400px'}} /> 
-})
-
 export const metadata = {
   title: 'TeleBots | Розробка Телеграм ботів, веб-сайтів та автоматизації бізнесу в Україні',
   description: '🚀 Професійна розробка Telegram ботів, чат-ботів, веб-сайтів та парсерів для автоматизації бізнесу. ✅ 24/7 підтримка ✅ Швидка розробка ✅ Гарантія якості. Збільшуйте продажі на 50% з нашими рішеннями!',
@@ -416,39 +403,44 @@ export default function Home() {
           }}
         />
 
-        <section id="statistics" className="statistics-section" aria-label="Статистика">
-          <h2 className="visually-hidden">Статистика</h2>
-          <Statistics />
-        </section>
-
         <section id="services" className="services-section" aria-label="Наші послуги" itemScope itemType="https://schema.org/Service">
-          <div className="min-h-screen bg-gradient-to-b from-gray-50 to-gray-100">
-            <div className="container mx-auto px-4 py-24">
-              <h2 className="text-4xl md:text-5xl font-bold text-center text-gray-900 mb-4" itemProp="name">
+          <div className="py-20 bg-gradient-to-b from-white via-gray-50/30 to-white relative overflow-hidden">
+            {/* Декоративні елементи */}
+            <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+              <div className="absolute top-20 left-10 w-72 h-72 bg-gray-200/20 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-20 right-10 w-96 h-96 bg-gray-300/20 rounded-full blur-3xl"></div>
+            </div>
+            
+            <div className="container mx-auto px-4 relative z-10">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4 text-center" itemProp="name">
                 Наші послуги
               </h2>
-              <p className="text-xl text-gray-600 text-center mb-16 max-w-3xl mx-auto" itemProp="description">
+              <p className="text-xl text-gray-700 text-center mb-16 max-w-3xl mx-auto" itemProp="description">
                 Обирайте рішення, яке найкраще підходить для вашого бізнесу
               </p>
               <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
-                <Link href="/chatbots" className="group relative block transform hover:-translate-y-3 transition-all duration-500" itemScope itemType="https://schema.org/Service">
+                <Link href="/chatbots" className="group relative block transform hover:-translate-y-4 transition-all duration-500" itemScope itemType="https://schema.org/Service">
                   <meta itemProp="serviceType" content="Розробка телеграм ботів" />
                   <meta itemProp="provider" content="TeleBots" />
                   <meta itemProp="areaServed" content="Україна" />
                   <meta itemProp="description" content="Професійна розробка чат-ботів для автоматизації комунікації з клієнтами. Створюємо ефективних ботів для Telegram та інших платформ." />
-                  <div className="bg-white p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-100 group-hover:border-gray-200 transition-all duration-500 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/[0.01] to-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                  <div className="bg-gradient-to-br from-white to-gray-50/30 p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-200/50 group-hover:border-gray-300/50 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                    {/* Hover glow effect */}
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-gray-800/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                     <div className="relative z-10">
                       <div className="flex justify-center mb-6">
-                        <div className="w-20 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-50 group-hover:shadow-lg relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                          <FaRobot className="w-10 h-10 text-gray-800 relative z-10 transition-all duration-300 group-hover:scale-110" />
+                        <div className="w-24 h-24 bg-gradient-to-br from-black/10 to-gray-800/10 rounded-3xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-black/20 group-hover:to-gray-800/20 group-hover:shadow-2xl relative overflow-hidden ring-2 ring-transparent group-hover:ring-gray-200/50">
+                          {/* Animated background */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-gray-100/40 to-gray-200/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          {/* Shine effect */}
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          <FaRobot className="w-12 h-12 text-gray-800 group-hover:text-gray-900 relative z-10 transition-all duration-500 group-hover:scale-110" />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-colors duration-300" itemProp="name">
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-all duration-300 group-hover:text-gray-900 group-hover:scale-105" itemProp="name">
                         Розробка чат-ботів
                       </h3>
-                      <p className="text-gray-600 transition-colors duration-300 leading-relaxed" itemProp="description">
+                      <p className="text-gray-700 transition-colors duration-300 leading-relaxed" itemProp="description">
                         Створюємо ефективних чат-ботів для автоматизації комунікації
                         з вашими клієнтами
                       </p>
@@ -457,27 +449,30 @@ export default function Home() {
                         <FaArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
                       </div>
                     </div>
+                    {/* Decorative corner accent */}
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-black/0 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </Link>
                 
-                <Link href="/websites" className="group relative block transform hover:-translate-y-3 transition-all duration-500" itemScope itemType="https://schema.org/Service">
+                <Link href="/websites" className="group relative block transform hover:-translate-y-4 transition-all duration-500" itemScope itemType="https://schema.org/Service">
                   <meta itemProp="serviceType" content="Розробка веб-сайтів" />
                   <meta itemProp="provider" content="TeleBots" />
                   <meta itemProp="areaServed" content="Україна" />
                   <meta itemProp="description" content="Професійна розробка сучасних та функціональних веб-сайтів. Створюємо сайти з адаптивним дизайном та оптимізацією для пошукових систем." />
-                  <div className="bg-white p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-100 group-hover:border-gray-200 transition-all duration-500 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/[0.01] to-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                  <div className="bg-gradient-to-br from-white to-gray-50/30 p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-200/50 group-hover:border-gray-300/50 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-gray-800/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                     <div className="relative z-10">
                       <div className="flex justify-center mb-6">
-                        <div className="w-20 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-50 group-hover:shadow-lg relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                          <FaDesktop className="w-10 h-10 text-gray-800 relative z-10 transition-all duration-300 group-hover:scale-110" />
+                        <div className="w-24 h-24 bg-gradient-to-br from-black/10 to-gray-800/10 rounded-3xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-black/20 group-hover:to-gray-800/20 group-hover:shadow-2xl relative overflow-hidden ring-2 ring-transparent group-hover:ring-gray-200/50">
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-gray-100/40 to-gray-200/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          <FaDesktop className="w-12 h-12 text-gray-800 group-hover:text-gray-900 relative z-10 transition-all duration-500 group-hover:scale-110" />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-colors duration-300" itemProp="name">
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-all duration-300 group-hover:text-gray-900 group-hover:scale-105" itemProp="name">
                         Розробка веб-сайтів
                       </h3>
-                      <p className="text-gray-600 transition-colors duration-300 leading-relaxed" itemProp="description">
+                      <p className="text-gray-700 transition-colors duration-300 leading-relaxed" itemProp="description">
                         Створюємо сучасні та функціональні веб-сайти
                         для вашого бізнесу
                       </p>
@@ -486,27 +481,29 @@ export default function Home() {
                         <FaArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
                       </div>
                     </div>
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-black/0 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </Link>
                 
-                <Link href="/parsers" className="group relative block transform hover:-translate-y-3 transition-all duration-500" itemScope itemType="https://schema.org/Service">
+                <Link href="/parsers" className="group relative block transform hover:-translate-y-4 transition-all duration-500" itemScope itemType="https://schema.org/Service">
                   <meta itemProp="serviceType" content="Розробка парсерів" />
                   <meta itemProp="provider" content="TeleBots" />
                   <meta itemProp="areaServed" content="Україна" />
                   <meta itemProp="description" content="Професійна розробка парсерів для автоматизованого збору та обробки даних. Створюємо ефективні інструменти для аналізу ринку та моніторингу конкурентів." />
-                  <div className="bg-white p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-100 group-hover:border-gray-200 transition-all duration-500 overflow-hidden">
-                    <div className="absolute inset-0 bg-gradient-to-br from-black/[0.01] to-black/[0.02] opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-3xl"></div>
+                  <div className="bg-gradient-to-br from-white to-gray-50/30 p-8 rounded-3xl shadow-lg group-hover:shadow-2xl relative z-10 h-full border border-gray-200/50 group-hover:border-gray-300/50 transition-all duration-500 overflow-hidden backdrop-blur-sm">
+                    <div className="absolute inset-0 bg-gradient-to-br from-black/10 via-gray-800/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
                     <div className="relative z-10">
                       <div className="flex justify-center mb-6">
-                        <div className="w-20 h-20 bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-white group-hover:to-gray-50 group-hover:shadow-lg relative overflow-hidden">
-                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 to-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-2xl"></div>
-                          <FaDatabase className="w-10 h-10 text-gray-800 relative z-10 transition-all duration-300 group-hover:scale-110" />
+                        <div className="w-24 h-24 bg-gradient-to-br from-black/10 to-gray-800/10 rounded-3xl flex items-center justify-center transition-all duration-500 group-hover:scale-110 group-hover:bg-gradient-to-br group-hover:from-black/20 group-hover:to-gray-800/20 group-hover:shadow-2xl relative overflow-hidden ring-2 ring-transparent group-hover:ring-gray-200/50">
+                          <div className="absolute inset-0 bg-gradient-to-br from-white/80 via-gray-100/40 to-gray-200/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          <div className="absolute inset-0 bg-gradient-to-br from-transparent via-white/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-3xl"></div>
+                          <FaDatabase className="w-12 h-12 text-gray-800 group-hover:text-gray-900 relative z-10 transition-all duration-500 group-hover:scale-110" />
                         </div>
                       </div>
-                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-colors duration-300" itemProp="name">
+                      <h3 className="text-2xl font-bold mb-4 text-gray-900 transition-all duration-300 group-hover:text-gray-900 group-hover:scale-105" itemProp="name">
                         Розробка парсерів
                       </h3>
-                      <p className="text-gray-600 transition-colors duration-300 leading-relaxed" itemProp="description">
+                      <p className="text-gray-700 transition-colors duration-300 leading-relaxed" itemProp="description">
                         Створюємо інструменти для автоматизованого збору
                         та обробки даних
                       </p>
@@ -515,6 +512,7 @@ export default function Home() {
                         <FaArrowRight className="ml-2 w-4 h-4 transform group-hover:translate-x-2 transition-transform duration-300" />
                       </div>
                     </div>
+                    <div className="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-black/0 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   </div>
                 </Link>
               </div>
@@ -522,30 +520,21 @@ export default function Home() {
           </div>
         </section>
 
-
-        <section id="advantages" className="advantages-section" aria-label="Наші переваги" itemScope itemType="https://schema.org/ItemList">
-          <h2 className="visually-hidden">Чому обирають TeleBots</h2>
-          <Advantages />
-        </section>
+          <Purchase />
 
         {/* <section id="prices" className="prices-section" aria-label="Ціни">
           <h2 className="visually-hidden">Вартість розробки</h2>
           <Prices />
         </section> */}
 
-        <section id="lead-form" className="lead-form-section" aria-label="Замовити проект" itemScope itemType="https://schema.org/ContactPage">
-          <h2 className="visually-hidden">Замовити розробку проекту</h2>
-          <LeadForm />
-        </section>
-
         <section id="portfolio" className="portfolio-section" aria-label="Портфоліо" itemScope itemType="https://schema.org/CollectionPage">
           <h2 className="visually-hidden">Наші проєкти</h2>
           <Portfolio />
         </section>
 
-        <section id="purchase" className="purchase-section" aria-label="Замовлення">
-          <h2 className="visually-hidden">Замовити розробку</h2>
-          <Purchase />
+        <section id="lead-form" className="lead-form-section" aria-label="Замовити проект" itemScope itemType="https://schema.org/ContactPage">
+          <h2 className="visually-hidden">Замовити розробку проекту</h2>
+          <LeadForm />
         </section>
 
 {/*       
@@ -559,10 +548,6 @@ export default function Home() {
           <Socials />
         </section> */}
 
-        <section id="reviews" className="reviews-section" aria-label="Відгуки" itemScope itemType="https://schema.org/Review">
-          <h2 className="visually-hidden">Відгуки клієнтів</h2>
-          <Reviews />
-        </section>
 
         {/* Додаємо SpeakableSpecification для голосового пошуку */}
         <script

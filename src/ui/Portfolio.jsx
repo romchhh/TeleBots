@@ -8,30 +8,7 @@ import { useTranslation } from '../hooks/useTranslation';
 import { useLanguage } from '../context/LanguageContext';
 import ServiceHero from './ServiceHero';
 import './Portfolio.css';
-import { 
-  FaRobot, 
-  FaUtensils, 
-  FaHeart, 
-  FaCat, 
-  FaShoppingCart, 
-  FaChartLine, 
-  FaBirthdayCake, 
-  FaLeaf, 
-  FaRocket, 
-  FaGlobe, 
-  FaBus, 
-  FaCar, 
-  FaGamepad, 
-  FaGraduationCap, 
-  FaCreditCard, 
-  FaTruck, 
-  FaStore, 
-  FaMoneyBillWave,
-  FaMobile,
-  FaSearch,
-  FaHome,
-  FaBitcoin
-} from 'react-icons/fa';
+// Icons видалено - тепер не використовуються
 
 const ImageWithBlur = ({ src, alt, width, height, priority = false, className }) => (
 	<Image
@@ -47,7 +24,7 @@ const ImageWithBlur = ({ src, alt, width, height, priority = false, className })
 	/>
 );
 
-function Portfolio() {
+function Portfolio({ isStandalonePage = false }) {
 	const { ref: portfolioRef, inView: portfolioInView } = useInView({
 		triggerOnce: false,
 		threshold: 0.05,
@@ -59,6 +36,21 @@ function Portfolio() {
 	const [selectedCategory, setSelectedCategory] = useState('all');
 	const [lightboxOpen, setLightboxOpen] = useState(false);
 	const [lightboxImage, setLightboxImage] = useState(null);
+	const [windowWidth, setWindowWidth] = useState(typeof window !== 'undefined' ? window.innerWidth : 1920);
+
+	// Відстежуємо розмір вікна для адаптивних span
+	useEffect(() => {
+		if (typeof window === 'undefined') return;
+		
+		const handleResize = () => {
+			setWindowWidth(window.innerWidth);
+		};
+
+		window.addEventListener('resize', handleResize);
+		handleResize(); // Встановлюємо початкове значення
+
+		return () => window.removeEventListener('resize', handleResize);
+	}, []);
 
 	// Закриття lightbox клавішею ESC
 	useEffect(() => {
@@ -106,7 +98,9 @@ function Portfolio() {
 		{ image: '/vsk-technology.png', largeImage: '/vsk-technology.png', caseId: 'vsk-technology', category: 'websites' },
 		{ image: '/v12-auto.png', largeImage: '/v12-auto.png', caseId: 'v12-auto', category: 'websites' },
 		{ image: '/tripvibe.png', largeImage: '/tripvibe.png', caseId: 'tripvibe', category: 'websites' },
-		{ image: '/IMAGE 2025-10-13 22:39:19.jpg', largeImage: '/IMAGE 2025-10-13 22:39:19.jpg', caseId: 'tron-energy-bot', category: 'chatbots' }
+		{ image: '/IMAGE 2025-10-13 22:39:19.jpg', largeImage: '/IMAGE 2025-10-13 22:39:19.jpg', caseId: 'tron-energy-bot', category: 'chatbots' },
+		{ image: '/Знімок екрана 2025-11-03 о 01.49.01.png', largeImage: '/Знімок екрана 2025-11-03 о 01.49.01.png', caseId: 'chars-kyiv', category: 'websites' },
+		{ image: '/IMAGE 2025-11-03 02:12:02.jpg', largeImage: '/IMAGE 2025-11-03 02:12:02.jpg', caseId: 'style-chat-vakhula', category: 'chatbots' }
 	];
 
 	// Створюємо масив робіт з перекладами
@@ -136,7 +130,9 @@ function Portfolio() {
 		{ title: "Offer Dpuchkov — продаючий сайт курсу", alt: "Повністю готовий до запуску трафіку сайт з Telegram-ботом та Google Таблицями для автоматизації заявок" },
 		{ title: "VSK Technology — професійний ремонт побутової техніки", alt: "Сучасний веб-сайт для компанії з ремонту побутової техніки з онлайн-записом та інтеграцією з Google Maps" },
 		{ title: "V12 Auto — імпорт автомобілів зі США", alt: "Повноцінна платформа для імпорту автомобілів зі США з повним циклом обслуговування від аукціону до видачі в МРЕО" },
-		{ title: "TripVibe — сучасне британське туристичне агентство", alt: "Повноцінна платформа для бронювання подорожей з підтримкою 24/7 та захистом ATOL & ABTA" }
+		{ title: "TripVibe — сучасне британське туристичне агентство", alt: "Повноцінна платформа для бронювання подорожей з підтримкою 24/7 та захистом ATOL & ABTA" },
+		{ title: "CHARS Kyiv — e-commerce платформа для чоловічого одягу", alt: "Розробили e-commerce платформу з каталогом, фільтрами, оплатою онлайн, доставкою через Нову Пошту, адмін-панеллю та Telegram-сповіщеннями про нові покупки" },
+		{ title: "StyleChatBot — особистий асистент стиліста в Telegram", alt: "Бот для стиліста, який автоматизує першу консультацію: опитування клієнтів, показ портфоліо, персональні рекомендації та прийом заявок прямо в чаті" }
 	];
 	
 	const projectsToUse = projects && projects.length > 0 ? projects : fallbackProjects;
@@ -151,6 +147,35 @@ function Portfolio() {
 		usingFallback: !projects || projects.length === 0
 	});
 	
+	// Патерни розмірів для masonry grid (span колонок і рядків)
+	const sizePatterns = [
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 2 }, // великий квадрат
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 2 }, // високий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 1, rowSpan: 2 }, // високий прямокутник
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 2 }, // великий квадрат
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 1, rowSpan: 2 }, // високий прямокутник
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 2 }, // великий квадрат
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+		{ colSpan: 1, rowSpan: 1 }, // маленький квадрат
+		{ colSpan: 1, rowSpan: 2 }, // високий прямокутник
+		{ colSpan: 2, rowSpan: 1 }, // широкий прямокутник
+	];
+
 	const works = projectsToUse.map((project, index) => {
 		// Безпечний доступ до imageMap з перевіркою
 		const imageData = imageMap[index];
@@ -158,13 +183,16 @@ function Portfolio() {
 			console.warn(`No image data found for project at index ${index}:`, project);
 			return null;
 		}
+		const sizePattern = sizePatterns[index % sizePatterns.length];
 		return {
 			title: project.title,
 			alt: project.alt,
 			image: imageData.image,
 			largeImage: imageData.largeImage,
 			caseId: imageData.caseId,
-			category: imageData.category
+			category: imageData.category,
+			colSpan: sizePattern.colSpan,
+			rowSpan: sizePattern.rowSpan
 		};
 	}).filter(Boolean); // Видаляємо null значення
 	
@@ -179,71 +207,14 @@ function Portfolio() {
 		return `${baseUrl}/case/${caseId}`;
 	};
 
-	const getCaseIcon = (caseId) => {
-		switch (caseId) {
-			case 'dr-tolstikova-bot':
-				return <FaChartLine className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'nieznany-piekarz':
-				return <FaBirthdayCake className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'nutritionist-bot':
-				return <FaLeaf className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'cats-fresh':
-				return <FaCat className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'space-traffic':
-				return <FaRocket className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'applum-bot':
-				return <FaMobile className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'webinar-bot':
-				return <FaGraduationCap className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'subscription-site':
-				return <FaGlobe className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'samurai-sushi':
-				return <FaUtensils className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'ukr-bus':
-				return <FaBus className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'electromotors':
-				return <FaCar className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'brandshop':
-				return <FaStore className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'carsrent':
-				return <FaShoppingCart className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'normalnoauto':
-				return <FaCar className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'salenicedevice':
-				return <FaSearch className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'kvartyrant':
-				return <FaHome className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'flixmarket':
-				return <FaLeaf className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'gtrading':
-				return <FaTruck className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'easyplay':
-				return <FaGamepad className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'cosmy':
-				return <FaHeart className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'newlineschool':
-				return <FaGraduationCap className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'xpaid':
-				return <FaCreditCard className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'alexandraaleksiuk':
-				return <FaHeart className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'offer-dpuchkov':
-				return <FaGraduationCap className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			case 'tron-energy-bot':
-				return <FaBitcoin className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-			default:
-				return <FaRobot className="text-3xl sm:text-4xl md:text-6xl text-black" />;
-		}
-	};
-
 	return (
-		<div className='min-h-screen bg-white'>
+		<div className='min-h-screen'>
 			{/* Hero Section */}
-			<ServiceHero serviceType="portfolio" />
+			<ServiceHero serviceType="portfolio" isStandalonePage={isStandalonePage} />
 			
 			<section 
 				id='portfolio' 
-				className='py-20 pt-24 md:pt-20 bg-white portfolio-container'
+			className='portfolio-container'
 				ref={portfolioRef}
 			>
 				<div className='container'>
@@ -293,77 +264,81 @@ function Portfolio() {
 					</div>
 				</div>
 
-				<div className={`grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 md:gap-8 lg:gap-10 transition-all duration-1000 portfolio-grid ${
-					portfolioInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
-				}`}>
-					{filteredProjects.map((work, index) => (
-						<div key={index} className='group relative overflow-hidden rounded-2xl border border-gray-200 transform transition-all duration-500 hover:-translate-y-3 bg-white portfolio-card'
+				<div 
+					className={`portfolio-masonry-grid transition-all duration-1000 ${
+						portfolioInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
+					}`}
+				>
+					{filteredProjects.map((work, index) => {
+						// Адаптуємо span залежно від ширини екрану
+						let colSpan = work.colSpan || 1;
+						let rowSpan = work.rowSpan || 1;
+						
+						// Адаптуємо span для різних розмірів екранів
+						if (windowWidth <= 480) {
+							// На дуже малих екранах - всі span 1
+							colSpan = 1;
+						} else if (windowWidth <= 768) {
+							// На мобільних (2 колонки) - обмежуємо colSpan до 2, rowSpan залишаємо
+							colSpan = Math.min(colSpan, 2);
+						} else if (windowWidth <= 1024) {
+							// На планшетах (3 колонки) - обмежуємо colSpan до 3
+							colSpan = Math.min(colSpan, 3);
+						}
+						// На десктопі (4 колонки) - залишаємо оригінальні значення
+						
+						return (
+						<div
+							key={index}
+							className='portfolio-masonry-item group'
 							style={{
-								boxShadow: '0 8px 32px rgba(0, 0, 0, 0.08)',
+								gridColumn: `span ${colSpan}`,
+								gridRow: `span ${rowSpan}`
 							}}
-							onMouseEnter={(e) => {
-								e.currentTarget.style.boxShadow = '0 24px 48px rgba(0, 0, 0, 0.15)';
-							}}
-							onMouseLeave={(e) => {
-								e.currentTarget.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.08)';
-							}}
-						>
-							<div 
-								className='relative h-48 sm:h-64 md:h-72 lg:h-96 overflow-hidden portfolio-card-image cursor-pointer'
-								onClick={(e) => {
-									e.preventDefault();
-									e.stopPropagation();
+							onClick={(e) => {
+								// Відкриваємо lightbox при кліку на фото
+								if (!e.target.closest('.portfolio-masonry-overlay')) {
 									setLightboxImage({ src: work.largeImage, alt: work.alt });
 									setLightboxOpen(true);
-								}}
-							>
+								}
+							}}
+						>
+							<div className='portfolio-masonry-image-wrapper'>
 								<ImageWithBlur
 									src={work.image}
 									alt={work.alt}
-									width={400}
-									height={384}
-									priority={index < 3}
-									className="object-cover w-full h-full group-hover:scale-105 transition-transform duration-700"
+									width={800}
+									height={800}
+									priority={index < 6}
+									className="portfolio-masonry-image"
 								/>
-								<div className='absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-500' />
-								<div className='absolute inset-0 flex items-end p-8 opacity-0 group-hover:opacity-100 transition-all duration-500 pointer-events-none'>
-									<div className="flex items-center gap-3">
-										<span className='text-white font-semibold text-base uppercase tracking-wider'>
-											{language === 'uk' ? 'Переглянути фото' :
-											 language === 'en' ? 'View Photo' :
-											 language === 'ru' ? 'Посмотреть фото' :
-											 'Zobacz zdjęcie'}
-										</span>
-										<svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7" />
-										</svg>
+								{/* Overlay при hover */}
+								<Link
+									href={getCaseUrl(work.caseId)}
+									className='portfolio-masonry-overlay'
+									onClick={(e) => {
+										// Дозволяємо перехід на сторінку кейсу
+										e.stopPropagation();
+									}}
+								>
+									<div className='portfolio-masonry-content'>
+										<h3 className='portfolio-masonry-title'>
+											{work.title}
+										</h3>
+										<p className='portfolio-masonry-description'>
+											{work.alt}
+										</p>
+										<div className='portfolio-masonry-arrow'>
+											<svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+											</svg>
+										</div>
 									</div>
-								</div>
+								</Link>
 							</div>
-							<Link href={getCaseUrl(work.caseId)} className='block p-4 sm:p-6 md:p-8 portfolio-card-content cursor-pointer hover:bg-gray-50 transition-colors'>
-								<div className="flex items-center gap-3 mb-3">
-									{getCaseIcon(work.caseId)}
-									<h3 className='text-lg sm:text-xl md:text-2xl font-bold text-gray-900 line-clamp-2 leading-tight portfolio-card-title'>
-										{work.title}
-									</h3>
-								</div>
-								<p className="text-gray-600 text-sm sm:text-base line-clamp-2 mb-4 portfolio-card-description">
-									{work.alt}
-								</p>
-								<div className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors">
-									<span className="text-xs sm:text-sm font-medium">
-										{language === 'uk' ? 'Читати далі' :
-										 language === 'en' ? 'Read more' :
-										 language === 'ru' ? 'Читать далее' :
-										 'Czytaj więcej'}
-									</span>
-									<svg className="w-3 h-3 sm:w-4 sm:h-4 transform group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
-									</svg>
-								</div>
-							</Link>
 						</div>
-					))}
+						);
+					})}
 				</div>
 			</div>
 		</section>

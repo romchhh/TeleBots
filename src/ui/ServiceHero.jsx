@@ -7,7 +7,7 @@ import { useLanguage } from "../context/LanguageContext";
 import LeadModal from "../components/LeadModal";
 import "./ServiceHero.css";
 
-const ServiceHero = memo(function ServiceHero({ serviceType = 'chatbots' }) { 
+const ServiceHero = memo(function ServiceHero({ serviceType = 'chatbots', isStandalonePage = false }) { 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
   const { language } = useLanguage();
@@ -115,7 +115,7 @@ const ServiceHero = memo(function ServiceHero({ serviceType = 'chatbots' }) {
 
   return (
     <>
-      <div className="service-hero-container">
+      <div className={`service-hero-container ${serviceType === 'portfolio' && !isStandalonePage ? 'portfolio-hero' : serviceType === 'portfolio' && isStandalonePage ? 'portfolio-hero-standalone' : ''}`}>
         <div className="service-hero-content">
           <div className="service-hero-left">
             <div className="service-hero-text-content">
@@ -125,6 +125,73 @@ const ServiceHero = memo(function ServiceHero({ serviceType = 'chatbots' }) {
               <p className="service-hero-subtitle text-black">
                 {config.subtitle}
               </p>
+              
+              {/* Statistics - тільки для сайтів, чат-ботів і парсерів */}
+              {serviceType !== 'portfolio' && (
+                <div className="hero-stats mb-6">
+                  {serviceType === 'websites' && (
+                    <>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">150+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Створених сайтів' : language === 'pl' ? 'Utworzonych stron' : 'Websites Created'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">98%</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Задоволених клієнтів' : language === 'pl' ? 'Zadowolonych klientów' : 'Satisfied Clients'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">24/7</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Підтримка' : language === 'pl' ? 'Wsparcie' : 'Support'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">2+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Років досвіду' : language === 'pl' ? 'Lat doświadczenia' : 'Years Experience'}</div>
+                      </div>
+                    </>
+                  )}
+                  {serviceType === 'chatbots' && (
+                    <>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">200+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Створених ботів' : language === 'pl' ? 'Utworzonych botów' : 'Bots Created'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">98%</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Задоволених клієнтів' : language === 'pl' ? 'Zadowolonych klientów' : 'Satisfied Clients'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">24/7</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Моніторинг' : language === 'pl' ? 'Monitoring' : 'Monitoring'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">2+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Років досвіду' : language === 'pl' ? 'Lat doświadczenia' : 'Years Experience'}</div>
+                      </div>
+                    </>
+                  )}
+                  {serviceType === 'parsers' && (
+                    <>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">50+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Парсерів створено' : language === 'pl' ? 'Parserów utworzonych' : 'Parsers Created'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">1M+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Даних оброблено' : language === 'pl' ? 'Danych przetworzonych' : 'Data Processed'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">99%</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Точність даних' : language === 'pl' ? 'Dokładność danych' : 'Data Accuracy'}</div>
+                      </div>
+                      <div className="hero-stat-item">
+                        <div className="hero-stat-number">2+</div>
+                        <div className="hero-stat-label">{language === 'uk' ? 'Років досвіду' : language === 'pl' ? 'Lat doświadczenia' : 'Years Experience'}</div>
+                      </div>
+                    </>
+                  )}
+                </div>
+              )}
+              
               <div className="mt-6 sm:mt-8 flex justify-start w-full max-w-full">
                 <button 
                   onClick={() => setIsModalOpen(true)}

@@ -102,31 +102,52 @@ const Hero = memo(function Hero() {
       <div className="hero-container">
         <div className="hero-content">
           <div className="hero-left">
-            <div className="social-icons-container">
-              <div className="social-icons">
-                {socialIcons.map((social, index) => (
-                  <a
-                    key={index}
-                    href={social.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="social-icon-wrapper"
-                    data-social={social.name}
-                    aria-label={`Visit our ${social.name} page`}
-                  >
-                    <span className="social-icon" aria-hidden="true">{social.icon}</span>
-                  </a>
-                ))}
-              </div>
-            </div>
-
             <div className="text-content">
               <h1 className="hero-title">
-                {t("hero.title")}
+                {t("hero.greeting")} {t("hero.title")}
               </h1>
               <p className="hero-subtitle">
                 {t("hero.subtitle")}
               </p>
+              
+              {/* Statistics */}
+              <div className="hero-stats">
+                <div className="hero-stat-item">
+                  <div className="hero-stat-number">{t("hero.stats.projects")}</div>
+                  <div className="hero-stat-label">{t("hero.stats.projectsLabel")}</div>
+                </div>
+                <div className="hero-stat-item">
+                  <div className="hero-stat-number">{t("hero.stats.clients")}</div>
+                  <div className="hero-stat-label">{t("hero.stats.clientsLabel")}</div>
+                </div>
+                <div className="hero-stat-item">
+                  <div className="hero-stat-number">{t("hero.stats.hours")}</div>
+                  <div className="hero-stat-label">{t("hero.stats.hoursLabel")}</div>
+                </div>
+                <div className="hero-stat-item">
+                  <div className="hero-stat-number">{t("hero.stats.experience")}</div>
+                  <div className="hero-stat-label">{t("hero.stats.experienceLabel")}</div>
+                </div>
+              </div>
+              
+              {/* Social icons */}
+              <div className="social-icons-container">
+                <div className="social-icons">
+                  {socialIcons.map((social, index) => (
+                    <a
+                      key={index}
+                      href={social.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="social-icon-wrapper"
+                      data-social={social.name}
+                      aria-label={`Visit our ${social.name} page`}
+                    >
+                      <span className="social-icon" aria-hidden="true">{social.icon}</span>
+                    </a>
+                  ))}
+                </div>
+              </div>
               <div className="mt-6 sm:mt-8 flex justify-start w-full max-w-full">
                 <button 
                   onClick={() => setIsModalOpen(true)}
@@ -183,10 +204,10 @@ const Hero = memo(function Hero() {
 
           <div className="hero-right">
             <Image
-              src="/Group 1000007030.png"
-              alt="TeleBots - Professional Telegram bot and website development company logo with modern design"
-              width={150}
-              height={225}
+              src="/image 24.png"
+              alt="TeleBots - Professional Telegram bot and website development company mobile app showcase"
+              width={600}
+              height={1200}
               priority
               fetchPriority="high"
               quality={90}

@@ -830,6 +830,58 @@ const ChatbotsPage = () => {
           </motion.div>
         </motion.div>
 
+        {/* Статистика */}
+        <motion.div 
+          className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            variants={fadeInUp}
+          >
+            {language === 'uk' ? 'Наші досягнення в розробці ботів' : language === 'pl' ? 'Nasze osiągnięcia w tworzeniu botów' : 'Our Bot Development Achievements'}
+          </motion.h2>
+          <motion.div 
+            className="grid md:grid-cols-4 gap-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.div 
+              variants={scaleIn}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl font-bold text-gray-800 mb-2">200+</div>
+              <div className="text-gray-600">{language === 'uk' ? 'Створених ботів' : language === 'pl' ? 'Utworzonych botów' : 'Bots Created'}</div>
+            </motion.div>
+            <motion.div 
+              variants={scaleIn}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl font-bold text-gray-800 mb-2">98%</div>
+              <div className="text-gray-600">{language === 'uk' ? 'Задоволених клієнтів' : language === 'pl' ? 'Zadowolonych klientów' : 'Satisfied Clients'}</div>
+            </motion.div>
+            <motion.div 
+              variants={scaleIn}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl font-bold text-gray-800 mb-2">24/7</div>
+              <div className="text-gray-600">{language === 'uk' ? 'Моніторинг' : language === 'pl' ? 'Monitoring' : 'Monitoring'}</div>
+            </motion.div>
+            <motion.div 
+              variants={scaleIn}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-shadow"
+            >
+              <div className="text-4xl font-bold text-gray-800 mb-2">2+</div>
+              <div className="text-gray-600">{language === 'uk' ? 'Років досвіду' : language === 'pl' ? 'Lat doświadczenia' : 'Years Experience'}</div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
+
         {/* Форма зворотного зв'язку */}
         <motion.section 
           id="lead-form" 

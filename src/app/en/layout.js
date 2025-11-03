@@ -1,42 +1,25 @@
-import { Montserrat, Oswald, Inter } from 'next/font/google';
+import dynamic from 'next/dynamic';
+import { NavbarProvider } from '../../context/NavbarContext';
+import { LanguageProvider } from '../../context/LanguageContext';
+import Header from '../../ui/Header';
 
-const montserrat = Montserrat({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-montserrat',
-  weight: ['400', '600', '700'],
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
-});
-
-const oswald = Oswald({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-oswald',
-  weight: ['400', '600'],
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
-});
-
-const inter = Inter({
-  subsets: ['latin', 'cyrillic'],
-  display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '600', '700'],
-  preload: true,
-  fallback: ['system-ui', 'arial'],
-  adjustFontFallback: true,
+// Lazy load non-critical components
+const ToastContainer = dynamic(() => import('react-toastify').then(mod => ({ default: mod.ToastContainer })), {
+  ssr: false,
+  loading: () => <div className="toast-placeholder" />
 });
 
 export default function EnLayout({ children }) {
   return (
-    <html lang="en" className={`${montserrat.variable} ${oswald.variable} ${inter.variable}`}>
-      <body className={montserrat.className}>
-        {children}
-      </body>
-    </html>
+    <>
+      <NavbarProvider>
+        <LanguageProvider>
+          <ToastContainer />
+          <Header />
+          {children}
+        </LanguageProvider>
+      </NavbarProvider>
+    </>
   );
 }
 

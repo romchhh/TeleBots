@@ -669,6 +669,66 @@ export const cases = {
         { value: "100%", label: "Автономність" },
         { value: "0", label: "Ручних операцій" }
       ]
+    },
+    'chars-kyiv': {
+      title: "CHARS Kyiv — e-commerce платформа для чоловічого одягу",
+      subtitle: "Повноцінна платформа з каталогом, оплатою та адмін-панеллю",
+      mainImage: "/Знімок екрана 2025-11-03 о 01.49.01.png",
+      description: "🖼 Розробили e-commerce платформу, де можна легко керувати товарами, приймати оплати й відстежувати замовлення без зайвих клопотів.\n\n💡 Що всередині:\n\n• Каталог із фільтрами за кольором, розміром і ціною\n• Зручна сторінка товару з фото та характеристиками\n• Оплата онлайн і доставка через Нову Пошту\n• Адмін-панель для керування товарами та замовленнями\n• Telegram-сповіщення про нові покупки\n\n📈 Що це дало:\n\n• Менше ручної роботи\n• Автоматизовані процеси\n• Зручний інтерфейс для клієнтів\n• Проста робота з товарами й аналітикою\n\nПросте рішення для брендів, які хочуть продавати онлайн без складних систем.",
+      technologies: ["Next.js", "React", "E-commerce", "Payment Integration", "Admin Panel", "Telegram API", "Nova Poshta API"],
+      duration: "3 тижні",
+      client: "CHARS Kyiv",
+      category: "E-commerce Platform",
+      portfolioCategory: "websites",
+      liveUrl: "https://charsua.com/",
+      features: [
+        "Каталог з фільтрами за кольором, розміром і ціною",
+        "Зручна сторінка товару з фото та характеристиками",
+        "Оплата онлайн через платіжні системи",
+        "Доставка через Нову Пошту",
+        "Адмін-панель для керування товарами",
+        "Управління замовленнями",
+        "Telegram-сповіщення про нові покупки",
+        "Аналітика продажів",
+        "Автоматизація процесів",
+        "Зручний інтерфейс для клієнтів"
+      ],
+      results: [
+        { value: "100%", label: "Автоматизація замовлень" },
+        { value: "24/7", label: "Доступність магазину" },
+        { value: "↓", label: "Менше ручної роботи" },
+        { value: "↑", label: "Зручність для клієнтів" }
+      ]
+    },
+    'style-chat-vakhula': {
+      title: "StyleChatBot — особистий асистент стиліста в Telegram",
+      subtitle: "Бот для автоматизації консультацій стиліста та збору лідів",
+      mainImage: "/IMAGE 2025-11-03 02:12:02.jpg",
+      description: "🖼 StyleChatBot — особистий асистент стиліста в Telegram\n\nМи розробили бота, який перетворює першу консультацію стиліста на зручний автоматизований діалог.\n\nБот допомагає клієнту пройти коротке опитування, показує портфоліо, надсилає персональні рекомендації та приймає заявку просто в чаті.\n\n🤍 Для стиліста це — готовий інструмент, що збирає ліди, керує розсилками й контентом без жодних таблиць чи ручної роботи.\n\nВсе відбувається швидко, логічно й у фірмовому стилі бренду.\n\nТехнічні особливості:\n\n• Автоматичне опитування клієнтів з різними типами питань\n• Динамічне портфоліо з прикладами робіт стиліста\n• Персоналізовані рекомендації на основі відповідей\n• Система прийому заявок прямо в Telegram\n• Автоматичні розсилки контенту\n• Управління базою клієнтів\n• Аналітика заявок та конверсій\n• Інтеграція з CRM-системами\n\nБізнес-логіка:\n\n• Клієнт запускає бота та проходить коротке опитування\n• Бот показує портфоліо стиліста з прикладами робіт\n• На основі відповідей генеруються персональні рекомендації\n• Клієнт може залишити заявку прямо в чаті\n• Стиліст отримує всі дані в організованому вигляді\n• Автоматичні розсилки дозволяють тримати контакт з клієнтами\n• Вся робота без таблиць та ручних операцій",
+      technologies: ["Node.js", "Telegram Bot API", "MongoDB", "Express.js", "CRM Integration", "Analytics", "Content Management"],
+      duration: "2 тижні",
+      client: "Style Chat Vakhula",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      liveUrl: "https://t.me/Style_Chat_Vakhula_Bot",
+      features: [
+        "Автоматичне опитування клієнтів",
+        "Динамічне портфоліо стиліста",
+        "Персоналізовані рекомендації",
+        "Прийом заявок в чаті",
+        "Автоматичні розсилки контенту",
+        "Управління базою клієнтів",
+        "Аналітика заявок",
+        "Інтеграція з CRM",
+        "Швидка та логічна робота",
+        "Фірмовий стиль бренду"
+      ],
+      results: [
+        { value: "100%", label: "Автоматизація консультацій" },
+        { value: "24/7", label: "Доступність бота" },
+        { value: "↓", label: "Менше ручної роботи" },
+        { value: "↑", label: "Збільшення лідів" }
+      ]
     }
   },
   
@@ -1339,6 +1399,66 @@ export const cases = {
         { value: "24/7", label: "Automatic operation" },
         { value: "100%", label: "Autonomy" },
         { value: "0", label: "Manual operations" }
+      ]
+    },
+    'chars-kyiv': {
+      title: "CHARS Kyiv — E-commerce Platform for Men's Clothing",
+      subtitle: "Complete platform with catalog, payment and admin panel",
+      mainImage: "/Знімок екрана 2025-11-03 о 01.49.01.png",
+      description: "🖼 Developed an e-commerce platform where you can easily manage products, accept payments and track orders without any hassle.\n\n💡 What's inside:\n\n• Catalog with filters by color, size and price\n• Convenient product page with photos and specifications\n• Online payment and delivery via Nova Poshta\n• Admin panel for managing products and orders\n• Telegram notifications about new purchases\n\n📈 What it gave:\n\n• Less manual work\n• Automated processes\n• Convenient interface for customers\n• Easy work with products and analytics\n\nSimple solution for brands who want to sell online without complex systems.",
+      technologies: ["Next.js", "React", "E-commerce", "Payment Integration", "Admin Panel", "Telegram API", "Nova Poshta API"],
+      duration: "3 weeks",
+      client: "CHARS Kyiv",
+      category: "E-commerce Platform",
+      portfolioCategory: "websites",
+      liveUrl: "https://charsua.com/",
+      features: [
+        "Catalog with filters by color, size and price",
+        "Convenient product page with photos and specifications",
+        "Online payment through payment systems",
+        "Delivery via Nova Poshta",
+        "Admin panel for product management",
+        "Order management",
+        "Telegram notifications about new purchases",
+        "Sales analytics",
+        "Process automation",
+        "Convenient interface for customers"
+      ],
+      results: [
+        { value: "100%", label: "Order automation" },
+        { value: "24/7", label: "Store availability" },
+        { value: "↓", label: "Less manual work" },
+        { value: "↑", label: "Customer convenience" }
+      ]
+    },
+    'style-chat-vakhula': {
+      title: "StyleChatBot — Personal Stylist Assistant in Telegram",
+      subtitle: "Bot for automating stylist consultations and lead generation",
+      mainImage: "/IMAGE 2025-11-03 02:12:02.jpg",
+      description: "🖼 StyleChatBot — Personal Stylist Assistant in Telegram\n\nWe developed a bot that turns the first stylist consultation into a convenient automated dialogue.\n\nThe bot helps the client take a short survey, shows portfolio, sends personal recommendations and accepts applications directly in the chat.\n\n🤍 For the stylist, this is a ready-made tool that collects leads, manages newsletters and content without any tables or manual work.\n\nEverything happens quickly, logically and in the brand's corporate style.\n\nTechnical Features:\n\n• Automatic client surveys with different question types\n• Dynamic portfolio with stylist work examples\n• Personalized recommendations based on responses\n• Application acceptance system directly in Telegram\n• Automatic content newsletters\n• Client database management\n• Application and conversion analytics\n• CRM system integration\n\nBusiness Logic:\n\n• Client starts bot and takes short survey\n• Bot shows stylist portfolio with work examples\n• Personal recommendations generated based on responses\n• Client can leave application directly in chat\n• Stylist receives all data in organized form\n• Automatic newsletters keep in touch with clients\n• All work without tables and manual operations",
+      technologies: ["Node.js", "Telegram Bot API", "MongoDB", "Express.js", "CRM Integration", "Analytics", "Content Management"],
+      duration: "2 weeks",
+      client: "Style Chat Vakhula",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      liveUrl: "https://t.me/Style_Chat_Vakhula_Bot",
+      features: [
+        "Automatic client surveys",
+        "Dynamic stylist portfolio",
+        "Personalized recommendations",
+        "Application acceptance in chat",
+        "Automatic content newsletters",
+        "Client database management",
+        "Application analytics",
+        "CRM integration",
+        "Fast and logical operation",
+        "Brand corporate style"
+      ],
+      results: [
+        { value: "100%", label: "Consultation automation" },
+        { value: "24/7", label: "Bot availability" },
+        { value: "↓", label: "Less manual work" },
+        { value: "↑", label: "Increased leads" }
       ]
     }
   },
@@ -2011,6 +2131,66 @@ export const cases = {
         { value: "100%", label: "Autonomia" },
         { value: "0", label: "Operacji ręcznych" }
       ]
+    },
+    'chars-kyiv': {
+      title: "CHARS Kyiv — platforma e-commerce dla męskiej odzieży",
+      subtitle: "Kompletna platforma z katalogiem, płatnością i panelem administracyjnym",
+      mainImage: "/Знімок екрана 2025-11-03 о 01.49.01.png",
+      description: "🖼 Opracowaliśmy platformę e-commerce, gdzie można łatwo zarządzać produktami, przyjmować płatności i śledzić zamówienia bez zbędnych kłopotów.\n\n💡 Co w środku:\n\n• Katalog z filtrami według koloru, rozmiaru i ceny\n• Wygodna strona produktu ze zdjęciami i specyfikacjami\n• Płatność online i dostawa przez Nova Poshta\n• Panel administracyjny do zarządzania produktami i zamówieniami\n• Powiadomienia Telegram o nowych zakupach\n\n📈 Co to dało:\n\n• Mniej pracy ręcznej\n• Zautomatyzowane procesy\n• Wygodny interfejs dla klientów\n• Prosta praca z produktami i analityką\n\nProste rozwiązanie dla marek, które chcą sprzedawać online bez skomplikowanych systemów.",
+      technologies: ["Next.js", "React", "E-commerce", "Payment Integration", "Admin Panel", "Telegram API", "Nova Poshta API"],
+      duration: "3 tygodnie",
+      client: "CHARS Kyiv",
+      category: "E-commerce Platform",
+      portfolioCategory: "websites",
+      liveUrl: "https://charsua.com/",
+      features: [
+        "Katalog z filtrami według koloru, rozmiaru i ceny",
+        "Wygodna strona produktu ze zdjęciami i specyfikacjami",
+        "Płatność online przez systemy płatnicze",
+        "Dostawa przez Nova Poshta",
+        "Panel administracyjny do zarządzania produktami",
+        "Zarządzanie zamówieniami",
+        "Powiadomienia Telegram o nowych zakupach",
+        "Analityka sprzedaży",
+        "Automatyzacja procesów",
+        "Wygodny interfejs dla klientów"
+      ],
+      results: [
+        { value: "100%", label: "Automatyzacja zamówień" },
+        { value: "24/7", label: "Dostępność sklepu" },
+        { value: "↓", label: "Mniej pracy ręcznej" },
+        { value: "↑", label: "Wygoda dla klientów" }
+      ]
+    },
+    'style-chat-vakhula': {
+      title: "StyleChatBot — osobisty asystent stylisty w Telegram",
+      subtitle: "Bot do automatyzacji konsultacji stylisty i zbierania leadów",
+      mainImage: "/IMAGE 2025-11-03 02:12:02.jpg",
+      description: "🖼 StyleChatBot — osobisty asystent stylisty w Telegram\n\nOpracowaliśmy bota, który zamienia pierwszą konsultację stylisty na wygodny zautomatyzowany dialog.\n\nBot pomaga klientowi przejść krótką ankietę, pokazuje portfolio, wysyła osobiste rekomendacje i przyjmuje zamówienia bezpośrednio w czacie.\n\n🤍 Dla stylisty to gotowe narzędzie, które zbiera leady, zarządza newsletterami i treścią bez żadnych tabel czy ręcznej pracy.\n\nWszystko dzieje się szybko, logicznie i w korporacyjnym stylu marki.\n\nCechy techniczne:\n\n• Automatyczne ankiety klientów z różnymi typami pytań\n• Dynamiczne portfolio z przykładami prac stylisty\n• Spersonalizowane rekomendacje na podstawie odpowiedzi\n• System przyjmowania zamówień bezpośrednio w Telegram\n• Automatyczne newslettere treści\n• Zarządzanie bazą klientów\n• Analityka zamówień i konwersji\n• Integracja z systemami CRM\n\nLogika biznesowa:\n\n• Klient uruchamia bota i przechodzi krótką ankietę\n• Bot pokazuje portfolio stylisty z przykładami prac\n• Na podstawie odpowiedzi generowane są osobiste rekomendacje\n• Klient może zostawić zamówienie bezpośrednio w czacie\n• Stylista otrzymuje wszystkie dane w zorganizowanej formie\n• Automatyczne newslettere pozwalają utrzymać kontakt z klientami\n• Cała praca bez tabel i ręcznych operacji",
+      technologies: ["Node.js", "Telegram Bot API", "MongoDB", "Express.js", "CRM Integration", "Analytics", "Content Management"],
+      duration: "2 tygodnie",
+      client: "Style Chat Vakhula",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      liveUrl: "https://t.me/Style_Chat_Vakhula_Bot",
+      features: [
+        "Automatyczne ankiety klientów",
+        "Dynamiczne portfolio stylisty",
+        "Spersonalizowane rekomendacje",
+        "Przyjmowanie zamówień w czacie",
+        "Automatyczne newslettere treści",
+        "Zarządzanie bazą klientów",
+        "Analityka zamówień",
+        "Integracja z CRM",
+        "Szybka i logiczna praca",
+        "Korporacyjny styl marki"
+      ],
+      results: [
+        { value: "100%", label: "Automatyzacja konsultacji" },
+        { value: "24/7", label: "Dostępność bota" },
+        { value: "↓", label: "Mniej pracy ręcznej" },
+        { value: "↑", label: "Zwiększenie leadów" }
+      ]
     }
   },
   
@@ -2681,6 +2861,66 @@ export const cases = {
         { value: "24/7", label: "Автоматическая работа" },
         { value: "100%", label: "Автономность" },
         { value: "0", label: "Ручных операций" }
+      ]
+    },
+    'chars-kyiv': {
+      title: "CHARS Kyiv — e-commerce платформа для мужской одежды",
+      subtitle: "Полноценная платформа с каталогом, оплатой и админ-панелью",
+      mainImage: "/Знімок екрана 2025-11-03 о 01.49.01.png",
+      description: "🖼 Разработали e-commerce платформу, где можно легко управлять товарами, принимать оплаты и отслеживать заказы без лишних хлопот.\n\n💡 Что внутри:\n\n• Каталог с фильтрами по цвету, размеру и цене\n• Удобная страница товара с фото и характеристиками\n• Оплата онлайн и доставка через Нова Пошта\n• Админ-панель для управления товарами и заказами\n• Telegram-уведомления о новых покупках\n\n📈 Что это дало:\n\n• Меньше ручной работы\n• Автоматизированные процессы\n• Удобный интерфейс для клиентов\n• Простая работа с товарами и аналитикой\n\nПростое решение для брендов, которые хотят продавать онлайн без сложных систем.",
+      technologies: ["Next.js", "React", "E-commerce", "Payment Integration", "Admin Panel", "Telegram API", "Nova Poshta API"],
+      duration: "3 недели",
+      client: "CHARS Kyiv",
+      category: "E-commerce Platform",
+      portfolioCategory: "websites",
+      liveUrl: "https://charsua.com/",
+      features: [
+        "Каталог с фильтрами по цвету, размеру и цене",
+        "Удобная страница товара с фото и характеристиками",
+        "Оплата онлайн через платежные системы",
+        "Доставка через Нова Пошта",
+        "Админ-панель для управления товарами",
+        "Управление заказами",
+        "Telegram-уведомления о новых покупках",
+        "Аналитика продаж",
+        "Автоматизация процессов",
+        "Удобный интерфейс для клиентов"
+      ],
+      results: [
+        { value: "100%", label: "Автоматизация заказов" },
+        { value: "24/7", label: "Доступность магазина" },
+        { value: "↓", label: "Меньше ручной работы" },
+        { value: "↑", label: "Удобство для клиентов" }
+      ]
+    },
+    'style-chat-vakhula': {
+      title: "StyleChatBot — личный ассистент стилиста в Telegram",
+      subtitle: "Бот для автоматизации консультаций стилиста и сбора лидов",
+      mainImage: "/IMAGE 2025-11-03 02:12:02.jpg",
+      description: "🖼 StyleChatBot — личный ассистент стилиста в Telegram\n\nМы разработали бота, который превращает первую консультацию стилиста в удобный автоматизированный диалог.\n\nБот помогает клиенту пройти короткий опрос, показывает портфолио, отправляет персональные рекомендации и принимает заявку прямо в чате.\n\n🤍 Для стилиста это — готовый инструмент, который собирает лиды, управляет рассылками и контентом без всяких таблиц или ручной работы.\n\nВсе происходит быстро, логично и в фирменном стиле бренда.\n\nТехнические особенности:\n\n• Автоматический опрос клиентов с разными типами вопросов\n• Динамическое портфолио с примерами работ стилиста\n• Персонализированные рекомендации на основе ответов\n• Система приема заявок прямо в Telegram\n• Автоматические рассылки контента\n• Управление базой клиентов\n• Аналитика заявок и конверсий\n• Интеграция с CRM-системами\n\nБизнес-логика:\n\n• Клиент запускает бота и проходит короткий опрос\n• Бот показывает портфолио стилиста с примерами работ\n• На основе ответов генерируются персональные рекомендации\n• Клиент может оставить заявку прямо в чате\n• Стилист получает все данные в организованном виде\n• Автоматические рассылки позволяют поддерживать контакт с клиентами\n• Вся работа без таблиц и ручных операций",
+      technologies: ["Node.js", "Telegram Bot API", "MongoDB", "Express.js", "CRM Integration", "Analytics", "Content Management"],
+      duration: "2 недели",
+      client: "Style Chat Vakhula",
+      category: "Telegram Bot",
+      portfolioCategory: "chatbots",
+      liveUrl: "https://t.me/Style_Chat_Vakhula_Bot",
+      features: [
+        "Автоматический опрос клиентов",
+        "Динамическое портфолио стилиста",
+        "Персонализированные рекомендации",
+        "Прием заявок в чате",
+        "Автоматические рассылки контента",
+        "Управление базой клиентов",
+        "Аналитика заявок",
+        "Интеграция с CRM",
+        "Быстрая и логичная работа",
+        "Фирменный стиль бренда"
+      ],
+      results: [
+        { value: "100%", label: "Автоматизация консультаций" },
+        { value: "24/7", label: "Доступность бота" },
+        { value: "↓", label: "Меньше ручной работы" },
+        { value: "↑", label: "Увеличение лидов" }
       ]
     }
   }

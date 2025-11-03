@@ -114,67 +114,123 @@ const CasePage = ({ caseId }) => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      {/* Header */}
-      <div className="bg-white py-12 md:py-16 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5">
-          <div className="absolute inset-0" style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23000000' fill-opacity='0.1'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-            backgroundRepeat: 'repeat'
-          }}></div>
-        </div>
-        <div className="container mx-auto px-6 md:px-4 relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <button
-              onClick={() => {
-                // Спочатку пробуємо перейти на головну сторінку
-                if (window.location.pathname !== baseUrl && window.location.pathname !== '/') {
-                  window.location.href = `${baseUrl}#portfolio`;
-                } else {
-                  // Якщо вже на головній, скролимо до портфоліо
-                  const portfolioSection = document.getElementById('portfolio');
-                  if (portfolioSection) {
-                    portfolioSection.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    // Якщо секції немає, переходимо на головну
-                    window.location.href = `${baseUrl}#portfolio`;
-                  }
-                }
-              }}
-              className="inline-flex items-center gap-3 text-gray-700 hover:text-gray-900 mb-8 transition-all duration-300 group bg-white/80 backdrop-blur-sm px-4 py-2 rounded-xl border border-gray-200/50 hover:bg-white hover:shadow-md"
-            >
-              <FaArrowLeft className="transition-transform duration-300 group-hover:-translate-x-1" />
-              <span className="font-medium">
-                {language === 'uk' ? 'Повернутися до портфоліо' : 
-                 language === 'en' ? 'Back to Portfolio' :
-                 language === 'ru' ? 'Вернуться к портфолио' :
-                 'Powrót do portfolio'}
-              </span>
-            </button>
-            
-            <div className="flex items-center gap-4 mb-6 group">
-              <div className="transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:drop-shadow-lg icon-bounce">
-                {getCaseIcon(caseId)}
+    <div className="min-h-screen case-page-container">
+      {/* Header з фоном */}
+      <div className="case-page-header relative overflow-hidden">
+        <div className="container mx-auto px-6 md:px-4 py-12 md:py-16 relative z-10">
+          {/* Основна секція: текст зліва, фото справа */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-start">
+            {/* Ліва частина: назва, опис, теги */}
+            <div className="case-page-left w-full">
+              <div className="flex items-center gap-4 mb-6 group">
+                <div className="transition-all duration-500 group-hover:scale-110 group-hover:rotate-12 group-hover:drop-shadow-lg icon-bounce">
+                  {getCaseIcon(caseId)}
+                </div>
+                <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight transition-all duration-300 group-hover:text-gray-600 group-hover:drop-shadow-sm text-glow">
+                  {caseData.title}
+                </h1>
               </div>
-              <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 leading-tight transition-all duration-300 group-hover:text-gray-600 group-hover:drop-shadow-sm text-glow">
-                {caseData.title}
-              </h1>
-            </div>
-            
-            <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-600 mb-8 leading-relaxed transition-all duration-300 hover:text-gray-800 hover:drop-shadow-sm">
-              {caseData.subtitle}
-            </p>
+              
+              <p className="text-xl sm:text-xl md:text-2xl text-gray-600 mb-8 leading-relaxed transition-all duration-300 hover:text-gray-800 hover:drop-shadow-sm">
+                {caseData.subtitle}
+              </p>
 
-            {caseData.technologies && (
-              <div className="flex flex-wrap gap-3 mb-8">
-                {caseData.technologies.map((tech, index) => (
-                  <span 
-                    key={index}
-                    className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-base font-medium transition-all duration-300 hover:bg-blue-200 hover:text-blue-900 hover:scale-105 hover:shadow-md hover:-translate-y-1 cursor-default"
-                  >
-                    {tech}
+              {caseData.technologies && (
+                <div className="flex flex-wrap gap-3 mb-8">
+                  {caseData.technologies.map((tech, index) => (
+                    <span 
+                      key={index}
+                      className="px-4 py-2 bg-blue-100 text-blue-800 rounded-full text-lg font-medium transition-all duration-300 hover:bg-blue-200 hover:text-blue-900 hover:scale-105 hover:shadow-md hover:-translate-y-1 cursor-default"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Права частина: фото проєкту */}
+            <div className="case-page-right w-full mt-8 lg:mt-16">
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-3xl hover:scale-[1.02] group w-full">
+                <Image
+                  src={caseData.mainImage}
+                  alt={caseData.title}
+                  width={800}
+                  height={600}
+                  className="w-full h-auto transition-all duration-500 group-hover:scale-105"
+                  priority
+                />
+                {/* Overlay effect on hover */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Project Information - під hero секцією */}
+      <div className="container mx-auto px-6 md:px-4 py-12 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-lg">
+            <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6">
+              {language === 'uk' ? 'Інформація про проект' :
+               language === 'en' ? 'Project Information' :
+               language === 'ru' ? 'Информация о проекте' :
+               'Informacje o projekcie'}
+            </h3>
+            
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+              {caseData.duration && (
+                <div>
+                  <span className="text-sm font-medium text-gray-500">
+                    {language === 'uk' ? 'Тривалість:' :
+                     language === 'en' ? 'Duration:' :
+                     language === 'ru' ? 'Длительность:' :
+                     'Czas trwania:'}
                   </span>
-                ))}
+                  <p className="text-gray-900">{caseData.duration}</p>
+                </div>
+              )}
+
+              {caseData.client && (
+                <div>
+                  <span className="text-sm font-medium text-gray-500">
+                    {language === 'uk' ? 'Клієнт:' :
+                     language === 'en' ? 'Client:' :
+                     language === 'ru' ? 'Клиент:' :
+                     'Klient:'}
+                  </span>
+                  <p className="text-gray-900">{caseData.client}</p>
+                </div>
+              )}
+
+              {caseData.category && (
+                <div>
+                  <span className="text-sm font-medium text-gray-500">
+                    {language === 'uk' ? 'Категорія:' :
+                     language === 'en' ? 'Category:' :
+                     language === 'ru' ? 'Категория:' :
+                     'Kategoria:'}
+                  </span>
+                  <p className="text-gray-900">{caseData.category}</p>
+                </div>
+              )}
+            </div>
+
+            {caseData.liveUrl && (
+              <div className="mt-6">
+                <a
+                  href={caseData.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 hover:scale-105 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group"
+                >
+                  <FaExternalLinkAlt className="transition-transform duration-300 group-hover:rotate-12" />
+                  {language === 'uk' ? 'Переглянути проект' :
+                   language === 'en' ? 'View Project' :
+                   language === 'ru' ? 'Посмотреть проект' :
+                   'Zobacz projekt'}
+                </a>
               </div>
             )}
           </div>
@@ -182,99 +238,12 @@ const CasePage = ({ caseId }) => {
       </div>
 
       {/* Main Content */}
-      <div className="container mx-auto px-6 md:px-4 py-12">
+      <div className="container mx-auto px-6 md:px-4 py-12 pt-24 md:pt-32">
         <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 md:gap-12">
-            {/* Main Image */}
-            <div className="lg:col-span-2">
-              <div className="relative rounded-2xl overflow-hidden shadow-2xl transition-all duration-500 hover:shadow-3xl hover:scale-[1.02] group hover-shimmer">
-                <Image
-                  src={caseData.mainImage}
-                  alt={caseData.title}
-                  width={800}
-                  height={600}
-                  className="w-full h-auto transition-all duration-500 group-hover:scale-105 img-zoom"
-                  priority
-                />
-                {/* Overlay effect on hover */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                {/* Shine effect */}
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-              </div>
-            </div>
-
-            {/* Sidebar */}
-            <div className="space-y-8">
-              {/* Project Info */}
-              <div className="bg-white rounded-3xl p-6 sm:p-10 border border-gray-200 shadow-lg hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-300 hover:-translate-y-2 transition-all duration-500 group card-lift hover-glow">
-                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-4 sm:mb-6 transition-all duration-300 group-hover:text-gray-600 group-hover:scale-105">
-                  {language === 'uk' ? 'Інформація про проект' :
-                   language === 'en' ? 'Project Information' :
-                   language === 'ru' ? 'Информация о проекте' :
-                   'Informacje o projekcie'}
-                </h3>
-                
-                {caseData.duration && (
-                  <div className="mb-4 transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-sm p-3 rounded-xl">
-                    <span className="text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-600">
-                      {language === 'uk' ? 'Тривалість:' :
-                       language === 'en' ? 'Duration:' :
-                       language === 'ru' ? 'Длительность:' :
-                       'Czas trwania:'}
-                    </span>
-                    <p className="text-gray-900 transition-colors duration-300 group-hover:text-gray-700">{caseData.duration}</p>
-                  </div>
-                )}
-
-                {caseData.client && (
-                  <div className="mb-4 transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-sm p-3 rounded-xl">
-                    <span className="text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-600">
-                      {language === 'uk' ? 'Клієнт:' :
-                       language === 'en' ? 'Client:' :
-                       language === 'ru' ? 'Клиент:' :
-                       'Klient:'}
-                    </span>
-                    <p className="text-gray-900 transition-colors duration-300 group-hover:text-gray-700">{caseData.client}</p>
-                  </div>
-                )}
-
-                {caseData.category && (
-                  <div className="mb-4 transition-all duration-300 hover:bg-gray-50 hover:scale-105 hover:shadow-sm p-3 rounded-xl">
-                    <span className="text-sm font-medium text-gray-500 transition-colors duration-300 group-hover:text-gray-600">
-                      {language === 'uk' ? 'Категорія:' :
-                       language === 'en' ? 'Category:' :
-                       language === 'ru' ? 'Категория:' :
-                       'Kategoria:'}
-                    </span>
-                    <p className="text-gray-900 transition-colors duration-300 group-hover:text-gray-700">{caseData.category}</p>
-                  </div>
-                )}
-
-                {caseData.liveUrl && (
-                  <div className="mt-6">
-                    <a
-                      href={caseData.liveUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-2 bg-black text-white px-4 py-2 rounded-lg hover:bg-gray-800 hover:scale-105 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 group btn-magnetic"
-                    >
-                      <FaExternalLinkAlt className="transition-transform duration-300 group-hover:rotate-12" />
-                      {language === 'uk' ? 'Переглянути проект' :
-                       language === 'en' ? 'View Project' :
-                       language === 'ru' ? 'Посмотреть проект' :
-                       'Zobacz projekt'}
-                    </a>
-                  </div>
-                )}
-              </div>
-
-              {/* Technologies */}
-            </div>
-          </div>
 
           {/* Description */}
           {caseData.description && (
-            <div className="mt-16 sm:mt-20 bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-lg hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-300 hover:-translate-y-2 transition-all duration-500 group card-lift hover-glow">
+            <div className="mt-8 sm:mt-12 bg-white rounded-3xl p-8 sm:p-12 border border-gray-200 shadow-lg hover:shadow-xl hover:shadow-gray-100/50 hover:border-gray-300 hover:-translate-y-2 transition-all duration-500 group card-lift hover-glow">
               <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-8 sm:mb-10 transition-all duration-300 group-hover:text-gray-600 group-hover:scale-105">
                 {language === 'uk' ? 'Опис проекту' :
                  language === 'en' ? 'Project Description' :
