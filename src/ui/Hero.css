@@ -24,6 +24,13 @@
     will-change: transform;
 }
 
+/* Desktop: add extra top offset so greeting text starts lower */
+@media (min-width: 1025px) {
+    .hero-container {
+        padding-top: 6rem;
+    }
+}
+
 
 .hero-content {
     position: relative;
@@ -224,12 +231,12 @@
 .logo-image {
     width: 100%;
     height: auto;
-    max-width: 1000px;
+    max-width: 1300px;
 }
 
 @media (min-width: 1400px) {
     .logo-image {
-        max-width: 1200px;
+        max-width: 1500px;
     }
 }
   
@@ -251,7 +258,7 @@
 
     .logo-image {
         width: 100%;
-        max-width: 700px;
+        max-width: 900px;
     }
   
     .hero-title {

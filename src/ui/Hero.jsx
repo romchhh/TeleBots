@@ -206,8 +206,8 @@ const Hero = memo(function Hero() {
             <Image
               src="/image 24.png"
               alt="TeleBots - Professional Telegram bot and website development company mobile app showcase"
-              width={600}
-              height={1200}
+              width={800}
+              height={1600}
               priority
               fetchPriority="high"
               quality={90}

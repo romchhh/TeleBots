@@ -178,23 +178,20 @@ function Portfolio({ isStandalonePage = false }) {
 
 	const works = projectsToUse.map((project, index) => {
 		// Безпечний доступ до imageMap з перевіркою
-		const imageData = imageMap[index];
-		if (!imageData) {
-			console.warn(`No image data found for project at index ${index}:`, project);
-			return null;
-		}
+    // Беріть зображення по колу, щоб не приховувати проєкти без imageMap
+    const imageData = imageMap[index % imageMap.length] || {};
 		const sizePattern = sizePatterns[index % sizePatterns.length];
-		return {
+        return {
 			title: project.title,
 			alt: project.alt,
-			image: imageData.image,
-			largeImage: imageData.largeImage,
-			caseId: imageData.caseId,
-			category: imageData.category,
+            image: imageData.image || '/blog1.png',
+            largeImage: imageData.largeImage || imageData.image || '/blog1.png',
+            caseId: imageData.caseId || `project-${index+1}`,
+            category: imageData.category || 'websites',
 			colSpan: sizePattern.colSpan,
 			rowSpan: sizePattern.rowSpan
 		};
-	}).filter(Boolean); // Видаляємо null значення
+    });
 	
 	console.log('Works array:', works);
 
@@ -275,13 +272,15 @@ function Portfolio({ isStandalonePage = false }) {
 						let rowSpan = work.rowSpan || 1;
 						
 						// Адаптуємо span для різних розмірів екранів
-						if (windowWidth <= 480) {
-							// На дуже малих екранах - всі span 1
-							colSpan = 1;
-						} else if (windowWidth <= 768) {
-							// На мобільних (2 колонки) - обмежуємо colSpan до 2, rowSpan залишаємо
-							colSpan = Math.min(colSpan, 2);
-						} else if (windowWidth <= 1024) {
+                        if (windowWidth <= 480) {
+                            // Дуже малі екрани: робимо охайну сітку 2хN, без вертикальних стрибків
+                            colSpan = Math.min(colSpan, 2);
+                            rowSpan = 1;
+                        } else if (windowWidth <= 768) {
+                            // Мобільні: 2 колонки, фіксована висота елементів
+                            colSpan = Math.min(colSpan, 2);
+                            rowSpan = 1;
+                        } else if (windowWidth <= 1024) {
 							// На планшетах (3 колонки) - обмежуємо colSpan до 3
 							colSpan = Math.min(colSpan, 3);
 						}
