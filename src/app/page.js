@@ -2,6 +2,7 @@ import dynamic from 'next/dynamic'
 import Script from 'next/script'
 import Link from 'next/link'
 import { FaRobot, FaDesktop, FaDatabase, FaArrowRight } from 'react-icons/fa'
+import { truncateTitle, truncateDescription } from '../utils/seo'
 
 // Critical - load immediately
 import Hero from '../ui/Hero'
@@ -20,8 +21,8 @@ const Purchase = dynamic(() => import('../ui/Purchase'), {
   loading: () => <div style={{minHeight: '400px'}} /> 
 })
 export const metadata = {
-  title: 'TeleBots | Розробка Телеграм ботів, веб-сайтів та автоматизації бізнесу в Україні',
-  description: '🚀 Професійна розробка Telegram ботів, чат-ботів, веб-сайтів та парсерів для автоматизації бізнесу. ✅ 24/7 підтримка ✅ Швидка розробка ✅ Гарантія якості. Збільшуйте продажі на 50% з нашими рішеннями!',
+  title: truncateTitle('TeleBots | Розробка Телеграм ботів та Веб-сайтів'),
+  description: truncateDescription('Професійна розробка Telegram ботів, чат-ботів, веб-сайтів та парсерів для автоматизації бізнесу. 24/7 підтримка, швидка розробка, гарантія якості.'),
   keywords: [
     'розробка телеграм ботів Україна',
     'створення чат ботів',
@@ -75,8 +76,8 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'TeleBots | Розробка Телеграм ботів та Веб-сайтів в Україні',
-    description: '🚀 Професійна розробка Telegram ботів, чат-ботів та веб-сайтів для автоматизації бізнесу. Збільшуйте продажі на 50% з нашими рішеннями!',
+    title: truncateTitle('TeleBots | Розробка Телеграм ботів та Веб-сайтів'),
+    description: truncateDescription('Професійна розробка Telegram ботів, чат-ботів та веб-сайтів для автоматизації бізнесу. Збільшуйте продажі з нашими рішеннями!'),
     url: 'https://telebots.site',
     siteName: 'TeleBots',
     images: [
@@ -101,8 +102,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TeleBots | Розробка Телеграм ботів та Веб-сайтів',
-    description: '🚀 Професійна розробка Telegram ботів, чат-ботів та веб-сайтів для автоматизації бізнесу. Збільшуйте продажі на 50%!',
+    title: truncateTitle('TeleBots | Розробка Телеграм ботів та Веб-сайтів'),
+    description: truncateDescription('Професійна розробка Telegram ботів, чат-ботів та веб-сайтів для автоматизації бізнесу.'),
     images: ['https://telebots.site/twitter-image.jpg'],
     creator: '@telebotsnowayrm',
     site: '@telebotsnowayrm',

@@ -10,10 +10,11 @@ import Script from 'next/script'
 import Link from 'next/link'
 import { FaRobot, FaDesktop, FaDatabase, FaArrowRight } from 'react-icons/fa'
 import Head from 'next/head'
+import { truncateTitle, truncateDescription } from '../../utils/seo'
 
 export const metadata = {
-  title: 'Telegram Bots and Website Development | TeleBots',
-  description: 'Professional development of Telegram bots, chatbots and websites for business automation. ✓ Fast development ✓ Technical support ✓ Quality guarantee. Automate your business with TeleBots!',
+  title: truncateTitle('Telegram Bots & Website Development | TeleBots'),
+  description: truncateDescription('Professional development of Telegram bots, chatbots and websites for business automation. Fast development, technical support, quality guarantee.'),
   keywords: [
     'telegram bot development',
     'chatbot creation',
@@ -40,19 +41,27 @@ export const metadata = {
     },
   },
   openGraph: {
-    title: 'TeleBots | Telegram Bot and Website Development',
-    description: 'Professional development of Telegram bots, chatbots and websites for business automation. Increase sales and improve customer communication.',
+    title: truncateTitle('TeleBots | Telegram Bot & Website Development'),
+    description: truncateDescription('Professional development of Telegram bots, chatbots and websites for business automation. Increase sales and improve customer communication.'),
+    siteName: 'TeleBots',
     url: 'https://telebots.site/en',
     images: [
       {
         url: 'https://telebots.site/home-preview.jpg',
         width: 1200,
         height: 630,
-        alt: 'TeleBots - Telegram Bot and Website Development',
+        alt: truncateDescription('TeleBots - Telegram Bot and Website Development', 100),
+        type: 'image/jpeg',
       }
     ],
     type: 'website',
     locale: 'en_US',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: truncateTitle('TeleBots | Telegram Bot & Website Development'),
+    description: truncateDescription('Professional development of Telegram bots, chatbots and websites for business automation.'),
+    images: ['https://telebots.site/home-preview.jpg'],
   }
 }
 

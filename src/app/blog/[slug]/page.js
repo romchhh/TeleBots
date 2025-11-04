@@ -14,6 +14,7 @@ import BlogPost12 from '../../../ui/Blog/BlogPost12'
 import BlogPost13 from '../../../ui/Blog/BlogPost13'
 import BlogPost14 from '../../../ui/Blog/BlogPost14'
 import BlogPost15 from '../../../ui/Blog/BlogPost15'
+import { truncateTitle, truncateDescription, generateHreflangAlternates } from '../../../utils/seo'
 const blogMetadata = {
   'your-first-telegram-bot': {
     title: 'Як створити Telegram бота: покроковий гайд для початківців',
@@ -128,29 +129,23 @@ export async function generateMetadata({ params }) {
   const post = blogMetadata[slug]
   if (!post) {
     return {
-      title: 'Статтю не знайдено | TeleBots',
-      description: 'Запитана стаття не існує або була переміщена.'
+      title: truncateTitle('Статтю не знайдено | TeleBots'),
+      description: truncateDescription('Запитана стаття не існує або була переміщена.')
     }
   }
 
+  const title = truncateTitle(`${post.title} | TeleBots`);
+  const description = truncateDescription(post.description);
+
   return {
-    title: `${post.title} | TeleBots Blog`,
-    description: post.description,
+    title,
+    description,
     keywords: post.keywords,
-    alternates: {
-      canonical: `https://telebots.site/blog/${slug}`,
-      languages: {
-        'uk': `https://telebots.site/blog/${slug}`,
-        'en': `https://telebots.site/en/blog/${slug}`,
-        'pl': `https://telebots.site/pl/blog/${slug}`,
-        'ru': `https://telebots.site/ru/blog/${slug}`,
-        'x-default': `https://telebots.site/blog/${slug}`,
-      },
-    },
+    alternates: generateHreflangAlternates(`/blog/${slug}`),
     openGraph: {
       type: 'article',
-      title: post.title,
-      description: post.description,
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
       url: `https://telebots.site/blog/${slug}`,
       siteName: 'TeleBots',
       locale: 'uk_UA',
@@ -159,9 +154,16 @@ export async function generateMetadata({ params }) {
           url: `https://telebots.site${post.image}`,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: truncateDescription(post.title, 100),
+          type: 'image/jpeg',
         }
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
+      images: [`https://telebots.site${post.image}`],
     },
   }
 }

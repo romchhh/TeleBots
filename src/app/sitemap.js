@@ -253,7 +253,9 @@ export default function sitemap() {
     'vsk-technology',
     'v12-auto',
     'tripvibe',
-    'tron-energy-bot'
+    'tron-energy-bot',
+    'chars-kyiv',
+    'style-chat-vakhula'
   ];
 
   // Portfolio page routes

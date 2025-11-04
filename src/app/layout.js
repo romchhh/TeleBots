@@ -6,6 +6,7 @@ import { NavbarProvider } from '../context/NavbarContext'
 import { LanguageProvider } from '../context/LanguageContext'
 import Header from '../ui/Header'
 import Footer from '../ui/Footer'
+import LangSetter from '../components/LangSetter'
 import 'react-toastify/dist/ReactToastify.css'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../index.css'
@@ -64,6 +65,13 @@ export const metadata = {
   metadataBase: new URL('https://telebots.site'),
   alternates: {
     canonical: 'https://telebots.site',
+    languages: {
+      'uk': 'https://telebots.site',
+      'en': 'https://telebots.site/en',
+      'ru': 'https://telebots.site/ru',
+      'pl': 'https://telebots.site/pl',
+      'x-default': 'https://telebots.site',
+    },
     types: {
       'application/rss+xml': 'https://telebots.site/feed.xml',
     },
@@ -379,6 +387,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className={`${montserrat.className} bg-white`} itemScope itemType="https://schema.org/WebPage">
+        <LangSetter />
         <NavbarProvider>
           <LanguageProvider>
             <ToastContainer />
