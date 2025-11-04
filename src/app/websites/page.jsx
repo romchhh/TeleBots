@@ -1,5 +1,14 @@
 import WebsitesPage from '../../pages_backup/websites';
 import { uk } from '../../translations';
+import { generateBreadcrumbs, generateServiceSchema } from '../../utils/seo';
+
+const breadcrumbsSchema = generateBreadcrumbs('/websites', 'Веб-сайти', 'uk');
+const serviceSchema = generateServiceSchema(
+  'Розробка веб-сайтів',
+  uk.metadata.websites.description,
+  'https://telebots.site/websites',
+  'uk'
+);
 
 export const metadata = {
   title: uk.metadata.websites.title,
@@ -30,10 +39,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://telebots.site/websites',
     languages: {
-      'uk': 'https://telebots.site/websites',
-      'en': 'https://telebots.site/en/websites',
-      'pl': 'https://telebots.site/pl/websites',
-      'ru': 'https://telebots.site/ru/websites',
+      'uk-UA': 'https://telebots.site/websites',
+      'en-US': 'https://telebots.site/en/websites',
+      'pl-PL': 'https://telebots.site/pl/websites',
+      'ru-RU': 'https://telebots.site/ru/websites',
       'x-default': 'https://telebots.site/websites',
     },
   },
@@ -51,5 +60,17 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <WebsitesPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <WebsitesPage />
+    </>
+  );
 } 

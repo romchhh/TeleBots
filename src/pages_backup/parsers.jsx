@@ -6,7 +6,7 @@ import {
   FaDatabase, FaCogs, FaChartBar, FaShieldAlt,
   FaRocket, FaCode, FaServer, FaUserCog,
   FaCheckCircle, FaGlobe, FaDesktop, FaTools,
-  FaChartLine, FaSearch, FaFileAlt, FaSync
+  FaChartLine, FaSearch, FaFileAlt, FaSync, FaRobot, FaCreditCard
 } from 'react-icons/fa';
 import LeadForm from '../ui/LeadForm';
 import LeadModal from '../components/LeadModal';
@@ -944,6 +944,72 @@ const ParsersPage = () => {
               <div className="text-4xl font-bold text-gray-800 mb-2">2+</div>
               <div className="text-gray-600">{language === 'uk' ? 'Років досвіду' : language === 'pl' ? 'Lat doświadczenia' : 'Years Experience'}</div>
             </motion.div>
+          </motion.div>
+        </motion.div>
+
+        {/* Other Services Section */}
+        <motion.div 
+          className="mb-16 bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-xl p-8 md:p-12 border border-gray-200"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+        >
+          <motion.h2 
+            className="text-3xl font-bold text-center mb-12"
+            variants={fadeInUp}
+          >
+            {language === 'uk' ? 'Наші інші послуги' : language === 'pl' ? 'Nasze inne usługi' : 'Our Other Services'}
+          </motion.h2>
+          <motion.div 
+            className="grid md:grid-cols-3 gap-6"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
+            <motion.a
+              href={language === 'uk' ? '/chatbots' : language === 'en' ? '/en/chatbots' : language === 'ru' ? '/ru/chatbots' : language === 'pl' ? '/pl/chatbots' : '/chatbots'}
+              variants={scaleIn}
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <FaRobot className="w-12 h-12 text-gray-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                {language === 'uk' ? 'Розробка чат-ботів' : language === 'pl' ? 'Tworzenie chatbotów' : 'Chatbot Development'}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {language === 'uk' ? 'Автоматизація спілкування з клієнтами' : language === 'pl' ? 'Automatyzacja komunikacji z klientami' : 'Automation of customer communication'}
+              </p>
+            </motion.a>
+            <motion.a
+              href={language === 'uk' ? '/websites' : language === 'en' ? '/en/websites' : language === 'ru' ? '/ru/websites' : language === 'pl' ? '/pl/websites' : '/websites'}
+              variants={scaleIn}
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <FaDesktop className="w-12 h-12 text-gray-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                {language === 'uk' ? 'Розробка веб-сайтів' : language === 'pl' ? 'Tworzenie stron internetowych' : 'Website Development'}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {language === 'uk' ? 'Сучасні та функціональні веб-сайти для вашого бізнесу' : language === 'pl' ? 'Nowoczesne i funkcjonalne strony internetowe dla Twojego biznesu' : 'Modern and functional websites for your business'}
+              </p>
+            </motion.a>
+            <motion.a
+              href={language === 'uk' ? '/prices' : language === 'en' ? '/en/prices' : language === 'ru' ? '/ru/prices' : language === 'pl' ? '/pl/prices' : '/prices'}
+              variants={scaleIn}
+              whileHover={{ scale: 1.05 }}
+              className="text-center p-6 bg-white rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              <FaCreditCard className="w-12 h-12 text-gray-800 mx-auto mb-4" />
+              <h3 className="text-xl font-semibold mb-2 text-gray-900">
+                {language === 'uk' ? 'Ціни та тарифи' : language === 'pl' ? 'Ceny i taryfy' : 'Prices & Plans'}
+              </h3>
+              <p className="text-gray-600 text-sm">
+                {language === 'uk' ? 'Перегляньте наші тарифні плани та ціни' : language === 'pl' ? 'Zobacz nasze plany cenowe i ceny' : 'View our pricing plans and rates'}
+              </p>
+            </motion.a>
           </motion.div>
         </motion.div>
 

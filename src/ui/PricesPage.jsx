@@ -1356,9 +1356,9 @@ const Page = () => {
         </a>
         
         <div className="mt-8 md:mt-12">
-          <h1 className="text-3xl md:text-4xl font-bold mb-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-bold mb-6 text-center">
             {t('Кожний проєкт унікальний', 'Every project is unique', 'Каждый проект уникален', 'Każdy projekt jest unikalny')}
-          </h1>
+          </h2>
           <div className="intro-text text-base md:text-lg max-w-3xl mx-auto px-4 md:px-0">
             <p className="mb-4">
               {t('Кожний проєкт є унікальним кейсом, що створений вирішувати проблему, чи розв\'язувати питання характерні саме для вашого випадку, напрямку бізнесу чи потреби.', 'Every project is a unique case created to solve problems or issues specific to your situation, business direction, or needs.', 'Каждый проект является уникальным кейсом, созданным решать проблему или решать вопросы, характерные именно для вашего случая, направления бизнеса или потребности.', 'Każdy projekt jest unikalnym przypadkiem stworzonym do rozwiązywania problemów lub kwestii charakterystycznych dla Twojej sytuacji, kierunku biznesu lub potrzeb.')}
@@ -1372,6 +1372,24 @@ const Page = () => {
 
       <section id="statistics" className="statistics-section" aria-label="Статистика">
         <Statistics />
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="container mx-auto px-4 md:px-8 mt-12 md:mt-16"
+        >
+          <div className="max-w-4xl mx-auto text-center">
+            <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+              {t(
+                'Завдяки нашому досвіду та професійному підходу, ми гарантуємо високоякісну розробку та надійну підтримку вашого проекту. Наші клієнти отримують інноваційні рішення, які допомагають їх бізнесу рости та розвиватися.',
+                'Thanks to our experience and professional approach, we guarantee high-quality development and reliable support for your project. Our clients receive innovative solutions that help their business grow and develop.',
+                'Благодаря нашему опыту и профессиональному подходу, мы гарантируем качественную разработку и надежную поддержку вашего проекта. Наши клиенты получают инновационные решения, которые помогают их бизнесу расти и развиваться.',
+                'Dzięki naszemu doświadczeniu i profesjonalnemu podejściu, gwarantujemy wysokiej jakości rozwój i niezawodne wsparcie dla Twojego projektu. Nasi klienci otrzymują innowacyjne rozwiązania, które pomagają ich biznesowi rosnąć i rozwijać się.'
+              )}
+            </p>
+          </div>
+        </motion.div>
       </section>
 
       <div className="services-section mt-20 mb-20">

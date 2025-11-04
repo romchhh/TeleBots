@@ -242,9 +242,6 @@ Allow: /
 
 # Additional sitemaps
 Sitemap: https://telebots.site/sitemap.xml
-Sitemap: https://telebots.site/sitemap-images.xml
-Sitemap: https://telebots.site/sitemap-news.xml
-Sitemap: https://telebots.site/sitemap-video.xml
 
 # Host directive
 Host: https://telebots.site

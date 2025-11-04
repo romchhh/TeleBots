@@ -30,10 +30,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://telebots.site/pl/parsers',
     languages: {
-      'uk': 'https://telebots.site/parsers',
-      'en': 'https://telebots.site/en/parsers',
-      'pl': 'https://telebots.site/pl/parsers',
-      'ru': 'https://telebots.site/ru/parsers',
+      'uk-UA': 'https://telebots.site/parsers',
+      'en-US': 'https://telebots.site/en/parsers',
+      'pl-PL': 'https://telebots.site/pl/parsers',
+      'ru-RU': 'https://telebots.site/ru/parsers',
       'x-default': 'https://telebots.site/parsers',
     },
   },

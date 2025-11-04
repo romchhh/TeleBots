@@ -444,6 +444,15 @@ export default function RussianHome() {
                 </Link>
               </div>
             </div>
+            <div className="text-center mt-12">
+              <Link 
+                href="/ru/portfolio" 
+                className="inline-flex items-center gap-2 text-gray-800 hover:text-gray-900 font-semibold text-lg transition-colors"
+              >
+                <span>Посмотреть все проекты</span>
+                <FaArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </div>
           </div>
         </section>
 

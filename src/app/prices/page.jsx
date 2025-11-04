@@ -1,9 +1,13 @@
 import PricesPage from '../../ui/PricesPage';
 import { uk } from '../../translations';
+import { generateBreadcrumbs } from '../../utils/seo';
+import { truncateTitle, truncateDescription } from '../../utils/seo';
+
+const breadcrumbsSchema = generateBreadcrumbs('/prices', 'Ціни', 'uk');
 
 export const metadata = {
-  title: uk.metadata.prices?.title || 'Ціни на розробку | TeleBots',
-  description: uk.metadata.prices?.description || 'Актуальні ціни на розробку Telegram ботів, сайтів та парсерів. Прозоре ціноутворення та якісні рішення.',
+  title: truncateTitle(uk.metadata.prices?.title || 'Ціни на розробку | TeleBots'),
+  description: truncateDescription(uk.metadata.prices?.description || 'Актуальні ціни на розробку Telegram ботів, сайтів та парсерів. Прозоре ціноутворення та якісні рішення.'),
   keywords: [
     'ціни на telegram ботів',
     'вартість розробки ботів',
@@ -17,8 +21,8 @@ export const metadata = {
     'бот для магазину ціна'
   ],
   openGraph: {
-    title: uk.metadata.prices?.og?.title || 'Ціни на розробку | TeleBots',
-    description: uk.metadata.prices?.og?.description || 'Розробка Telegram ботів, сайтів та парсерів за доступними цінами. Три пакети послуг для різних потреб бізнесу.',
+    title: truncateTitle(uk.metadata.prices?.og?.title || 'Ціни на розробку | TeleBots'),
+    description: truncateDescription(uk.metadata.prices?.og?.description || 'Розробка Telegram ботів, сайтів та парсерів за доступними цінами. Три пакети послуг для різних потреб бізнесу.'),
     type: 'website',
     locale: 'uk_UA',
     url: 'https://telebots.site/prices',
@@ -28,23 +32,24 @@ export const metadata = {
         url: 'https://telebots.site/prices-preview.jpg',
         width: 1200,
         height: 630,
-        alt: uk.metadata.prices?.og?.imageAlt || 'Ціни на розробку TeleBots',
+        alt: truncateDescription(uk.metadata.prices?.og?.imageAlt || 'Ціни на розробку TeleBots', 100),
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: uk.metadata.prices?.twitter?.title || 'Ціни на розробку | TeleBots',
-    description: uk.metadata.prices?.twitter?.description || 'Розробка Telegram ботів, сайтів та парсерів за доступними цінами',
+    title: truncateTitle(uk.metadata.prices?.twitter?.title || 'Ціни на розробку | TeleBots'),
+    description: truncateDescription(uk.metadata.prices?.twitter?.description || 'Розробка Telegram ботів, сайтів та парсерів за доступними цінами'),
     images: ['https://telebots.site/prices-preview.jpg'],
   },
   alternates: {
     canonical: 'https://telebots.site/prices',
     languages: {
-      'uk': 'https://telebots.site/prices',
-      'en': 'https://telebots.site/en/prices',
-      'pl': 'https://telebots.site/pl/prices',
-      'ru': 'https://telebots.site/ru/prices',
+      'uk-UA': 'https://telebots.site/prices',
+      'en-US': 'https://telebots.site/en/prices',
+      'pl-PL': 'https://telebots.site/pl/prices',
+      'ru-RU': 'https://telebots.site/ru/prices',
       'x-default': 'https://telebots.site/prices',
     },
   },
@@ -62,5 +67,13 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PricesPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+      <PricesPage />
+    </>
+  );
 }

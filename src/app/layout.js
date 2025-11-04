@@ -167,9 +167,13 @@ export const metadata = {
   },
 };
 
-export default function RootLayout({ children }) {
+export default async function RootLayout({ children }) {
+  // Get language from middleware headers
+  const headersList = await headers();
+  const lang = headersList.get('x-lang') || 'uk';
+  
   return (
-    <html lang="uk" suppressHydrationWarning className={`${montserrat.variable}`}>
+    <html lang={lang} suppressHydrationWarning className={`${montserrat.variable}`}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />

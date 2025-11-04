@@ -10,7 +10,17 @@ export async function generateMetadata({ params }) {
   if (!caseData) {
     return {
       title: truncateTitle('Кейс не знайдено | TeleBots'),
-      description: truncateDescription('Запитаний кейс не знайдено на нашому сайті.')
+      description: truncateDescription('Запитаний кейс не знайдено на нашому сайті.'),
+      alternates: {
+        canonical: `https://telebots.site/case/${params.id}`,
+        languages: {
+          'uk-UA': `https://telebots.site/case/${params.id}`,
+          'en-US': `https://telebots.site/en/case/${params.id}`,
+          'pl-PL': `https://telebots.site/pl/case/${params.id}`,
+          'ru-RU': `https://telebots.site/ru/case/${params.id}`,
+          'x-default': `https://telebots.site/case/${params.id}`,
+        },
+      },
     };
   }
 
@@ -86,6 +96,29 @@ export default function Case({ params }) {
       '@type': 'WebPage',
       '@id': `https://telebots.site/case/${params.id}`
     },
+    breadcrumb: {
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          name: 'Головна',
+          item: 'https://telebots.site'
+        },
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: 'Портфоліо',
+          item: 'https://telebots.site/portfolio'
+        },
+        {
+          '@type': 'ListItem',
+          position: 3,
+          name: caseData.title,
+          item: `https://telebots.site/case/${params.id}`
+        }
+      ]
+    },
     inLanguage: 'uk'
   } : null;
 
@@ -117,15 +150,12 @@ export async function generateStaticParams() {
     'webinar-bot',
     'electromotors',
     'cosmy',
-    'brandshop',
     'carsrent',
     'normalnoauto',
     'salenicedevice',
     'kvartyrant',
     'flixmarket',
-    'gtrading',
     'newlineschool',
-    'xpaid',
     'alexandraaleksiuk',
     'offer-dpuchkov',
     'vsk-technology',

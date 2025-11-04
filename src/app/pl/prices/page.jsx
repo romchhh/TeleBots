@@ -1,9 +1,13 @@
 import PricesPage from '../../../ui/PricesPage';
 import { pl } from '../../../translations';
+import { generateBreadcrumbs } from '../../../utils/seo';
+import { truncateTitle, truncateDescription } from '../../../utils/seo';
+
+const breadcrumbsSchema = generateBreadcrumbs('/pl/prices', 'Ceny', 'pl');
 
 export const metadata = {
-  title: pl.metadata.prices?.title || 'Ceny rozwoju | TeleBots',
-  description: pl.metadata.prices?.description || 'Aktualne ceny za tworzenie botów Telegram, stron internetowych i parserów. Przejrzyste cenniki i jakościowe rozwiązania.',
+  title: truncateTitle(pl.metadata.prices?.title || 'Ceny rozwoju | TeleBots'),
+  description: truncateDescription(pl.metadata.prices?.description || 'Aktualne ceny za tworzenie botów Telegram, stron internetowych i parserów. Przejrzyste cenniki i jakościowe rozwiązania.'),
   keywords: [
     'ceny botów telegram',
     'koszt tworzenia bota',
@@ -17,8 +21,8 @@ export const metadata = {
     'cena bota sklepu'
   ],
   openGraph: {
-    title: pl.metadata.prices?.og?.title || 'Ceny rozwoju | TeleBots',
-    description: pl.metadata.prices?.og?.description || 'Tworzenie botów Telegram, stron internetowych i parserów w przystępnych cenach. Trzy pakiety usług dla różnych potrzeb biznesowych.',
+    title: truncateTitle(pl.metadata.prices?.og?.title || 'Ceny rozwoju | TeleBots'),
+    description: truncateDescription(pl.metadata.prices?.og?.description || 'Tworzenie botów Telegram, stron internetowych i parserów w przystępnych cenach. Trzy pakiety usług dla różnych potrzeb biznesowych.'),
     type: 'website',
     locale: 'pl_PL',
     url: 'https://telebots.site/pl/prices',
@@ -28,23 +32,24 @@ export const metadata = {
         url: 'https://telebots.site/prices-preview.jpg',
         width: 1200,
         height: 630,
-        alt: pl.metadata.prices?.og?.imageAlt || 'Ceny rozwoju TeleBots',
+        alt: truncateDescription(pl.metadata.prices?.og?.imageAlt || 'Ceny rozwoju TeleBots', 100),
+        type: 'image/jpeg',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: pl.metadata.prices?.twitter?.title || 'Ceny rozwoju | TeleBots',
-    description: pl.metadata.prices?.twitter?.description || 'Tworzenie botów Telegram, stron internetowych i parserów w przystępnych cenach',
+    title: truncateTitle(pl.metadata.prices?.twitter?.title || 'Ceny rozwoju | TeleBots'),
+    description: truncateDescription(pl.metadata.prices?.twitter?.description || 'Tworzenie botów Telegram, stron internetowych i parserów w przystępnych cenach'),
     images: ['https://telebots.site/prices-preview.jpg'],
   },
   alternates: {
     canonical: 'https://telebots.site/pl/prices',
     languages: {
-      'uk': 'https://telebots.site/prices',
-      'en': 'https://telebots.site/en/prices',
-      'pl': 'https://telebots.site/pl/prices',
-      'ru': 'https://telebots.site/ru/prices',
+      'uk-UA': 'https://telebots.site/prices',
+      'en-US': 'https://telebots.site/en/prices',
+      'pl-PL': 'https://telebots.site/pl/prices',
+      'ru-RU': 'https://telebots.site/ru/prices',
       'x-default': 'https://telebots.site/prices',
     },
   },
@@ -62,5 +67,13 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <PricesPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+      <PricesPage />
+    </>
+  );
 }

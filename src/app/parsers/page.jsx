@@ -1,5 +1,14 @@
 import ParsersPage from '../../pages_backup/parsers';
 import { uk } from '../../translations';
+import { generateBreadcrumbs, generateServiceSchema } from '../../utils/seo';
+
+const breadcrumbsSchema = generateBreadcrumbs('/parsers', 'Парсери', 'uk');
+const serviceSchema = generateServiceSchema(
+  'Розробка парсерів',
+  uk.metadata.parsers.description,
+  'https://telebots.site/parsers',
+  'uk'
+);
 
 export const metadata = {
   title: uk.metadata.parsers.title,
@@ -30,10 +39,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://telebots.site/parsers',
     languages: {
-      'uk': 'https://telebots.site/parsers',
-      'en': 'https://telebots.site/en/parsers',
-      'pl': 'https://telebots.site/pl/parsers',
-      'ru': 'https://telebots.site/ru/parsers',
+      'uk-UA': 'https://telebots.site/parsers',
+      'en-US': 'https://telebots.site/en/parsers',
+      'pl-PL': 'https://telebots.site/pl/parsers',
+      'ru-RU': 'https://telebots.site/ru/parsers',
       'x-default': 'https://telebots.site/parsers',
     },
   },
@@ -51,5 +60,17 @@ export const metadata = {
 };
 
 export default function Page() {
-  return <ParsersPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ParsersPage />
+    </>
+  );
 } 

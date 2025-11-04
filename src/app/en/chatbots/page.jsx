@@ -30,10 +30,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://telebots.site/en/chatbots',
     languages: {
-      'uk': 'https://telebots.site/chatbots',
-      'en': 'https://telebots.site/en/chatbots',
-      'pl': 'https://telebots.site/pl/chatbots',
-      'ru': 'https://telebots.site/ru/chatbots',
+      'uk-UA': 'https://telebots.site/chatbots',
+      'en-US': 'https://telebots.site/en/chatbots',
+      'pl-PL': 'https://telebots.site/pl/chatbots',
+      'ru-RU': 'https://telebots.site/ru/chatbots',
       'x-default': 'https://telebots.site/chatbots',
     },
   },

@@ -445,6 +445,15 @@ export default function EnglishHome() {
               </div>
               </div>
             </div>
+            <div className="text-center mt-12">
+              <Link 
+                href="/pl/portfolio" 
+                className="inline-flex items-center gap-2 text-gray-800 hover:text-gray-900 font-semibold text-lg transition-colors"
+              >
+                <span>Zobacz wszystkie projekty</span>
+                <FaArrowRight className="w-5 h-5 transform group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </div>
         </section>
 
           <Purchase />

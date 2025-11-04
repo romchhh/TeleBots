@@ -4,14 +4,16 @@ export function middleware(request) {
   const { pathname } = request.nextUrl;
   
   // Determine language from pathname
-  let lang = 'uk';
-  if (pathname.startsWith('/en')) {
+  // Check for language prefixes first (must be at the start of pathname)
+  let lang = 'uk'; // default language
+  if (pathname.startsWith('/en/') || pathname === '/en') {
     lang = 'en';
-  } else if (pathname.startsWith('/pl')) {
-    lang = 'pl';
-  } else if (pathname.startsWith('/ru')) {
+  } else if (pathname.startsWith('/ru/') || pathname === '/ru') {
     lang = 'ru';
+  } else if (pathname.startsWith('/pl/') || pathname === '/pl') {
+    lang = 'pl';
   }
+  // For root path and other paths without language prefix, default to 'uk'
   
   // Create response
   const response = NextResponse.next();

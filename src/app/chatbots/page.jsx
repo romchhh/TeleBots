@@ -1,5 +1,14 @@
 import ChatbotsPage from '../../pages_backup/chatbots';
 import { uk } from '../../translations';
+import { generateBreadcrumbs, generateServiceSchema } from '../../utils/seo';
+
+const breadcrumbsSchema = generateBreadcrumbs('/chatbots', 'Чат-боти', 'uk');
+const serviceSchema = generateServiceSchema(
+  'Розробка Telegram ботів',
+  uk.metadata.chatbots.description,
+  'https://telebots.site/chatbots',
+  'uk'
+);
 
 export const metadata = {
   title: uk.metadata.chatbots.title,
@@ -30,10 +39,10 @@ export const metadata = {
   alternates: {
     canonical: 'https://telebots.site/chatbots',
     languages: {
-      'uk': 'https://telebots.site/chatbots',
-      'en': 'https://telebots.site/en/chatbots',
-      'pl': 'https://telebots.site/pl/chatbots',
-      'ru': 'https://telebots.site/ru/chatbots',
+      'uk-UA': 'https://telebots.site/chatbots',
+      'en-US': 'https://telebots.site/en/chatbots',
+      'pl-PL': 'https://telebots.site/pl/chatbots',
+      'ru-RU': 'https://telebots.site/ru/chatbots',
       'x-default': 'https://telebots.site/chatbots',
     },
   },
@@ -48,8 +57,24 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
+  other: {
+    'breadcrumb-schema': JSON.stringify(breadcrumbsSchema),
+    'service-schema': JSON.stringify(serviceSchema),
+  },
 };
 
 export default function Page() {
-  return <ChatbotsPage />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbsSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+      />
+      <ChatbotsPage />
+    </>
+  );
 } 
