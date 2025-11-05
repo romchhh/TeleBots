@@ -14,6 +14,7 @@ import BlogPost12 from '../../../../ui/Blog/BlogPost12'
 import BlogPost13 from '../../../../ui/Blog/BlogPost13'
 import BlogPost14 from '../../../../ui/Blog/BlogPost14'
 import BlogPost15 from '../../../../ui/Blog/BlogPost15'
+import { truncateTitle, truncateDescription, generateHreflangAlternates } from '../../../../utils/seo'
 
 // Англійські метадані для блог-постів
 const blogMetadata = {
@@ -128,19 +129,23 @@ export async function generateMetadata({ params }) {
   const post = blogMetadata[params.slug]
   if (!post) {
     return {
-      title: 'Article Not Found | TeleBots',
-      description: 'The requested article does not exist or has been moved.'
+      title: truncateTitle('Article Not Found | TeleBots'),
+      description: truncateDescription('The requested article does not exist or has been moved.')
     }
   }
 
+  const title = truncateTitle(`${post.title} | TeleBots Blog`);
+  const description = truncateDescription(post.description);
+
   return {
-    title: `${post.title} | TeleBots Blog`,
-    description: post.description,
+    title,
+    description,
     keywords: post.keywords,
+    alternates: generateHreflangAlternates(`/pl/blog/${params.slug}`),
     openGraph: {
       type: 'article',
-      title: post.title,
-      description: post.description,
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
       url: `https://telebots.site/pl/blog/${params.slug}`,
       siteName: 'TeleBots',
       locale: 'pl_PL',
@@ -149,19 +154,16 @@ export async function generateMetadata({ params }) {
           url: `https://telebots.site${post.image}`,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: truncateDescription(post.title, 100),
+          type: 'image/jpeg',
         }
       ],
     },
-    alternates: {
-      canonical: `https://telebots.site/pl/blog/${params.slug}`,
-      languages: {
-        'uk': `https://telebots.site/blog/${params.slug}`,
-        'en': `https://telebots.site/en/blog/${params.slug}`,
-        'pl': `https://telebots.site/pl/blog/${params.slug}`,
-        'ru': `https://telebots.site/ru/blog/${params.slug}`,
-        'x-default': `https://telebots.site/blog/${params.slug}`,
-      },
+    twitter: {
+      card: 'summary_large_image',
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
+      images: [`https://telebots.site${post.image}`],
     },
   }
 }

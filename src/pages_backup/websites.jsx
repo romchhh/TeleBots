@@ -8,6 +8,7 @@ import {
   FaUserCog, FaCheckCircle, FaDatabase, FaCogs,
   FaGlobe, FaDesktop, FaTools, FaChartLine, FaRobot
 } from 'react-icons/fa';
+import { LineChart, Line, BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer, PieChart, Pie, Cell } from 'recharts';
 import LeadForm from '../ui/LeadForm';
 import LeadModal from '../components/LeadModal';
 import ServiceHero from '../ui/ServiceHero';
@@ -27,7 +28,7 @@ const PRICE_PLANS = [
       'SSL-сертифікат',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Замовити зараз'
   },
   {
@@ -45,7 +46,7 @@ const PRICE_PLANS = [
       'SSL-сертифікат',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Замовити вигідно',
     recommended: true
   },
@@ -65,7 +66,7 @@ const PRICE_PLANS = [
       'SSL-сертифікат',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Замовити найкраще'
   }
 ];
@@ -85,7 +86,7 @@ const PRICE_PLANS_PL = [
       'Certyfikat SSL',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Zamów teraz'
   },
   {
@@ -103,7 +104,7 @@ const PRICE_PLANS_PL = [
       'Certyfikat SSL',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Zamów korzystnie',
     recommended: true
   },
@@ -123,7 +124,7 @@ const PRICE_PLANS_PL = [
       'Certyfikat SSL',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Zamów najlepsze'
   }
 ];
@@ -143,7 +144,7 @@ const PRICE_PLANS_EN = [
       'SSL certificate',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Order now'
   },
   {
@@ -161,7 +162,7 @@ const PRICE_PLANS_EN = [
       'SSL certificate',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Best value',
     recommended: true
   },
@@ -181,7 +182,7 @@ const PRICE_PLANS_EN = [
       'SSL certificate',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Premium option'
   }
 ];
@@ -543,33 +544,132 @@ const WebsitesPage = () => {
           transition={{ duration: 0.8, delay: 0.2 }}
         >
           <motion.div 
-            className="max-w-4xl mx-auto text-left text-gray-600 space-y-4 mb-12"
+            className="max-w-5xl mx-auto text-left space-y-6 mb-16"
             variants={staggerContainer}
             initial="initial"
             animate="animate"
           >
-            <motion.p variants={fadeInUp}>
-              {language === 'uk'
-                ? 'Веб-сайти - це вітрина вашого бізнесу в цифровому світі. Вони відіграють ключову роль у привабленні клієнтів, презентації послуг та збільшенні продажів. Наша команда створює сучасні, швидкі та функціональні веб-сайти, які ефективно працюють на всіх пристроях та забезпечують відмінний користувацький досвід.'
-                : language === 'pl'
-                ? 'Strony internetowe to wizytówka Twojego biznesu w świecie cyfrowym. Odgrywają kluczową rolę w przyciąganiu klientów, prezentacji usług i zwiększaniu sprzedaży. Nasz zespół tworzy nowoczesne, szybkie i funkcjonalne strony internetowe, które skutecznie działają na wszystkich urządzeniach i zapewniają doskonałe doświadczenie użytkownika.'
-                : 'Websites are the showcase of your business in the digital world. They play a key role in attracting customers, presenting services, and increasing sales. Our team creates modern, fast, and functional websites that work effectively on all devices and provide an excellent user experience.'}
-            </motion.p>
-            <motion.p variants={fadeInUp}>
-              {language === 'uk'
-                ? 'Ми використовуємо передові технології та сучасні фреймворки для створення веб-сайтів, які не тільки красиво виглядають, але й швидко завантажуються, оптимізовані для пошукових систем та забезпечують високу конверсію. Кожен проект розробляється індивідуально з урахуванням специфіки вашого бізнесу.'
-                : language === 'pl'
-                ? 'Używamy zaawansowanych technologii i nowoczesnych frameworków do tworzenia stron internetowych, które nie tylko pięknie wyglądają, ale także szybko się ładują, są zoptymalizowane pod kątem wyszukiwarek i zapewniają wysoką konwersję. Każdy projekt jest tworzony indywidualnie z uwzględnieniem specyfiki Twojego biznesu.'
-                : 'We use advanced technologies and modern frameworks to create websites that not only look beautiful but also load quickly, are optimized for search engines, and provide high conversion. Each project is developed individually, taking into account the specifics of your business.'}
-            </motion.p>
-            <motion.p variants={fadeInUp}>
-              {language === 'uk'
-                ? 'Від простого лендінгу до складного корпоративного порталу - ми забезпечуємо повний цикл розробки: від аналізу потреб та проектування до впровадження, тестування та подальшої підтримки. Наші сайти адаптивні, безпечні та готові до масштабування разом з вашим бізнесом.'
-                : language === 'pl'
-                ? 'Od prostej strony docelowej po złożony portal korporacyjny - zapewniamy pełny cykl tworzenia: od analizy potrzeb i projektowania po wdrożenie, testowanie i dalsze wsparcie. Nasze strony są responsywne, bezpieczne i gotowe do skalowania wraz z Twoim biznesem.'
-                : 'From a simple landing page to a complex corporate portal - we provide a full development cycle: from needs analysis and design to implementation, testing, and further support. Our sites are responsive, secure, and ready to scale with your business.'}
-            </motion.p>
+            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-gray-50 to-gray-100 rounded-2xl p-8 md:p-12 border border-gray-300">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                {language === 'uk' 
+                  ? 'Веб-сайти як потужний інструмент для росту бізнесу' 
+                  : language === 'pl' 
+                  ? 'Strony internetowe jako potężne narzędzie do wzrostu biznesu'
+                  : 'Websites as a powerful tool for business growth'}
+              </h3>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-4">
+                {language === 'uk'
+                  ? 'Веб-сайти - це вітрина вашого бізнесу в цифровому світі. Вони відіграють ключову роль у привабленні клієнтів, презентації послуг та збільшенні продажів на 40-60% завдяки професійному дизайну та оптимізації. Наша команда створює сучасні, швидкі та функціональні веб-сайти, які ефективно працюють на всіх пристроях та забезпечують відмінний користувацький досвід, що призводить до збільшення конверсії.'
+                  : language === 'pl'
+                  ? 'Strony internetowe to wizytówka Twojego biznesu w świecie cyfrowym. Odgrywają kluczową rolę w przyciąganiu klientów, prezentacji usług i zwiększaniu sprzedaży o 40-60% dzięki profesjonalnemu projektowi i optymalizacji. Nasz zespół tworzy nowoczesne, szybkie i funkcjonalne strony internetowe, które skutecznie działają na wszystkich urządzeniach i zapewniają doskonałe doświadczenie użytkownika, prowadząc do zwiększenia konwersji.'
+                  : 'Websites are the showcase of your business in the digital world. They play a key role in attracting customers, presenting services, and increasing sales by 40-60% thanks to professional design and optimization. Our team creates modern, fast, and functional websites that work effectively on all devices and provide an excellent user experience, leading to increased conversion.'}
+              </p>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                {language === 'uk'
+                  ? 'Ми використовуємо передові технології та сучасні фреймворки для створення веб-сайтів, які не тільки виглядають красиво, але й швидко завантажуються (менше 2 секунд), оптимізовані для пошукових систем та забезпечують високу конверсію. Кожен проект розробляється індивідуально, враховуючи специфіку вашого бізнесу та цільову аудиторію.'
+                  : language === 'pl'
+                  ? 'Używamy zaawansowanych technologii i nowoczesnych frameworków do tworzenia stron internetowych, które nie tylko wyglądają pięknie, ale także szybko się ładują (mniej niż 2 sekundy), są zoptymalizowane pod kątem wyszukiwarek i zapewniają wysoką konwersję. Każdy projekt jest tworzony indywidualnie, uwzględniając specyfikę Twojego biznesu i grupę docelową.'
+                  : 'We use advanced technologies and modern frameworks to create websites that not only look beautiful but also load quickly (less than 2 seconds), are optimized for search engines, and provide high conversion. Each project is developed individually, taking into account the specifics of your business and target audience.'}
+              </p>
+            </motion.div>
+            
+            <motion.div variants={fadeInUp} className="bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl p-8 md:p-12 border border-gray-400">
+              <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
+                {language === 'uk' 
+                  ? 'Повний цикл розробки від ідеї до запуску' 
+                  : language === 'pl' 
+                  ? 'Pełny cykl tworzenia od pomysłu do uruchomienia'
+                  : 'Full development cycle from idea to launch'}
+              </h3>
+              <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+                {language === 'uk'
+                  ? 'Від простого лендінгу до складного корпоративного порталу - ми забезпечуємо повний цикл розробки: від глибокого аналізу потреб та проектування унікального дизайну до впровадження, тестування на всіх пристроях та подальшої технічної підтримки 24/7. Наші сайти адаптивні, безпечні, готові до масштабування разом з вашим бізнесом та завжди оптимізовані для максимальної продуктивності.'
+                  : language === 'pl'
+                  ? 'Od prostej strony docelowej po złożony portal korporacyjny - zapewniamy pełny cykl tworzenia: od głębokiej analizy potrzeb i projektowania unikalnego designu po wdrożenie, testowanie na wszystkich urządzeniach i dalsze wsparcie techniczne 24/7. Nasze strony są responsywne, bezpieczne, gotowe do skalowania wraz z Twoim biznesem i zawsze zoptymalizowane pod kątem maksymalnej wydajności.'
+                  : 'From a simple landing page to a complex corporate portal - we provide a full development cycle: from deep needs analysis and unique design creation to implementation, testing on all devices, and further 24/7 technical support. Our sites are responsive, secure, ready to scale with your business, and always optimized for maximum performance.'}
+              </p>
+            </motion.div>
           </motion.div>
+        </motion.div>
+
+        {/* Графіки та статистика */}
+        <motion.div 
+          className="mb-20"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12 mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-gray-900">
+              {language === 'uk' 
+                ? 'Результати наших сайтів у цифрах' 
+                : language === 'pl' 
+                ? 'Wyniki naszych stron w liczbach'
+                : 'Our websites results in numbers'}
+            </h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">
+                  {language === 'uk' 
+                    ? 'Показники швидкості завантаження' 
+                    : language === 'pl' 
+                    ? 'Wskaźniki szybkości ładowania'
+                    : 'Page load speed metrics'}
+                </h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <BarChart data={[
+                    { type: language === 'uk' ? 'До оптимізації' : language === 'pl' ? 'Przed optymalizacją' : 'Before', speed: 4.5 },
+                    { type: language === 'uk' ? 'Після оптимізації' : language === 'pl' ? 'Po optymalizacji' : 'After', speed: 1.2 }
+                  ]}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="type" />
+                    <YAxis />
+                    <Tooltip />
+                    <Bar dataKey="speed" fill="#1f2937" />
+                  </BarChart>
+                </ResponsiveContainer>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold mb-6 text-gray-800 text-center">
+                  {language === 'uk' 
+                    ? 'Типи розроблених сайтів' 
+                    : language === 'pl' 
+                    ? 'Typy stworzonych stron'
+                    : 'Types of developed websites'}
+                </h3>
+                <ResponsiveContainer width="100%" height={300}>
+                  <PieChart>
+                    <Pie
+                      data={[
+                        { name: language === 'uk' ? 'Landing' : language === 'pl' ? 'Landing' : 'Landing', value: 40 },
+                        { name: language === 'uk' ? 'Корпоративні' : language === 'pl' ? 'Korporacyjne' : 'Corporate', value: 30 },
+                        { name: language === 'uk' ? 'E-commerce' : language === 'pl' ? 'E-commerce' : 'E-commerce', value: 20 },
+                        { name: language === 'uk' ? 'Інші' : language === 'pl' ? 'Inne' : 'Others', value: 10 }
+                      ]}
+                      cx="50%"
+                      cy="50%"
+                      labelLine={false}
+                      label={({ name, percent }) => `${name} ${(percent * 100).toFixed(0)}%`}
+                      outerRadius={100}
+                      fill="#374151"
+                      dataKey="value"
+                    >
+                      {[
+                        { name: language === 'uk' ? 'Landing' : language === 'pl' ? 'Landing' : 'Landing', value: 40 },
+                        { name: language === 'uk' ? 'Корпоративні' : language === 'pl' ? 'Korporacyjne' : 'Corporate', value: 30 },
+                        { name: language === 'uk' ? 'E-commerce' : language === 'pl' ? 'E-commerce' : 'E-commerce', value: 20 },
+                        { name: language === 'uk' ? 'Інші' : language === 'pl' ? 'Inne' : 'Others', value: 10 }
+                      ].map((entry, index) => (
+                        <Cell key={`cell-${index}`} fill={['#1f2937', '#374151', '#4b5563', '#000000'][index]} />
+                      ))}
+                    </Pie>
+                    <Tooltip />
+                  </PieChart>
+                </ResponsiveContainer>
+              </div>
+            </div>
+          </div>
         </motion.div>
 
         {/* Основні послуги */}
@@ -584,18 +684,18 @@ const WebsitesPage = () => {
             <motion.div
               key={index}
               variants={scaleIn}
-              whileHover={{ scale: 1.02 }}
-              className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+              whileHover={{ scale: 1.05, y: -5 }}
+              className="bg-gradient-to-br from-white to-gray-50 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 border border-gray-100"
             >
               <motion.div 
-                className="mb-4"
+                className="mb-6 text-4xl"
                 variants={pulseAnimation}
                 animate="animate"
               >
                 {service.icon}
               </motion.div>
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 text-gray-900">{service.title}</h3>
+              <p className="text-gray-600 text-base md:text-lg leading-relaxed">{service.description}</p>
             </motion.div>
           ))}
         </motion.div>
@@ -720,7 +820,7 @@ const WebsitesPage = () => {
 
         {/* Технології */}
         <motion.div 
-          className="bg-gradient-to-r from-purple-700 to-purple-900 rounded-xl shadow-lg p-8 mb-16 text-gray-900"
+          className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-2xl p-8 md:p-12 mb-20 border border-gray-200"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}

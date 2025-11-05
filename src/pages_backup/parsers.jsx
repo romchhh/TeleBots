@@ -28,7 +28,7 @@ const PRICE_PLANS = [
       'Хостинг на 6 місяців',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Замовити зараз'
   },
   {
@@ -46,7 +46,7 @@ const PRICE_PLANS = [
       'Технічна підтримка',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Замовити вигідно',
     recommended: true
   },
@@ -66,7 +66,7 @@ const PRICE_PLANS = [
       'Індивідуальні доробки',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Замовити найкраще'
   }
 ];
@@ -87,7 +87,7 @@ const PRICE_PLANS_PL = [
       'Hosting na 6 miesięcy',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Zamów teraz'
   },
   {
@@ -105,7 +105,7 @@ const PRICE_PLANS_PL = [
       'Wsparcie techniczne',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Zamów korzystnie',
     recommended: true
   },
@@ -125,7 +125,7 @@ const PRICE_PLANS_PL = [
       'Indywidualne modyfikacje',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Zamów najlepsze'
   }
 ];
@@ -146,7 +146,7 @@ const PRICE_PLANS_EN = [
       'Hosting for 6 months',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-blue-500 to-blue-600',
+    accent: 'from-gray-800 to-gray-900',
     buttonText: 'Order now'
   },
   {
@@ -164,7 +164,7 @@ const PRICE_PLANS_EN = [
       'Technical support',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-green-500 to-green-600',
+    accent: 'from-gray-900 to-black',
     buttonText: 'Best value',
     recommended: true
   },
@@ -184,7 +184,7 @@ const PRICE_PLANS_EN = [
       'Custom modifications',
     ],
     orderLink: 'https://t.me/nowayrm',
-    accent: 'from-purple-500 to-purple-600',
+    accent: 'from-gray-700 to-gray-800',
     buttonText: 'Premium option'
   }
 ];
@@ -634,7 +634,7 @@ const ParsersPage = () => {
                 whileHover={{ y: -10 }}
               >
                 <motion.div 
-                  className="bg-green-100 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-green-600"
+                  className="bg-gray-200 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4 text-gray-800"
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >
@@ -674,11 +674,11 @@ const ParsersPage = () => {
                 variants={scaleIn}
                 whileHover={{ y: -10 }}
                 className={`relative bg-white rounded-2xl shadow-lg overflow-hidden ${
-                  plan.recommended ? 'ring-2 ring-green-500' : ''
+                  plan.recommended ? 'ring-2 ring-gray-900' : ''
                 }`}
               >
                 {plan.recommended && (
-                  <div className="absolute top-0 right-0 bg-green-500 text-white px-4 py-1 rounded-bl-lg">
+                  <div className="absolute top-0 right-0 bg-gray-900 text-white px-4 py-1 rounded-bl-lg">
 {language === 'uk' ? 'Рекомендований' : language === 'pl' ? 'Polecany' : 'Recommended'}
                   </div>
                 )}
@@ -692,7 +692,7 @@ const ParsersPage = () => {
                   <ul className="mb-8 space-y-4">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-center text-gray-600">
-                        <FaCheckCircle className="text-green-500 mr-3" />
+                        <FaCheckCircle className="text-gray-700 mr-3" />
                         {feature}
                       </li>
                     ))}
@@ -723,7 +723,7 @@ const ParsersPage = () => {
 
         {/* Технології */}
         <motion.div 
-          className="bg-gradient-to-r from-purple-700 to-purple-900 rounded-xl shadow-lg p-8 mb-16 text-gray-900"
+          className="bg-gradient-to-br from-gray-50 to-white rounded-2xl shadow-2xl p-8 md:p-12 mb-20 border border-gray-200"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
@@ -807,7 +807,7 @@ const ParsersPage = () => {
                 whileHover={{ y: -10 }}
               >
                 <motion.div 
-                  className="text-green-500 mb-4"
+                  className="text-gray-700 mb-4"
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.6 }}
                 >

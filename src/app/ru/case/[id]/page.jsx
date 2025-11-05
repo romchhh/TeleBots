@@ -40,7 +40,7 @@ export async function generateMetadata({ params }) {
     title,
     description,
     keywords,
-    alternates: generateHreflangAlternates(`/case/${params.id}`),
+    alternates: generateHreflangAlternates(`/ru/case/${params.id}`),
     openGraph: {
       title: ogTitle,
       description: ogDescription,

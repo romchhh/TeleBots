@@ -60,23 +60,38 @@ export function getLocaleCode(lang) {
 
 /**
  * Generate hreflang alternates for a page
- * @param {string} basePath - Base path without language prefix (e.g., '/case/dr-tolstikova-bot')
+ * @param {string} basePath - Base path with or without language prefix (e.g., '/case/dr-tolstikova-bot' or '/en/blog/slug')
  * @returns {object} Alternates object for Next.js metadata
  */
 export function generateHreflangAlternates(basePath) {
   const baseUrl = 'https://telebots.site';
   
   // Remove leading slash if present
-  const cleanPath = basePath.startsWith('/') ? basePath : `/${basePath}`;
+  let cleanPath = basePath.startsWith('/') ? basePath : `/${basePath}`;
+  
+  // Extract language prefix and base path
+  let basePathWithoutLang = cleanPath;
+  if (cleanPath.startsWith('/en/')) {
+    basePathWithoutLang = cleanPath.replace('/en', '');
+  } else if (cleanPath.startsWith('/ru/')) {
+    basePathWithoutLang = cleanPath.replace('/ru', '');
+  } else if (cleanPath.startsWith('/pl/')) {
+    basePathWithoutLang = cleanPath.replace('/pl', '');
+  }
+  
+  // Ensure base path starts with /
+  if (!basePathWithoutLang.startsWith('/')) {
+    basePathWithoutLang = `/${basePathWithoutLang}`;
+  }
   
   return {
     canonical: `${baseUrl}${cleanPath}`,
     languages: {
-      'uk-UA': `${baseUrl}${cleanPath}`,
-      'en-US': `${baseUrl}/en${cleanPath}`,
-      'ru-RU': `${baseUrl}/ru${cleanPath}`,
-      'pl-PL': `${baseUrl}/pl${cleanPath}`,
-      'x-default': `${baseUrl}${cleanPath}`,
+      'uk-UA': `${baseUrl}${basePathWithoutLang}`,
+      'en-US': `${baseUrl}/en${basePathWithoutLang}`,
+      'ru-RU': `${baseUrl}/ru${basePathWithoutLang}`,
+      'pl-PL': `${baseUrl}/pl${basePathWithoutLang}`,
+      'x-default': `${baseUrl}${basePathWithoutLang}`,
     },
   };
 }

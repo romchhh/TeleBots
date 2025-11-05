@@ -14,6 +14,7 @@ import BlogPost12 from '../../../../ui/Blog/BlogPost12'
 import BlogPost13 from '../../../../ui/Blog/BlogPost13'
 import BlogPost14 from '../../../../ui/Blog/BlogPost14'
 import BlogPost15 from '../../../../ui/Blog/BlogPost15'
+import { truncateTitle, truncateDescription, generateHreflangAlternates } from '../../../../utils/seo'
 
 // Российские метаданные для блог-постов
 const blogMetadata = {
@@ -129,40 +130,41 @@ export async function generateMetadata({ params }) {
   
   if (!post) {
     return {
-      title: 'Статья не найдена | TeleBots',
-      description: 'Запрашиваемая статья не найдена.'
+      title: truncateTitle('Статья не найдена | TeleBots'),
+      description: truncateDescription('Запрашиваемая статья не найдена.')
     }
   }
 
+  const title = truncateTitle(`${post.title} | TeleBots`);
+  const description = truncateDescription(post.description);
+
   return {
-    title: post.title,
-    description: post.description,
+    title,
+    description,
     keywords: post.keywords,
-    alternates: {
-      canonical: `https://telebots.site/ru/blog/${params.slug}`,
-      languages: {
-        'uk': `https://telebots.site/blog/${params.slug}`,
-        'en': `https://telebots.site/en/blog/${params.slug}`,
-        'pl': `https://telebots.site/pl/blog/${params.slug}`,
-        'ru': `https://telebots.site/ru/blog/${params.slug}`,
-        'x-default': `https://telebots.site/blog/${params.slug}`,
-      },
-    },
+    alternates: generateHreflangAlternates(`/ru/blog/${params.slug}`),
     openGraph: {
       type: 'article',
-      title: post.title,
-      description: post.description,
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
       url: `https://telebots.site/ru/blog/${params.slug}`,
       siteName: 'TeleBots',
       locale: 'ru_RU',
       images: [
         {
-          url: post.image,
+          url: `https://telebots.site${post.image}`,
           width: 1200,
           height: 630,
-          alt: post.title,
+          alt: truncateDescription(post.title, 100),
+          type: 'image/jpeg',
         }
       ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: truncateTitle(post.title),
+      description: truncateDescription(post.description),
+      images: [`https://telebots.site${post.image}`],
     },
   }
 }

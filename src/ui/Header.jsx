@@ -14,7 +14,7 @@ function Header() {
     const { isActiveNav, setIsActiveNav } = useNavbar();
     const { language } = useLanguage();
 
-    const activeStyles = pagePosition > 150 ? 'bg-white' : '';
+    const activeStyles = pagePosition > 150 ? 'bg-transparent lg:bg-white' : '';
 
     const handleToggleNavbar = () => {
         setIsActiveNav((state) => !state);
